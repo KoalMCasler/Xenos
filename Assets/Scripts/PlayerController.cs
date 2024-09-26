@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameManager.gameState == GameManager.GameState.Gameplay)
+        if(gameManager.gameState == GameManager.GameState.Gameplay && !hasLanded)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
             }
+        }
+        else if(hasLanded)
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
@@ -81,7 +85,7 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue)
     {
         Vector2 moveVector = movementValue.Get<Vector2>();
-        if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp)
+        if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
             RotatePlayer(moveVector);
         }
@@ -132,7 +136,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void CheckRotation()
     {
-        if(hasLanded)
+        if(!hasLanded)
         {
             float step = playerBody.velocity.z * Time.deltaTime;
             if(playerTransform.rotation.x <= minRotationX)
@@ -180,6 +184,14 @@ public class PlayerController : MonoBehaviour
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
                 }
             }
+        }
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            hasLanded = true;
         }
     }
 }
