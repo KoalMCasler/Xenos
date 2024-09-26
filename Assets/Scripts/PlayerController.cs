@@ -127,7 +127,9 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
         }
     }
-
+    /// <summary>
+    /// Keeps player rotation within max/min rotation angle.
+    /// </summary>
     void CheckRotation()
     {
         if(playerTransform.rotation.x <= minRotationX)
