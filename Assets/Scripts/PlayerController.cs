@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     public float maxRotationY;
     public float minRotationY;
 
-    
     void Awake()
     {
         gameManager = GameManager.gameManager;

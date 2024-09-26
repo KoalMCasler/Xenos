@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Xenos.sln"
+    "dotnet.defaultSolution": "Xenos.sln",
+    "dotnet.preferCSharpExtension": true
 }
