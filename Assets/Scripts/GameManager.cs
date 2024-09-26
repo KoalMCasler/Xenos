@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
 
     }
     
+    /// <summary>
+    /// Used to change game state at specific points, runing methods only once instead of every frame.
+    /// </summary>
     void ChangeGameState()
     {
-        /// <summary>
-        /// Used to change game state at specific points, runing methods only once instead of every frame.
-        /// </summary>
         switch(gameState)
         {
             case GameState.MainMenu: MainMenu(); break;

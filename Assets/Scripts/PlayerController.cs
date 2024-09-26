@@ -90,15 +90,19 @@ public class PlayerController : MonoBehaviour
             RotatePlayer(moveVector);
         }
     }
-
+    /// <summary>
+    /// Launches player at end of ramp based on upgrades
+    /// </summary>
     public void LaunchBoost()
     {
-        //Launched player at end of ramp based on upgrades
         isOffRamp = true;
         playerBody.AddForce(Vector3.forward * boostValue);
     }
-
-    public void RotatePlayer(Vector2 moveVector) // should only take in the move vector from OnMove Method
+    /// <summary>
+    /// Should only take in the move vector from OnMove Method, logic for player movement
+    /// </summary>
+    /// <param name="moveVector"></param>
+    public void RotatePlayer(Vector2 moveVector) //
     {
         float step = playerBody.velocity.z * Time.deltaTime;
         if(moveVector.x > 0)
