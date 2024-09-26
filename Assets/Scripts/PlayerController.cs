@@ -10,11 +10,14 @@ public class PlayerController : MonoBehaviour
     public Transform playerTransform;
     private Rigidbody playerBody;
     public bool hasLaunched;
+    public bool hasLanded;
     public bool isOffRamp;
     public int boostValue;
     public float maxRotationX;
-    public float maxRotationY;
+    public float maxRotationZ;
     public float minRotationX;
+    public float minRotationZ;
+    public float maxRotationY;
     public float minRotationY;
 
     
@@ -45,12 +48,6 @@ public class PlayerController : MonoBehaviour
             if(isOffRamp)
             {
                 CheckRotation();
-            }
-            if(!isOffRamp)
-            {
-                Quaternion rotation = new Quaternion();
-                rotation.Set(playerTransform.rotation.x,0,playerTransform.rotation.z,1);
-                playerTransform.rotation = rotation;
             }
             if(hasLaunched)
             {
@@ -132,37 +129,58 @@ public class PlayerController : MonoBehaviour
         }
     }
     /// <summary>
-    /// Keeps player rotation within max/min rotation angle.
+    /// Keeps player rotation within max/min rotation angles.
     /// </summary>
     void CheckRotation()
     {
-        if(playerTransform.rotation.x <= minRotationX)
+        if(hasLanded)
         {
-            Debug.Log("Clamping rotation x =" + playerTransform.rotation.x);
-            Quaternion rotation = Quaternion.AngleAxis(-30, transform.right);
-            rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
-            playerTransform.rotation = rotation;
-        }
-        if(playerTransform.rotation.x >= maxRotationX)
-        {
-            Debug.Log("Clamping rotation x =" + playerTransform.rotation.x );
-            Quaternion rotation = Quaternion.AngleAxis(30, transform.right);
-            rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
-            playerTransform.rotation = rotation;
-        }
-        if(playerTransform.rotation.z <= minRotationY)
-        {
-            Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
-            Quaternion rotation = Quaternion.AngleAxis(-25, transform.forward);
-            rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
-            playerTransform.rotation = rotation;
-        }
-        if(playerTransform.rotation.z >= maxRotationY)
-        {
-            Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
-            Quaternion rotation = Quaternion.AngleAxis(25, transform.forward);
-            rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
-            playerTransform.rotation = rotation;
+            float step = playerBody.velocity.z * Time.deltaTime;
+            if(playerTransform.rotation.x <= minRotationX)
+            {
+                Debug.Log("Clamping rotation x =" + playerTransform.rotation.x);
+                Quaternion rotation = Quaternion.AngleAxis(-30, transform.right);
+                rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+            }
+            if(playerTransform.rotation.x >= maxRotationX)
+            {
+                Debug.Log("Clamping rotation x =" + playerTransform.rotation.x );
+                Quaternion rotation = Quaternion.AngleAxis(30, transform.right);
+                rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+            }
+            if(playerTransform.rotation.z <= minRotationZ)
+            {
+                Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
+                Quaternion rotation = Quaternion.AngleAxis(-25, transform.forward);
+                rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+            }
+            if(playerTransform.rotation.z >= maxRotationZ)
+            {
+                Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
+                Quaternion rotation = Quaternion.AngleAxis(25, transform.forward);
+                rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+            }
+            if(!isOffRamp)
+            {
+                if(playerTransform.rotation.y <= minRotationY)
+                {
+                    Debug.Log("Clamping rotation y =" + playerTransform.rotation.y);
+                    Quaternion rotation = Quaternion.AngleAxis(-1, transform.up);
+                    rotation.Set(playerTransform.rotation.x,rotation.y,playerTransform.rotation.z,1);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+                }
+                if(playerTransform.rotation.y >= maxRotationY)
+                {
+                    Debug.Log("Clamping rotation y =" + playerTransform.rotation.y);
+                    Quaternion rotation = Quaternion.AngleAxis(1, transform.up);
+                    rotation.Set(playerTransform.rotation.x,rotation.y,playerTransform.rotation.z,1);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
+                }
+            }
         }
     }
 }
