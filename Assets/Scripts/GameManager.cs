@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,9 +18,11 @@ public class GameManager : MonoBehaviour
     public UpgradeManager upgradeManager;
     [SerializeField]
     public SoundManager soundManager;
+    public PlayerController player;
     public static GameManager gameManager;
     public enum GameState{MainMenu, Gameplay, Upgrades, Results}
     public GameState gameState;
+    private Stats loadedStats;
     void Awake()
     {
         if(gameManager != null)
@@ -29,11 +34,14 @@ public class GameManager : MonoBehaviour
             GameObject.DontDestroyOnLoad(this.gameObject);
             gameManager = this;
         }
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        loadedStats = ScriptableObject.CreateInstance<Stats>();
     }
     
     void Start()
     {
-        gameState = GameState.Gameplay;
+        gameState = GameState.MainMenu;
+        ChangeGameState();
     }
 
     void Update()
@@ -57,27 +65,86 @@ public class GameManager : MonoBehaviour
 
     void MainMenu()
     {
-
+        uIManager.SetUIMainMenu();
     }
 
     void Gameplay()
     {
-
+        
     }
 
     void Upgrades()
     {
-
+        ReloadGame();
     }
 
     void Results()
     {
-        ReloadGame();
+        uIManager.SetUIResults();
     }
 
     void ReloadGame()
     {
-        gameState = GameState.Gameplay;
+        SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadScene("MainLevel");
+    }
+    /// <summary>
+    /// Quits Entire Game. 
+    /// </summary>
+    public void QuitGame()
+    {
+        //Debug line to test quit function in editor
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
+    /// <summary>
+    /// Saves all owned upgrades and player stats
+    /// </summary>
+    public void SaveGame()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.json");
+
+        Stats playerSave = player.playerStats;
+        string json = JsonUtility.ToJson(playerSave);
+
+        bf.Serialize(file, json);
+        file.Close();   
+    }
+    /// <summary>
+    /// Checks to see if save exists, return true or false
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckforSave()
+    {
+        bool doseSaveExisit = File.Exists(Application.persistentDataPath + "/playerInfo.json");
+        return doseSaveExisit;
+    }
+    /// <summary>
+    /// Loads player save and brings you right to upgrade menu
+    /// </summary>
+    public void LoadGame()
+    {
+        if(File.Exists(Application.persistentDataPath + "/playerInfo.json"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.json", FileMode.Open);
+
+            string json = (string)bf.Deserialize(file);
+            
+            file.Close();
+            JsonUtility.FromJsonOverwrite(json, loadedStats);
+            player.playerStats = loadedStats;
+
+        }
+        uIManager.SetUIUpgrades();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        player.ResetPlayerBools();
+        player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
+        player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

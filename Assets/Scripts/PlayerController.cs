@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,8 +25,8 @@ public class PlayerController : MonoBehaviour
     public bool hasLaunched;
     public bool hasLanded;
     public bool isOffRamp;
-    public int boostValue;
-    public float lookSensitivity;
+    [Header("Player Stats")]
+    public Stats playerStats;
     void Awake()
     {
         gameManager = GameManager.gameManager;
@@ -41,8 +42,7 @@ public class PlayerController : MonoBehaviour
         spawnPoint = GameObject.FindWithTag("Start").transform;
         playerTransform.position = spawnPoint.position;
         //Makes sure player has not launched. 
-        hasLaunched = false;
-        isOffRamp = false;
+        ResetPlayerBools();
     }
 
     // Update is called once per frame
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
             //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.y*-lookSensitivity,0,moveVector2.x*-lookSensitivity);
+            transform.Rotate(moveVector2.y*-playerStats.lookSensitivity,0,moveVector2.x*-playerStats.lookSensitivity);
             //Used to let the player move left/right
             if(moveVector2.x > 0)
             {
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
     public void LaunchBoost()
     {
         isOffRamp = true;
-        playerBody.AddForce(Vector3.forward * boostValue);
+        playerBody.AddForce(Vector3.forward * playerStats.boostValue);
     }
     void HoldYRotation()
     {
@@ -148,5 +148,12 @@ public class PlayerController : MonoBehaviour
             gameManager.gameState = GameManager.GameState.Results;
             gameManager.ChangeGameState();
         }
+    }
+
+    public void ResetPlayerBools()
+    {
+        hasLanded = false;
+        hasLaunched = false;
+        isOffRamp = false;
     }
 }
