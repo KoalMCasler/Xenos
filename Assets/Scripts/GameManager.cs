@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handels basic gameplay and state control
+/// </summary>
 public class GameManager : MonoBehaviour
 {
+    [Header("Object Referances")]
+    [SerializeField]
+    public UIManager uIManager;
+    [SerializeField]
+    public UpgradeManager upgradeManager;
+    [SerializeField]
+    public SoundManager soundManager;
     public static GameManager gameManager;
-    public enum GameState{MainMenu, Gameplay, Upgrades}
+    public enum GameState{MainMenu, Gameplay, Upgrades, Results}
     public GameState gameState;
     void Awake()
     {
@@ -22,7 +33,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        
+        gameState = GameState.Gameplay;
     }
 
     void Update()
@@ -33,13 +44,14 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Used to change game state at specific points, runing methods only once instead of every frame.
     /// </summary>
-    void ChangeGameState()
+    public void ChangeGameState()
     {
         switch(gameState)
         {
             case GameState.MainMenu: MainMenu(); break;
             case GameState.Gameplay: Gameplay(); break;
             case GameState.Upgrades: Upgrades(); break;
+            case GameState.Results: Results(); break;
         }
     }
 
@@ -56,5 +68,16 @@ public class GameManager : MonoBehaviour
     void Upgrades()
     {
 
+    }
+
+    void Results()
+    {
+        ReloadGame();
+    }
+
+    void ReloadGame()
+    {
+        gameState = GameState.Gameplay;
+        SceneManager.LoadScene("MainLevel");
     }
 }

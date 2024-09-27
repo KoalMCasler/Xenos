@@ -1,30 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Handels all player movement and holds active stats for gameplay
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
+    [Header("Object Referances")]
+    [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private Camera mainCamera;
     private Transform spawnPoint;
+    [Header("Compnent Referances")]
+    [SerializeField]
+    private ConstantForce playerForce;
     public Transform playerTransform;
     private Rigidbody playerBody;
+    [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
     public bool isOffRamp;
     public int boostValue;
-    public float maxRotationX;
-    public float maxRotationZ;
-    public float minRotationX;
-    public float minRotationZ;
-    public float maxRotationY;
-    public float minRotationY;
-
+    public float lookSensitivity;
     void Awake()
     {
         gameManager = GameManager.gameManager;
         playerBody = this.gameObject.GetComponent<Rigidbody>();
         playerTransform = this.transform;
+        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        playerForce = this.GetComponent<ConstantForce>();
     }
     // Start is called before the first frame update
     void Start()
@@ -44,9 +52,9 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
-            if(isOffRamp)
+            if(!isOffRamp)
             {
-                CheckRotation();
+                HoldYRotation();
             }
             if(hasLaunched)
             {
@@ -62,6 +70,7 @@ public class PlayerController : MonoBehaviour
         else if(hasLanded)
         {
             Cursor.lockState = CursorLockMode.None;
+            playerForce.force = new Vector3(0,0,0);
         }
         else
         {
@@ -69,6 +78,7 @@ public class PlayerController : MonoBehaviour
             playerBody.isKinematic = true;
             Cursor.lockState = CursorLockMode.None;
         }
+        CheckForRunEnd();
     }
 
     void OnLaunch()
@@ -84,10 +94,20 @@ public class PlayerController : MonoBehaviour
     
     void OnMove(InputValue movementValue)
     {
-        Vector2 moveVector = movementValue.Get<Vector2>();
+        Vector2 moveVector2 = movementValue.Get<Vector2>();
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
-            RotatePlayer(moveVector);
+            //Aims player towards mouse movement 
+            transform.Rotate(moveVector2.y*-lookSensitivity,0,moveVector2.x*-lookSensitivity);
+            //Used to let the player move left/right
+            if(moveVector2.x > 0)
+            {
+                playerForce.force = new Vector3(5,0,0);
+            }
+            if(moveVector2.x < 0)
+            {
+                playerForce.force = new Vector3(-5,0,0);
+            }
         }
     }
     /// <summary>
@@ -98,92 +118,15 @@ public class PlayerController : MonoBehaviour
         isOffRamp = true;
         playerBody.AddForce(Vector3.forward * boostValue);
     }
-    /// <summary>
-    /// Should only take in the move vector from OnMove Method, logic for player movement
-    /// </summary>
-    /// <param name="moveVector"></param>
-    public void RotatePlayer(Vector2 moveVector) //
+    void HoldYRotation()
     {
-        float step = playerBody.velocity.z * Time.deltaTime;
-        if(moveVector.x > 0)
+        if(playerTransform.rotation.y < 0)
         {
-            Quaternion rotation = Quaternion.AngleAxis(30, transform.right);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step*5);
+            transform.Rotate(0,1,0);
         }
-        if(moveVector.x < 0)
+        if(playerTransform.rotation.y > 0)
         {
-            Quaternion rotation = Quaternion.AngleAxis(-30, transform.right);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step*5);
-        }
-        if(moveVector.y > 0)
-        {
-            Quaternion rotation = Quaternion.AngleAxis(-25, transform.forward);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-        }
-        if(moveVector.y < 0)
-        {
-            Quaternion rotation = Quaternion.AngleAxis(25, transform.forward);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-        }
-        else
-        {
-            Quaternion rotation = new Quaternion();
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-        }
-    }
-    /// <summary>
-    /// Keeps player rotation within max/min rotation angles.
-    /// </summary>
-    void CheckRotation()
-    {
-        if(!hasLanded)
-        {
-            float step = playerBody.velocity.z * Time.deltaTime;
-            if(playerTransform.rotation.x <= minRotationX)
-            {
-                Debug.Log("Clamping rotation x =" + playerTransform.rotation.x);
-                Quaternion rotation = Quaternion.AngleAxis(-30, transform.right);
-                rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-            }
-            if(playerTransform.rotation.x >= maxRotationX)
-            {
-                Debug.Log("Clamping rotation x =" + playerTransform.rotation.x );
-                Quaternion rotation = Quaternion.AngleAxis(30, transform.right);
-                rotation.Set(rotation.x,playerTransform.rotation.y,playerTransform.rotation.z,1);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-            }
-            if(playerTransform.rotation.z <= minRotationZ)
-            {
-                Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
-                Quaternion rotation = Quaternion.AngleAxis(-25, transform.forward);
-                rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-            }
-            if(playerTransform.rotation.z >= maxRotationZ)
-            {
-                Debug.Log("Clamping rotation z =" + playerTransform.rotation.z);
-                Quaternion rotation = Quaternion.AngleAxis(25, transform.forward);
-                rotation.Set(playerTransform.rotation.x,playerTransform.rotation.y,rotation.z,1);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-            }
-            if(!isOffRamp)
-            {
-                if(playerTransform.rotation.y <= minRotationY)
-                {
-                    Debug.Log("Clamping rotation y =" + playerTransform.rotation.y);
-                    Quaternion rotation = Quaternion.AngleAxis(-1, transform.up);
-                    rotation.Set(playerTransform.rotation.x,rotation.y,playerTransform.rotation.z,1);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-                }
-                if(playerTransform.rotation.y >= maxRotationY)
-                {
-                    Debug.Log("Clamping rotation y =" + playerTransform.rotation.y);
-                    Quaternion rotation = Quaternion.AngleAxis(1, transform.up);
-                    rotation.Set(playerTransform.rotation.x,rotation.y,playerTransform.rotation.z,1);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, step);
-                }
-            }
+            transform.Rotate(0,-1,0);
         }
     }
 
@@ -192,6 +135,18 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             hasLanded = true;
+        }
+    }
+
+    /// <summary>
+    /// Checks to see if player has landed and has stoped moveing. 
+    /// </summary>
+    void CheckForRunEnd()
+    {
+        if(hasLanded && playerBody.velocity == Vector3.zero)
+        {
+            gameManager.gameState = GameManager.GameState.Results;
+            gameManager.ChangeGameState();
         }
     }
 }
