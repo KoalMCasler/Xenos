@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        while(gameState != GameState.Gameplay)
+        if(gameState != GameState.Gameplay)
         {
             player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
             player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
@@ -226,11 +226,17 @@ public class GameManager : MonoBehaviour
         operation.completed -= OperationCompleted;
     }
 
+    /// <summary>
+    /// Used to clear player stats for a fresh game. 
+    /// </summary>
     public void ResetPlayerStats()
     {
         player.playerStats.ResetStats();
     }
 
+    /// <summary>
+    /// Resets run stats for each fresh run. 
+    /// </summary>
     public void StartRun()
     {
         runDistance = 0;

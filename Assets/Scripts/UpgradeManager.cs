@@ -61,7 +61,16 @@ public class UpgradeManager : MonoBehaviour
                 rampLevelTotal += 0.1f;
             }
         }
-        Vector3 newScale = new Vector3(1,rampLevelTotal,1);
+        float rampScaleZ = 1;
+        if(rampLevelTotal == 1)
+        {
+            rampScaleZ = 1;
+        }
+        else
+        {
+            rampScaleZ = rampLevelTotal;
+        }
+        Vector3 newScale = new Vector3(1,rampLevelTotal,rampScaleZ);
         ramp.transform.localScale = newScale;
     }
 

@@ -154,7 +154,7 @@ public class UIManager : MonoBehaviour
 
     void UpdateResults()
     {
-        if(gameManager.gameState == GameManager.GameState.Results || gameManager.gameState == GameManager.GameState.Gameplay)
+        if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
             gameManager.runDistance = distanceTracker.returnDistance();
             distanceResultsText.text = string.Format("Distance = {0:0.0}m",gameManager.runDistance);
@@ -183,7 +183,7 @@ public class UIManager : MonoBehaviour
         {
             if(boostButtons[i].GetComponent<BuffUpgradeButton>().canAford)
             {
-                if(!upgradeManager.playerStats.boostLevel[i])
+                if(!upgradeManager.playerStats.boostLevel[i] && boostButtons[i].GetComponent<BuffUpgradeButton>().isUnlocked)
                 {
                     boostButtons[i].interactable = true;
                 }
@@ -205,7 +205,7 @@ public class UIManager : MonoBehaviour
         {
             if(rampButtons[i].GetComponent<BuffUpgradeButton>().canAford)
             {
-                if(!upgradeManager.playerStats.rampScale[i])
+                if(!upgradeManager.playerStats.rampScale[i] && rampButtons[i].GetComponent<BuffUpgradeButton>().isUnlocked)
                 {
                     rampButtons[i].interactable = true;
                 }

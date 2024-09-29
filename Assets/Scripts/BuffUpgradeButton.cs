@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BuffUpgradeButton : MonoBehaviour
 {
+    public UIManager uIManager;
     public float upgradeCost;
     public bool canAford;
     public int upgradeSlot;
@@ -14,18 +15,25 @@ public class BuffUpgradeButton : MonoBehaviour
     public string boostType;
     public Color cantAfordColor;
     public Color canAfordColor;
+    public bool isUnlocked;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.gameManager;
+        uIManager = gameManager.uIManager;
         thisButton = this.GetComponent<Button>();
+        isUnlocked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckIfCanAford();
-        ChangeColor();
+        CheckIfUnlocked();
+        if(isUnlocked)
+        {
+            CheckIfCanAford();
+            ChangeColor();
+        }
     }
 
     public void BuyUpgrade()
@@ -36,10 +44,12 @@ public class BuffUpgradeButton : MonoBehaviour
             if(boostType == "Launch")
             {
                 gameManager.player.playerStats.boostLevel[upgradeSlot] = true;
+                isUnlocked = true;
             }
             if(boostType == "Ramp")
             {
                 gameManager.player.playerStats.rampScale[upgradeSlot] = true;
+                isUnlocked = true;
             }
         }
     }
@@ -89,6 +99,60 @@ public class BuffUpgradeButton : MonoBehaviour
         else
         {
             canAford = false;
+        }
+    }
+
+    void CheckIfUnlocked()
+    {
+        if(boostType == "Launch")
+        {
+            if(upgradeSlot == 0)
+            {
+                isUnlocked = true;
+            }
+            else
+            {
+                if(uIManager.boostButtons[upgradeSlot-1].GetComponent<BuffUpgradeButton>().isUnlocked && gameManager.player.playerStats.boostLevel[upgradeSlot-1])
+                {
+                    isUnlocked = true;
+                }
+                else
+                {
+                    isUnlocked = false;
+                }
+            }
+            if(isUnlocked == false)
+            {
+                ColorBlock cb = thisButton.colors;
+                cb.disabledColor = cantAfordColor;
+                thisButton.colors = cb;
+                thisButton.interactable = false;
+            }
+        }
+        if(boostType == "Ramp")
+        {
+            if(upgradeSlot == 0)
+            {
+                isUnlocked = true;
+            }
+            else
+            {
+                if(uIManager.rampButtons[upgradeSlot-1].GetComponent<BuffUpgradeButton>().isUnlocked && gameManager.player.playerStats.rampScale[upgradeSlot-1])
+                {
+                    isUnlocked = true;
+                }
+                else
+                {
+                    isUnlocked = false;
+                }
+            }
+            if(isUnlocked == false)
+            {
+                ColorBlock cb = thisButton.colors;
+                cb.disabledColor = cantAfordColor;
+                thisButton.colors = cb;
+                thisButton.interactable = false;
+            }
         }
     }
 
