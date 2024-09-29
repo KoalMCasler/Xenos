@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7300887914039844075}
   - component: {fileID: 4502942149321202517}
   - component: {fileID: 2080827467467582525}
+  - component: {fileID: 7240844848446267097}
   m_Layer: 0
   m_Name: BuffUpgradeButton
   m_TagString: Untagged
@@ -100,8 +101,8 @@ MonoBehaviour:
     m_NormalColor: {r: 0.38823533, g: 0.38823533, b: 0.38823533, a: 1}
     m_HighlightedColor: {r: 0.7311321, g: 1, b: 0.99309385, a: 1}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 0.7294118, g: 1, b: 0.9921569, a: 1}
-    m_DisabledColor: {r: 1, g: 0.13217431, b: 0, a: 1}
+    m_SelectedColor: {r: 0.38823533, g: 0.38823533, b: 0.38823533, a: 1}
+    m_DisabledColor: {r: 0, g: 1, b: 0, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -119,4 +120,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4502942149321202517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7240844848446267097}
+        m_TargetAssemblyTypeName: BuffUpgradeButton, Assembly-CSharp
+        m_MethodName: BuyUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7240844848446267097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627926043986736751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e591b3513716e3741a34a156d9bd2f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeCost: 0
+  canAford: 0
+  upgradeSlot: 0
+  thisButton: {fileID: 0}
+  boostType: 
+  cantAfordColor: {r: 1, g: 0, b: 0, a: 1}
+  canAfordColor: {r: 0, g: 1, b: 0, a: 1}

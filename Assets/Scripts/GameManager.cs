@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public enum GameState{MainMenu, Gameplay, Upgrades, Results}
     public GameState gameState;
     private Stats loadedStats;
+    public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
+    [Header("Run stats")]
+    public float runDistance;
+    public float collectedMoney;
     void Awake()
     {
         if(gameManager != null)
@@ -40,13 +44,19 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        gameState = GameState.MainMenu;
-        ChangeGameState();
+        if(gameState == GameState.MainMenu)
+        {
+            ChangeGameState();
+        }
     }
 
     void Update()
     {
-
+        while(gameState != GameState.Gameplay)
+        {
+            player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
+            player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
+        }
     }
     
     /// <summary>
@@ -54,6 +64,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ChangeGameState()
     {
+        Debug.Log("Changing to " + gameState + " Gamestate");
         switch(gameState)
         {
             case GameState.MainMenu: MainMenu(); break;
@@ -86,7 +97,7 @@ public class GameManager : MonoBehaviour
     void ReloadGame()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene("MainLevel");
+        LoadScene("MainLevel");
     }
     /// <summary>
     /// Quits Entire Game. 
@@ -102,14 +113,29 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void SaveGame()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.json");
+        if(CheckforSave())
+        {
+            Debug.Log("Overwriting save");
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.json", FileMode.Open);
+            
+            Stats playerSave = player.playerStats;
+            string json = JsonUtility.ToJson(playerSave);
+            bf.Serialize(file, json);
+            file.Close(); 
+        }
+        else
+        {
+            Debug.Log("Creating save");
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.json");
 
-        Stats playerSave = player.playerStats;
-        string json = JsonUtility.ToJson(playerSave);
+            Stats playerSave = player.playerStats;
+            string json = JsonUtility.ToJson(playerSave);
 
-        bf.Serialize(file, json);
-        file.Close();   
+            bf.Serialize(file, json);
+            file.Close();   
+        }
     }
     /// <summary>
     /// Checks to see if save exists, return true or false
@@ -125,9 +151,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadGame()
     {
-        if(File.Exists(Application.persistentDataPath + "/playerInfo.json"))
+        if(CheckforSave())
         {
-            BinaryFormatter bf = new BinaryFormatter();
+             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.json", FileMode.Open);
 
             string json = (string)bf.Deserialize(file);
@@ -135,9 +161,9 @@ public class GameManager : MonoBehaviour
             file.Close();
             JsonUtility.FromJsonOverwrite(json, loadedStats);
             player.playerStats = loadedStats;
-
         }
-        uIManager.SetUIUpgrades();
+        gameState = GameState.Upgrades;
+        ChangeGameState();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -145,6 +171,69 @@ public class GameManager : MonoBehaviour
         player.ResetPlayerBools();
         player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
         player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
+        uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
+        upgradeManager.ramp = GameObject.FindWithTag("Ramp");
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "MainLevel":
+                uIManager.UILoadingScreen(uIManager.upgradeMenu);
+                break;
+        }
+        StartCoroutine(WaitForScreenLoad(sceneName));   
+    }
+
+    /// <summary>
+    /// Waits for screen to load before starting operation. 
+    /// </summary>
+    /// <param name="sceneName"></param>
+    /// <returns></returns>
+    private IEnumerator WaitForScreenLoad(string sceneName)
+    {
+        yield return new WaitForSeconds(uIManager.fadeTime);
+        Debug.Log("Loading Scene Starting");
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        operation.completed += OperationCompleted;
+        scenesToLoad.Add(operation);
+    }
+    /// <summary>
+    /// Gets average progress for Loading bar. 
+    /// </summary>
+    /// <returns></returns>
+    public float GetLoadingProgress()
+    {
+        float totalprogress = 0;
+
+        foreach (AsyncOperation operation in scenesToLoad)
+        {
+            totalprogress += operation.progress;
+        }
+
+        return totalprogress / scenesToLoad.Count;
+    }
+    /// <summary>
+    /// Event for when load operation is finished. 
+    /// </summary>
+    /// <param name="operation"></param>
+    private void OperationCompleted(AsyncOperation operation)
+    {
+        scenesToLoad.Remove(operation);
+        operation.completed -= OperationCompleted;
+    }
+
+    public void ResetPlayerStats()
+    {
+        player.playerStats.ResetStats();
+    }
+
+    public void StartRun()
+    {
+        runDistance = 0;
+        collectedMoney = 0;
     }
 }

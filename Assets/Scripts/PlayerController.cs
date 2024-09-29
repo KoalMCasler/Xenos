@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameManager.gameState == GameManager.GameState.Gameplay)
+        {
+            CheckForRunEnd();
+        }
         if(gameManager.gameState == GameManager.GameState.Gameplay && !hasLanded)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -78,7 +82,6 @@ public class PlayerController : MonoBehaviour
             playerBody.isKinematic = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        CheckForRunEnd();
     }
 
     void OnLaunch()

@@ -24,7 +24,7 @@ public class DistanceTracker : MonoBehaviour
 
     public float returnDistance()
     {
-        Debug.Log("Player is " + distanceFromPlayer + "m Away from the ramp");
+        //Debug.Log("Player is " + distanceFromPlayer + "m Away from the ramp");
         return distanceFromPlayer;
     }
 
