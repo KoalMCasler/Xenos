@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
@@ -21,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private ConstantForce playerForce;
     public Transform playerTransform;
     private Rigidbody playerBody;
+    public InputActionAsset playerInputs;
+    public InputAction boostAction;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
@@ -43,6 +47,15 @@ public class PlayerController : MonoBehaviour
         playerTransform.position = spawnPoint.position;
         //Makes sure player has not launched. 
         ResetPlayerBools();
+        boostAction = playerInputs.FindAction("Boost", false);
+        if(playerStats.boostSpeed < 2)
+        {
+            playerStats.boostSpeed = 2;
+        }
+        if(playerStats.fuel < 5)
+        {
+            playerStats.fuel = 5;
+        }
     }
 
     // Update is called once per frame
@@ -70,11 +83,20 @@ public class PlayerController : MonoBehaviour
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
             }
+            if(boostAction.IsPressed())
+            {
+                Boost();
+            }
+            else
+            {
+                playerForce.relativeForce = new Vector3(0,0,0);
+            }
         }
         else if(hasLanded)
         {
             Cursor.lockState = CursorLockMode.None;
             playerForce.force = new Vector3(0,0,0);
+            playerForce.relativeForce = new Vector3(0,0,0);
         }
         else
         {
@@ -97,9 +119,9 @@ public class PlayerController : MonoBehaviour
     
     void OnMove(InputValue movementValue)
     {
-        Vector2 moveVector2 = movementValue.Get<Vector2>();
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
+            Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
             transform.Rotate(moveVector2.y*-playerStats.lookSensitivity,0,moveVector2.x*-playerStats.lookSensitivity);
             //Used to let the player move left/right
@@ -111,6 +133,24 @@ public class PlayerController : MonoBehaviour
             {
                 playerForce.force = new Vector3(-5,0,0);
             }
+            if(moveVector2.y > 0)
+            {
+                playerForce.force = new Vector3(0,3.5f,0);
+            }
+            if(moveVector2.y < 0)
+            {
+                playerForce.force = new Vector3(0,-3.5f,0);
+            }
+        }
+    }
+
+    void Boost()
+    {
+        if(playerStats.fuel > 0)
+        {
+            Debug.Log(playerStats.fuel);
+            playerStats.fuel -= Time.deltaTime;
+            playerForce.relativeForce = new Vector3(0,0,playerStats.boostSpeed);
         }
     }
     /// <summary>
@@ -158,5 +198,6 @@ public class PlayerController : MonoBehaviour
         hasLanded = false;
         hasLaunched = false;
         isOffRamp = false;
+        playerStats.fuel = 5;
     }
 }

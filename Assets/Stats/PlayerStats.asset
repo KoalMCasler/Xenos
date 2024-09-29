@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   boostValue: 0
+  fuel: 2.7500935
+  boostSpeed: 2
   lookSensitivity: 0.15
   boostLevel: 00000000000000000000
   rampScale: 00000000000000000000

@@ -157,10 +157,10 @@ public class UIManager : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
             gameManager.runDistance = distanceTracker.returnDistance();
-            distanceResultsText.text = string.Format("Distance = {0:0.0}m",gameManager.runDistance);
+            distanceResultsText.text = string.Format("Distance = {0:0.00}m",gameManager.runDistance);
             moneyResultsText.text = string.Format("Money Colected = {0}$",gameManager.collectedMoney);
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
-            totalResultsText.text = string.Format("Total = {0:0.0}$",runTotal);
+            totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
         }
     }
 
@@ -171,7 +171,7 @@ public class UIManager : MonoBehaviour
 
     void UpdateUpgrades()
     {
-        currentMoneyText.text = string.Format("{0:0.0}$",gameManager.player.playerStats.money);
+        currentMoneyText.text = string.Format("{0:0.00}$",gameManager.player.playerStats.money);
         ManageBoostButtons();
         ManageRampButtons();
     }
