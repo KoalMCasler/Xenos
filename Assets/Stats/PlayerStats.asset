@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   boostValue: 0
-  fuel: 5
+  maxFuel: 5
+  fuel: 3.9334455
   boostSpeed: 10
   lookSensitivity: 0.15
   boostLevel: 00000000000000000000

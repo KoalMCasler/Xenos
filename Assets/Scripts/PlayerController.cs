@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
             if(!isOffRamp)
             {
-
+                HoldYRotation();
             }
             if(hasLaunched)
             {
@@ -185,11 +185,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Keeps player on track for launch
+    /// </summary>
+    void HoldYRotation()
+    {
+        transform.rotation.Set(transform.rotation.x,0,transform.rotation.z,1);
+    }
+
     public void ResetPlayerBools()
     {
         hasLanded = false;
         hasLaunched = false;
         isOffRamp = false;
-        playerStats.fuel = 5;
+        playerStats.fuel = playerStats.maxFuel;
+    }
+
+    public float GetAltitude()
+    {
+        float altitude = 0;
+        return altitude;
     }
 }

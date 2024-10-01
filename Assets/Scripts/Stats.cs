@@ -7,7 +7,8 @@ public class Stats : ScriptableObject
 {
     public float money;
     public int boostValue;
-    public float fuel = 5;
+    public float maxFuel;
+    public float fuel;
     public int boostSpeed;
     public float lookSensitivity;
     public bool[] boostLevel = new bool[10];

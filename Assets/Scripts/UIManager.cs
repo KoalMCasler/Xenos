@@ -42,6 +42,12 @@ public class UIManager : MonoBehaviour
     [Header("HUD")]
     public TextMeshProUGUI altitudeText;
     public TextMeshProUGUI distanceText;
+    public Image fuelBar;
+    [Header("Fuel Bar colors")]
+    public Color fullFuel;
+    public Color halfFuel;
+    public Color lowFuel;
+
 
     void Awake()
     {
@@ -76,7 +82,48 @@ public class UIManager : MonoBehaviour
         {
             UpdateUpgrades();
         }
+        if(gameManager.gameState == GameManager.GameState.Gameplay)
+        {
+            UpdateHud();
+        }
         UpdateResults();
+    }
+
+    /// <summary>
+    /// Updates Hud for player when game is active. 
+    /// </summary>
+    void UpdateHud()
+    {
+        if(gameManager.player.isOffRamp)
+        {
+            distanceText.text = string.Format("{0:0.00}m",distanceTracker.returnDistance());
+            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.GetAltitude());
+            fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
+        }
+        else
+        {
+            distanceText.text = string.Format("{0:0.00}m",0);
+            altitudeText.text = string.Format("{0:0.00}m",0);
+        }
+        CheckFuel();
+    }
+    /// <summary>
+    /// Used to set the color of the fuel gage as it lowers.
+    /// </summary>
+    void CheckFuel()
+    {
+        if(fuelBar.fillAmount > 0.75f)
+        {
+            fuelBar.color = fullFuel;
+        }
+        if(fuelBar.fillAmount < 0.5f && fuelBar.fillAmount > 0.25f)
+        {
+            fuelBar.color = halfFuel;
+        }
+        if(fuelBar.fillAmount < 0.25f)
+        {
+            fuelBar.color = lowFuel;
+        }
     }
     /// <summary>
     /// Used to clear all active UI to set up for activating a specific menu. See SetUI... methods.
