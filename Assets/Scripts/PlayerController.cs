@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public Stats playerStats;
     void Awake()
     {
-        gameManager = GameManager.gameManager;
+        gameManager = FindObjectOfType<GameManager>();
         playerBody = this.gameObject.GetComponent<Rigidbody>();
         playerTransform = this.transform;
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
             if(!isOffRamp)
             {
-                HoldYRotation();
+
             }
             if(hasLaunched)
             {
@@ -83,13 +83,16 @@ public class PlayerController : MonoBehaviour
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
             }
-            if(boostAction.IsPressed())
+            if(hasLaunched && isOffRamp)
             {
-                Boost();
-            }
-            else
-            {
-                playerForce.relativeForce = new Vector3(0,0,0);
+                if(boostAction.IsPressed())
+                {
+                    Boost();
+                }
+                else
+                {
+                    playerForce.relativeForce = new Vector3(0,0,0);
+                }
             }
         }
         else if(hasLanded)
@@ -123,23 +126,23 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.y*-playerStats.lookSensitivity,0,moveVector2.x*-playerStats.lookSensitivity);
+            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity,0,moveVector2.y*playerStats.lookSensitivity);
             //Used to let the player move left/right
             if(moveVector2.x > 0)
             {
-                playerForce.force = new Vector3(5,0,0);
+                playerForce.force = new Vector3(0,0,-1);
             }
             if(moveVector2.x < 0)
             {
-                playerForce.force = new Vector3(-5,0,0);
+                playerForce.force = new Vector3(0,0,1);
             }
             if(moveVector2.y > 0)
             {
-                playerForce.force = new Vector3(0,3.5f,0);
+                playerForce.force = new Vector3(0,1,0);
             }
             if(moveVector2.y < 0)
             {
-                playerForce.force = new Vector3(0,-3.5f,0);
+                playerForce.force = new Vector3(0,-1,0);
             }
         }
     }
@@ -150,7 +153,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log(playerStats.fuel);
             playerStats.fuel -= Time.deltaTime;
-            playerForce.relativeForce = new Vector3(0,0,playerStats.boostSpeed);
+            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,0,0);
         }
     }
     /// <summary>
@@ -159,18 +162,7 @@ public class PlayerController : MonoBehaviour
     public void LaunchBoost()
     {
         isOffRamp = true;
-        playerBody.AddForce(Vector3.forward * playerStats.boostValue);
-    }
-    void HoldYRotation()
-    {
-        if(playerTransform.rotation.y < 0)
-        {
-            transform.Rotate(0,1,0);
-        }
-        if(playerTransform.rotation.y > 0)
-        {
-            transform.Rotate(0,-1,0);
-        }
+        playerBody.AddForce(Vector3.right * playerStats.boostValue);
     }
 
     public void OnCollisionEnter(Collision other)

@@ -47,7 +47,7 @@ public class UpgradeManager : MonoBehaviour
         }
         if(boostLevelTotal > 0)
         {
-            playerStats.boostValue = boostLevelTotal * 200;
+            playerStats.boostValue = boostLevelTotal * 300;
         }
     }
 
