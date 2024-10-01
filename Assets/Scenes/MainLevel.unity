@@ -13753,6 +13753,47 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1945640861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7546335344607961046, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+  m_PrefabInstance: {fileID: 2521273743814578622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1945640863
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945640861}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 12f3bc39be2ccca4682c0ca69f0e272b, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1945640864
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945640861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 652e1ccc3c6c38549b8a6362edd26c2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &1950183472 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7690090016566542795, guid: 36fe56f14bab8f64691f7d7d4376259a, type: 3}
@@ -14991,7 +15032,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7546335344607961046, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945640864}
+    - targetCorrespondingSourceObject: {fileID: 7546335344607961046, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945640863}
   m_SourcePrefab: {fileID: 100100000, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
 --- !u!1 &3364103458009434981 stripped
 GameObject:
