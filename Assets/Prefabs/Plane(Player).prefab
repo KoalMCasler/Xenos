@@ -1121,7 +1121,6 @@ GameObject:
   - component: {fileID: 3025328838504760370}
   - component: {fileID: 3193828950608621237}
   - component: {fileID: 167230451537684633}
-  - component: {fileID: 1257816804994890277}
   m_Layer: 0
   m_Name: Plane(Player)
   m_TagString: Player
@@ -1319,20 +1318,6 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
---- !u!114 &1257816804994890277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5036434801527258498}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fa9a06de59da64099f1e9f52d9ecea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CenterOfMass2: {x: -0.2, y: -0.4, z: 0}
-  Awake: 1
 --- !u!1 &6666927653307779209
 GameObject:
   m_ObjectHideFlags: 0
