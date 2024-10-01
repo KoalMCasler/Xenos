@@ -39,6 +39,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI moneyResultsText;
     public TextMeshProUGUI totalResultsText;
     public float runTotal;
+    [Header("HUD")]
+    public TextMeshProUGUI altitudeText;
+    public TextMeshProUGUI distanceText;
 
     void Awake()
     {
