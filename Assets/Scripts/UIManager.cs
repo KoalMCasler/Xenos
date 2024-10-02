@@ -209,6 +209,7 @@ public class UIManager : MonoBehaviour
         {
             gameManager.runDistance = distanceTracker.returnDistance();
             distanceResultsText.text = string.Format("Distance = {0:0.00}m",gameManager.runDistance);
+            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.gameObject.transform.position.y);
             moneyResultsText.text = string.Format("Money Colected = {0}$",gameManager.collectedMoney);
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
             totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
