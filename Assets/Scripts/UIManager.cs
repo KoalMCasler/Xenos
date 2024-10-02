@@ -104,6 +104,7 @@ public class UIManager : MonoBehaviour
         {
             distanceText.text = string.Format("{0:0.00}m",0);
             altitudeText.text = string.Format("{0:0.00}m",0);
+            fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
         }
         CheckFuel();
     }

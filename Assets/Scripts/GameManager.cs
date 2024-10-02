@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     void Gameplay()
     {
-        
+        player.ResetForNewRun();
     }
 
     void Upgrades()
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player.ResetPlayerBools();
+        player.ResetForNewRun();
         player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
         player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();

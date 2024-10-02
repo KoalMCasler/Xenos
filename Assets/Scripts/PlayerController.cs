@@ -13,8 +13,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Object Referances")]
-    [SerializeField]
-    private GameManager gameManager;
+    public GameManager gameManager;
     [SerializeField]
     private Camera mainCamera;
     private Transform spawnPoint;
@@ -31,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public bool isOffRamp;
     [Header("Player Stats")]
     public Stats playerStats;
+    [Header("Animation")]
+    public Animator propellorAnim;
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         spawnPoint = GameObject.FindWithTag("Start").transform;
         playerTransform.position = spawnPoint.position;
         //Makes sure player has not launched. 
-        ResetPlayerBools();
+        ResetForNewRun();
         boostAction = playerInputs.FindAction("Boost", false);
         if(playerStats.boostSpeed < 2)
         {
@@ -107,6 +108,16 @@ public class PlayerController : MonoBehaviour
             playerBody.isKinematic = true;
             Cursor.lockState = CursorLockMode.None;
         }
+        if(playerBody.velocity.x > 0 )
+        {
+            propellorAnim.SetBool("isMoving", true);
+            propellorAnim.speed = playerBody.velocity.x/2;
+        }
+        else
+        {
+            propellorAnim.SetBool("isMoving", false);
+            propellorAnim.speed = 1;
+        }
     }
 
     void OnLaunch()
@@ -126,16 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity,0,moveVector2.y*playerStats.lookSensitivity);
-            //Used to let the player move left/right
-            if(moveVector2.x > 0)
-            {
-                playerForce.force = new Vector3(0,0,-1);
-            }
-            if(moveVector2.x < 0)
-            {
-                playerForce.force = new Vector3(0,0,1);
-            }
+            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
             if(moveVector2.y > 0)
             {
                 playerForce.force = new Vector3(0,1,0);
@@ -153,7 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log(playerStats.fuel);
             playerStats.fuel -= Time.deltaTime;
-            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,0,0);
+            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,3,0);
         }
     }
     /// <summary>
@@ -193,12 +195,13 @@ public class PlayerController : MonoBehaviour
         transform.rotation.Set(transform.rotation.x,0,transform.rotation.z,1);
     }
 
-    public void ResetPlayerBools()
+    public void ResetForNewRun()
     {
         hasLanded = false;
         hasLaunched = false;
         isOffRamp = false;
         playerStats.fuel = playerStats.maxFuel;
+
     }
 
     public float GetAltitude()
