@@ -70,10 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
-            if(!isOffRamp)
-            {
-                HoldYRotation();
-            }
+            HoldYRotation();
             if(hasLaunched)
             {
                 //Releases player from spawn position when launch it activated. 
@@ -192,7 +189,16 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void HoldYRotation()
     {
-        transform.rotation.Set(transform.rotation.x,0,transform.rotation.z,1);
+            if(!isOffRamp)
+            {
+                RigidbodyConstraints constraints = RigidbodyConstraints.FreezeRotationY;
+                playerBody.constraints = constraints;
+            }
+            else
+            {
+                RigidbodyConstraints constraints = RigidbodyConstraints.None;
+                playerBody.constraints = constraints;
+            }
     }
 
     public void ResetForNewRun()
