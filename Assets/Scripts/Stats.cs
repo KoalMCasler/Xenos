@@ -17,7 +17,10 @@ public class Stats : ScriptableObject
     public void ResetStats()
     {
         money = 0;
-        lookSensitivity = .15f;
+        lookSensitivity = .05f;
+        maxFuel = 5;
+        startBoost = 0;
+        boostSpeed = 10;
         ownedEquipment = new bool[24];
     }
 }

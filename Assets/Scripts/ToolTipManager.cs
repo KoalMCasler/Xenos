@@ -28,7 +28,7 @@ public class ToolTipManager : MonoBehaviour
         discription.text = eq.discription;
         switch(eq.type)
         {
-            case Equipment.equipType.Matirial:
+            case Equipment.equipType.Material:
                 equipmentType.text = "Material";
                 statModified.text = string.Format("Mass = {0}kg",eq.modValue);
                 break;

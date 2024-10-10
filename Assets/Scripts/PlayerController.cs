@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
-            transform.Rotate(0,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
+            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
         }
     }
 

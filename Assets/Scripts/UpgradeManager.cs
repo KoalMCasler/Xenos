@@ -64,7 +64,7 @@ public class UpgradeManager : MonoBehaviour
             //playerStats.ownedEquipment.Add(equip);
             switch(equip.type)
             {
-                case Equipment.equipType.Matirial:
+                case Equipment.equipType.Material:
                     matSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Engine:
@@ -82,7 +82,7 @@ public class UpgradeManager : MonoBehaviour
         {
             switch(equip.type)
             {
-                case Equipment.equipType.Matirial:
+                case Equipment.equipType.Material:
                     matSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Engine:

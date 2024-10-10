@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EquipmentSlot : MonoBehaviour
 {
-    public enum SlotType{Matirial, Engine, Fuel, Booster}
+    public enum SlotType{Material, Engine, Fuel, Booster}
     public SlotType type;
     public Equipment currentEquipment;
     public TextMeshProUGUI currentStats;
@@ -23,7 +23,7 @@ public class EquipmentSlot : MonoBehaviour
         {
             switch(type)
             {
-                case SlotType.Matirial:
+                case SlotType.Material:
                     currentStats.text = "Trash\nMass = 100kg";
                     break;
                 case SlotType.Engine:
@@ -41,7 +41,7 @@ public class EquipmentSlot : MonoBehaviour
         {
             switch(type)
             {
-                case SlotType.Matirial:
+                case SlotType.Material:
                     currentStats.text = string.Format("{0}\nMass = {1}kg",currentEquipment.equipmentName,currentEquipment.modValue);
                     
                     break;

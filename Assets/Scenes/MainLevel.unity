@@ -3225,19 +3225,19 @@ MonoBehaviour:
   - {fileID: 6005588828493986792}
   - {fileID: 6005588827096178196}
   - {fileID: 6005588827361986787}
-  - {fileID: 6005588827361986787}
+  - {fileID: 6005588828196287771}
   - {fileID: 6005588827727665703}
   - {fileID: 6005588826959263009}
   - {fileID: 6005588826767659586}
-  - {fileID: 6005588828196287771}
   - {fileID: 6005588827329839240}
   - {fileID: 6005588827715942352}
+  - {fileID: 6005588828349100441}
   - {fileID: 6005588828054068333}
   - {fileID: 6005588827474125597}
   - {fileID: 6005588827890149789}
-  - {fileID: 6005588828349100441}
   - {fileID: 6005588826764353838}
   - {fileID: 6005588826536222707}
+  - {fileID: 6005588828018811521}
   - {fileID: 6005588827665418330}
   - {fileID: 6005588826971877905}
   - {fileID: 6005588827090050033}
@@ -9678,7 +9678,7 @@ GameObject:
   - component: {fileID: 5679128374571793256}
   - component: {fileID: 6396894428289752207}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: ScrapMetalEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14337,6 +14337,10 @@ PrefabInstance:
       propertyPath: m_CenterOfMass.y
       value: -0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3193828950608621237, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.205
@@ -17337,7 +17341,7 @@ GameObject:
   - component: {fileID: 606042165123934421}
   - component: {fileID: 2197506610875420466}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: CustomCarEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17356,7 +17360,7 @@ GameObject:
   - component: {fileID: 606042165077766117}
   - component: {fileID: 2197506610921588738}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: DynamiteEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17375,7 +17379,7 @@ GameObject:
   - component: {fileID: 606042165413564342}
   - component: {fileID: 2197506611125282897}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: ShipEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17394,7 +17398,7 @@ GameObject:
   - component: {fileID: 606042165418720474}
   - component: {fileID: 2197506611120134973}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: TruckGasTankEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17413,7 +17417,7 @@ GameObject:
   - component: {fileID: 606042165538600974}
   - component: {fileID: 2197506611264987113}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: C4Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17432,7 +17436,7 @@ GameObject:
   - component: {fileID: 606042165513536007}
   - component: {fileID: 2197506611290072544}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: ShipGasTankEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17451,7 +17455,7 @@ GameObject:
   - component: {fileID: 606042164573421289}
   - component: {fileID: 2197506610352167182}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: LargeJugEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17470,7 +17474,7 @@ GameObject:
   - component: {fileID: 606042164721325335}
   - component: {fileID: 2197506610472694512}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: AluminumEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17489,7 +17493,7 @@ GameObject:
   - component: {fileID: 606042164717428092}
   - component: {fileID: 2197506610479741595}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: HybridEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17508,7 +17512,7 @@ GameObject:
   - component: {fileID: 606042164990379525}
   - component: {fileID: 2197506610744173026}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: DynamiteBundleEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17527,7 +17531,7 @@ GameObject:
   - component: {fileID: 606042164953580512}
   - component: {fileID: 2197506610780447751}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: HCSteelEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17546,7 +17550,7 @@ GameObject:
   - component: {fileID: 606042165026335882}
   - component: {fileID: 2197506610704550765}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: WarpEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17565,7 +17569,7 @@ GameObject:
   - component: {fileID: 606042164064255861}
   - component: {fileID: 2197506611938252946}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: EperimentalTankEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17584,7 +17588,7 @@ GameObject:
   - component: {fileID: 606042164029243801}
   - component: {fileID: 2197506611970107006}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: 2JerryCansEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17603,7 +17607,7 @@ GameObject:
   - component: {fileID: 606042164192523369}
   - component: {fileID: 2197506612074713998}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: CarGasTankEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17622,7 +17626,7 @@ GameObject:
   - component: {fileID: 606042164514467355}
   - component: {fileID: 2197506612289636860}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: HBoosterEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17641,7 +17645,7 @@ GameObject:
   - component: {fileID: 606042164516197806}
   - component: {fileID: 2197506612291580489}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: FireworkEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17660,7 +17664,7 @@ GameObject:
   - component: {fileID: 606042164487243731}
   - component: {fileID: 2197506612321083444}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: OldTruckEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17679,7 +17683,7 @@ GameObject:
   - component: {fileID: 606042164500687396}
   - component: {fileID: 2197506612307643843}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: PrototypeJetEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17698,7 +17702,7 @@ GameObject:
   - component: {fileID: 606042163475282908}
   - component: {fileID: 2197506611449814075}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: IronMatEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17717,7 +17721,7 @@ GameObject:
   - component: {fileID: 606042163722642972}
   - component: {fileID: 2197506611470877179}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: LCSteelEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17736,7 +17740,7 @@ GameObject:
   - component: {fileID: 606042163832532077}
   - component: {fileID: 2197506611633064842}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: RoteryHybridEngineEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17755,7 +17759,7 @@ GameObject:
   - component: {fileID: 606042163886254319}
   - component: {fileID: 2197506611844140808}
   m_Layer: 0
-  m_Name: Equipment
+  m_Name: TitaniumEquipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17773,11 +17777,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 2
+  equipmentName: Ship Gas Tank
+  cost: 1000
+  discription: Gas tank taken from an old cargo ship
+  modValue: 30
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17794,11 +17798,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 3
+  equipmentName: C4 Booster
+  cost: 750
+  discription: A lump of plastic explosive. HOW IS THIS SAFE?!
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17815,11 +17819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 2
+  equipmentName: Truck Gas Tank
+  cost: 750
+  discription: 'Old gas tank taken from an old truck '
+  modValue: 25
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17836,11 +17840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 1
+  equipmentName: Ship Engine
+  cost: 500
+  discription: An old ship engine used for transport ships
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17857,11 +17861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 1
+  equipmentName: Custom Car Engine
+  cost: 250
+  discription: A custom engine designed for fancy cars
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17878,11 +17882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 3
+  equipmentName: Dynamite Booster
+  cost: 250
+  discription: This dosent feel safe
+  modValue: 10
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17899,11 +17903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 3
+  equipmentName: Dynamite Bundle
+  cost: 500
+  discription: No way this is safe!
+  modValue: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17921,10 +17925,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  equipmentName: HC Steel
+  cost: 750
+  discription: High Carbon Steel alloy. Ordered in from another village.
+  modValue: 60
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17941,11 +17945,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 3
+  equipmentName: WarpBooster
+  cost: 1000
+  discription: An unknow piece of tech, you donw know what it will do...
+  modValue: 25
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17962,11 +17966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 1
+  equipmentName: Hybrid Engine
+  cost: 750
+  discription: A hybrid Engine, increse fuel eficency.
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -17984,10 +17988,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  equipmentName: Aluminum
+  cost: 1000
+  discription: Light weight aluminum
+  modValue: 40
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18004,11 +18008,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 2
+  equipmentName: Large Jug
+  cost: 250
+  discription: A large jug used for storing any liquid.
+  modValue: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18025,11 +18029,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
+  type: 3
+  equipmentName: Firework Booster
   cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  discription: Some fireworks strapped to the back.
+  modValue: 5
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18046,11 +18050,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 3
+  equipmentName: Hydrogen Booster
+  cost: 1000
+  discription: There is no way OHS would allow this!
+  modValue: 25
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18067,11 +18071,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 1
+  equipmentName: Prototype Jet Engine
+  cost: 1000
+  discription: A Prototype Jet Engine, your not sure how you got your hands on it
+  modValue: 30
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18088,11 +18092,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
+  type: 1
+  equipmentName: Old Truck Engine
   cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  discription: An Old Truck Engine, better thank a car engine.
+  modValue: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18109,11 +18113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 2
+  equipmentName: Car Gas Tank
+  cost: 500
+  discription: Old gas tank taken from an old car
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18130,11 +18134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 2
+  equipmentName: Eperimental Tank
+  cost: 1000
+  discription: An Eperimental Tank that increse the fuel you aquire during a run.
+  modValue: 20
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18151,11 +18155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
+  type: 2
+  equipmentName: 2 Jerry Cans
   cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  discription: Twice as much!
+  modValue: 10
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18173,10 +18177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  equipmentName: Titanium
+  cost: 1000
+  discription: Found only in the rarest of places, Reduces Impact Damage
+  modValue: 70
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18193,11 +18197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e0be488b91f440a727999da904447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  type: 1
+  equipmentName: Rotery Hybrid Engine
+  cost: 1000
+  discription: A Rotery Hybrid engine, has a good boost and effiecny.
+  modValue: 25
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18215,10 +18219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  equipmentName: LC Steel
+  cost: 500
+  discription: Low Carbon Steel alloy.
+  modValue: 70
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0
@@ -18236,10 +18240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: Scrap Metal
-  cost: 100
-  discription: Old, heavy Scrap Metal you found in a bin.
-  modValue: 90
+  equipmentName: Iron
+  cost: 250
+  discription: Heavy iron. Found in most hardware stores
+  modValue: 80
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
   isOwned: 0

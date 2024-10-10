@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
     [Serializable]
-    public enum equipType{Matirial, Engine, Fuel, Booster}
+    public enum equipType{Material, Engine, Fuel, Booster}
     public equipType type;
     public string equipmentName;
     public float cost;
