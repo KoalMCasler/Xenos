@@ -28,9 +28,6 @@ public class UIManager : MonoBehaviour
     public CanvasGroup loadingScreenCanvasGroup;
     public Image loadingBar;
     public float fadeTime;
-    [Header("UpgradeButtons")]
-    public Button[] boostButtons;
-    public Button[] rampButtons;
     [Header("Upgrade Menu UI")]
     public TextMeshProUGUI currentMoneyText;
     [Header("Run Results")]
@@ -224,54 +221,6 @@ public class UIManager : MonoBehaviour
     void UpdateUpgrades()
     {
         currentMoneyText.text = string.Format("{0:0.00}$",gameManager.player.playerStats.money);
-        ManageBoostButtons();
-        ManageRampButtons();
-    }
-
-    void ManageBoostButtons()
-    {
-        
-        for(int i = 0; i < upgradeManager.playerStats.boostLevel.Count(); i++)
-        {
-            if(boostButtons[i].GetComponent<BuffUpgradeButton>().canAford)
-            {
-                if(!upgradeManager.playerStats.boostLevel[i] && boostButtons[i].GetComponent<BuffUpgradeButton>().isUnlocked)
-                {
-                    boostButtons[i].interactable = true;
-                }
-                else
-                {
-                    boostButtons[i].interactable = false;
-                }
-            }
-            else
-            {
-                boostButtons[i].interactable = false;
-            }
-        }
-    }
-
-    void ManageRampButtons()
-    {
-        for(int i = 0; i < upgradeManager.playerStats.rampScale.Count(); i++)
-        {
-            if(rampButtons[i].GetComponent<BuffUpgradeButton>().canAford)
-            {
-                if(!upgradeManager.playerStats.rampScale[i] && rampButtons[i].GetComponent<BuffUpgradeButton>().isUnlocked)
-                {
-                    rampButtons[i].interactable = true;
-                }
-                else
-                {
-                    rampButtons[i].interactable = false;
-                }
-                
-            }
-            else
-            {
-                rampButtons[i].interactable = false;
-            }
-        }
     }
 
     /// <summary>

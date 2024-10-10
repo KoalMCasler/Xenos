@@ -172,7 +172,6 @@ public class GameManager : MonoBehaviour
         player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
         player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
-        upgradeManager.ramp = GameObject.FindWithTag("Ramp");
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 

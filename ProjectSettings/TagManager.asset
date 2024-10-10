@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Marker
   - Ramp
+  - ToolTip
   layers:
   - Default
   - TransparentFX

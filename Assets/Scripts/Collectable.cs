@@ -11,7 +11,7 @@ public class Collectable : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player");
+        if(other.gameObject.tag == "Player")
         {
             gameManager = other.GetComponent<PlayerController>().gameManager;
             switch(type)
