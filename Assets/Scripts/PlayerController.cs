@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ConstantForce playerForce;
     public Transform playerTransform;
-    private Rigidbody playerBody;
+    public Rigidbody playerBody;
     public InputActionAsset playerInputs;
     public InputAction boostAction;
     [Header("Background Stats")]
@@ -92,6 +90,7 @@ public class PlayerController : MonoBehaviour
                     playerForce.relativeForce = new Vector3(0,0,0);
                 }
             }
+            //Debug.Log(playerBody.velocity);
         }
         else if(hasLanded)
         {
@@ -134,15 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
-            if(moveVector2.y > 0)
-            {
-                playerForce.force = new Vector3(0,1,0);
-            }
-            if(moveVector2.y < 0)
-            {
-                playerForce.force = new Vector3(0,-1,0);
-            }
+            transform.Rotate(0,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
         }
     }
 
@@ -150,9 +141,9 @@ public class PlayerController : MonoBehaviour
     {
         if(playerStats.fuel > 0)
         {
-            Debug.Log(playerStats.fuel);
+            //Debug.Log(playerStats.fuel);
             playerStats.fuel -= Time.deltaTime;
-            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,3,0);
+            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerBody.mass*3,0);
         }
     }
     /// <summary>
@@ -161,7 +152,7 @@ public class PlayerController : MonoBehaviour
     public void LaunchBoost()
     {
         isOffRamp = true;
-        playerBody.AddForce(Vector3.right * playerStats.boostValue);
+        playerBody.AddForce(Vector3.right * playerStats.startBoost);
     }
 
     public void OnCollisionEnter(Collision other)

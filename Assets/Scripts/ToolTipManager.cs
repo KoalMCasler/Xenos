@@ -29,15 +29,15 @@ public class ToolTipManager : MonoBehaviour
         switch(eq.type)
         {
             case Equipment.equipType.Matirial:
-                equipmentType.text = "Matirial";
+                equipmentType.text = "Material";
                 statModified.text = string.Format("Mass = {0}kg",eq.modValue);
                 break;
             case Equipment.equipType.Engine:
                 equipmentType.text = "Engine";
                 statModified.text = string.Format("Thrust = {0}",eq.modValue);
                 break;
-            case Equipment.equipType.Wing:
-                equipmentType.text = "Wing";
+            case Equipment.equipType.Fuel:
+                equipmentType.text = "Fuel";
                 statModified.text = string.Format("Fuel = {0}/s",eq.modValue);
                 break;
             case Equipment.equipType.Booster:

@@ -124,11 +124,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: BuyEquipment
+        m_MethodName: BuyOrEquip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6005588828507890212}
-          m_ObjectArgumentAssemblyTypeName: Equipment, Assembly-CSharp
+          m_ObjectArgument: {fileID: 5921404858059545093}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipment: {fileID: 6005588828507890212}
-  tTM: {fileID: 0}
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
 --- !u!1 &5921404858059545093
@@ -201,11 +200,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  equipmentName: 
-  cost: 0
-  discription: 
-  modValue: 0
-  image: {fileID: 0}
+  equipmentName: Scrap Metal
+  cost: 100
+  discription: Old, heavy Scrap Metal you found in a bin.
+  modValue: 90
+  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  isEquipped: 0
+  isOwned: 0
+  upgradeIndex: 0
 --- !u!222 &606042163673612240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -227,14 +229,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: f919e3e054980aa458332104a2a03d4e, type: 3}
+  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

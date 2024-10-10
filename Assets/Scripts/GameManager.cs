@@ -163,14 +163,15 @@ public class GameManager : MonoBehaviour
             player.playerStats = loadedStats;
         }
         gameState = GameState.Upgrades;
+        upgradeManager.CheckEquptment();
         ChangeGameState();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.ResetForNewRun();
-        player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
-        player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
+        player.playerTransform.position = GameObject.FindWithTag("Start").transform.position;
+        player.playerTransform.rotation = GameObject.FindWithTag("Start").transform.rotation;
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }

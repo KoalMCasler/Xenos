@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfb4cca0d3843743b2e75bec744878a, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  money: 0
-  boostValue: 0
+  money: 97.31793
+  startBoost: 0
   maxFuel: 5
-  fuel: 3.9334455
+  fuel: 5
   boostSpeed: 10
   lookSensitivity: 0.15
-  boostLevel: 00000000000000000000
-  rampScale: 00000000000000000000
-  ownedUpgrades: 000000000000000000000000000000000000
+  ownedEquipment: 000000000000000000000000000000000000000000000000

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Equipment equipment;
-    public ToolTipManager tTM;
+    private ToolTipManager tTM;
     public GameObject toolTipWindow;
     public Vector3 toolTipOffset;
     void Awake()
@@ -18,7 +18,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         toolTipWindow.SetActive(true);
-        toolTipWindow.transform.position = equipment.gameObject.transform.position - toolTipOffset;
+        toolTipWindow.transform.position = equipment.transform.position - toolTipOffset;
         tTM.SetToolTip(equipment);
     }
     public void OnPointerExit(PointerEventData eventData)
