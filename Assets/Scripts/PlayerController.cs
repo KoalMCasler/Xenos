@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                RigidbodyConstraints constraints = RigidbodyConstraints.None;
+                RigidbodyConstraints constraints = RigidbodyConstraints.FreezeRotationX;
                 playerBody.constraints = constraints;
             }
     }
@@ -212,7 +212,22 @@ public class PlayerController : MonoBehaviour
 
     public void Explode()
     {
-        GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+10,playerTransform.position.y,playerTransform.position.z),playerTransform.rotation);
+        GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),playerTransform.rotation);
+        gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,1);
+    }
+
+    public void PlaceBestRunMarker()
+    {
+        if(gameManager.runDistance > playerStats.bestDistance)
+        {
+            playerStats.bestRunPositon = this.transform.position;
+        }
+    }
+
+    public float ReturnDistance()
+    {
+        float distance = Vector3.Distance(GameObject.FindWithTag("Marker").transform.position,playerTransform.position);
+        return distance;
     }
 }

@@ -13,6 +13,8 @@ public class Stats : ScriptableObject
     public float boostSpeed;
     public float lookSensitivity;
     public bool[] ownedEquipment = new bool[24];
+    public Vector3 bestRunPositon;
+    public float bestDistance;
 
     public void ResetStats()
     {
@@ -22,5 +24,7 @@ public class Stats : ScriptableObject
         startBoost = 0;
         boostSpeed = 10;
         ownedEquipment = new bool[24];
+        bestRunPositon = Vector3.zero;
+        bestDistance = 0;
     }
 }

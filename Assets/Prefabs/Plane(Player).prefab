@@ -1281,7 +1281,7 @@ MonoBehaviour:
   hasLaunched: 0
   hasLanded: 0
   isOffRamp: 0
-  explodeTime: 2
+  explodeTime: 1
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237

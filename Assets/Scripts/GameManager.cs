@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public SoundManager soundManager;
     public PlayerController player;
     public GameObject playerCam;
+    public Transform camStartPosition;
     public float cameraOffset;
     public static GameManager gameManager;
     public enum GameState{MainMenu, Gameplay, Upgrades, Results}
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         playerCam = GameObject.FindWithTag("MainCamera");
+        camStartPosition = GameObject.FindWithTag("CamStart").transform;
         loadedStats = ScriptableObject.CreateInstance<Stats>();
     }
     
@@ -81,6 +83,8 @@ public class GameManager : MonoBehaviour
     void Gameplay()
     {
         player.ResetForNewRun();
+        GameObject runMarker = GameObject.FindWithTag("BestRun");
+        runMarker.transform.position = player.playerStats.bestRunPositon;
     }
 
     void Upgrades()
@@ -95,8 +99,6 @@ public class GameManager : MonoBehaviour
 
     void ReloadGame()
     {
-        player.gameObject.SetActive(true);
-        playerCam.transform.SetParent(player.playerTransform);
         SceneManager.sceneLoaded += OnSceneLoaded;
         LoadScene("MainLevel");
     }
@@ -171,9 +173,15 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.ResetForNewRun();
+        player.gameObject.SetActive(true);
+        uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
+        camStartPosition = GameObject.FindWithTag("CamStart").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
         player.playerTransform.position = player.spawnPoint.position;
         player.playerTransform.rotation = player.spawnPoint.rotation;
+        playerCam.transform.position = camStartPosition.position;
+        playerCam.transform.rotation = camStartPosition.rotation;
+        playerCam.transform.SetParent(player.playerTransform);
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -249,7 +257,7 @@ public class GameManager : MonoBehaviour
     {
         playerCam.transform.SetParent(this.gameObject.transform, true);
         playerCam.transform.position.Set(playerCam.transform.position.x,playerCam.transform.position.y+cameraOffset,playerCam.transform.position.z);
-        playerCam.transform.rotation.Set(0,90,0,1);
+        player.PlaceBestRunMarker();
         player.Explode();
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(player.explodeTime);

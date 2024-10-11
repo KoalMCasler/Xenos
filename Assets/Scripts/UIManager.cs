@@ -30,7 +30,11 @@ public class UIManager : MonoBehaviour
     public float fadeTime;
     [Header("Upgrade Menu UI")]
     public TextMeshProUGUI currentMoneyText;
+    public TextMeshProUGUI bestRunText;
+    public TextMeshProUGUI objectiveText;
+    private float distanceFromWall;
     [Header("Run Results")]
+    public GameObject newBestRunObject;
     public DistanceTracker distanceTracker;
     public TextMeshProUGUI distanceResultsText;
     public TextMeshProUGUI moneyResultsText;
@@ -50,11 +54,6 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameManager.gameManager;
         upgradeManager = gameManager.upgradeManager;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
     }
 
     // Update is called once per frame
@@ -93,7 +92,7 @@ public class UIManager : MonoBehaviour
     {
         if(gameManager.player.isOffRamp)
         {
-            distanceText.text = string.Format("{0:0.00}m",distanceTracker.returnDistance());
+            distanceText.text = string.Format("{0:0.00}m",gameManager.player.ReturnDistance());
             altitudeText.text = string.Format("{0:0.00}m",gameManager.player.GetAltitude());
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
         }
@@ -178,6 +177,14 @@ public class UIManager : MonoBehaviour
     {
         ResetAllMenus();
         resultsMenu.SetActive(true);
+        if(gameManager.runDistance > gameManager.player.playerStats.bestDistance)
+        {
+            newBestRunObject.SetActive(true);
+        }
+        else
+        {
+            newBestRunObject.SetActive(false);
+        }
     }
     /// <summary>
     /// Sets UI to Story menu
@@ -204,23 +211,30 @@ public class UIManager : MonoBehaviour
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
-            gameManager.runDistance = distanceTracker.returnDistance();
+            gameManager.runDistance = gameManager.player.ReturnDistance();
             distanceResultsText.text = string.Format("Distance = {0:0.00}m",gameManager.runDistance);
             altitudeText.text = string.Format("{0:0.00}m",gameManager.player.gameObject.transform.position.y);
             moneyResultsText.text = string.Format("Money Colected = {0}$",gameManager.collectedMoney);
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
             totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
+            distanceFromWall = 9000 - gameManager.runDistance;
         }
     }
 
     public void EndResults()
     {
         gameManager.player.playerStats.money += runTotal;
+        if(gameManager.player.playerStats.bestDistance < gameManager.runDistance)
+        {
+            gameManager.player.playerStats.bestDistance = gameManager.runDistance;
+        }
     }
 
     void UpdateUpgrades()
     {
         currentMoneyText.text = string.Format("{0:0.00}$",gameManager.player.playerStats.money);
+        bestRunText.text = string.Format("{0:0.00}M",gameManager.player.playerStats.bestDistance);
+        objectiveText.text = string.Format("You were {0:0.00}M away from THE WALL",distanceFromWall);
     }
 
     /// <summary>
