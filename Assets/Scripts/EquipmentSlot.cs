@@ -52,7 +52,7 @@ public class EquipmentSlot : MonoBehaviour
                     currentStats.text = string.Format("{0}\nFuel = {1}L",currentEquipment.equipmentName,currentEquipment.modValue);
                     break;
                 case SlotType.Booster:
-                    currentStats.text = string.Format("{0}\nStarting Boost = {0}N",currentEquipment.equipmentName,currentEquipment.modValue);
+                    currentStats.text = string.Format("{0}\nStarting Boost = {1}N",currentEquipment.equipmentName,currentEquipment.modValue);
                     break;
             }
             currentImage.sprite = currentEquipment.icon;
