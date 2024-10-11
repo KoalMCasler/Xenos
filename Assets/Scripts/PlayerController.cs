@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     [SerializeField]
     private Camera mainCamera;
-    private Transform spawnPoint;
+    public Transform spawnPoint;
     [Header("Compnent Referances")]
     [SerializeField]
     private ConstantForce playerForce;
@@ -22,10 +22,12 @@ public class PlayerController : MonoBehaviour
     public Rigidbody playerBody;
     public InputActionAsset playerInputs;
     public InputAction boostAction;
+    public GameObject explosion;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
     public bool isOffRamp;
+    public float explodeTime;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         //Sets player at spawn position. 
         spawnPoint = GameObject.FindWithTag("Start").transform;
-        playerTransform.position = spawnPoint.position;
+        //playerTransform.position = spawnPoint.position;
         //Makes sure player has not launched. 
         ResetForNewRun();
         boostAction = playerInputs.FindAction("Boost", false);
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
             {
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
+                playerTransform.rotation = spawnPoint.rotation;
             }
             if(hasLaunched && isOffRamp)
             {
@@ -168,7 +171,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void CheckForRunEnd()
     {
-        if(hasLanded && playerBody.velocity == Vector3.zero)
+        if(hasLanded)
         {
             gameManager.gameState = GameManager.GameState.Results;
             gameManager.ChangeGameState();
@@ -205,5 +208,11 @@ public class PlayerController : MonoBehaviour
     {
         float altitude = 0;
         return altitude;
+    }
+
+    public void Explode()
+    {
+        GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+10,playerTransform.position.y,playerTransform.position.z),playerTransform.rotation);
+        Destroy(playerExplosion,1);
     }
 }

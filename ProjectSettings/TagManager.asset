@@ -9,6 +9,7 @@ TagManager:
   - Marker
   - Ramp
   - ToolTip
+  - BestRun
   layers:
   - Default
   - TransparentFX

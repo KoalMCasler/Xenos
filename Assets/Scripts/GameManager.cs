@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public SoundManager soundManager;
     public PlayerController player;
+    public GameObject playerCam;
+    public float cameraOffset;
     public static GameManager gameManager;
     public enum GameState{MainMenu, Gameplay, Upgrades, Results}
     public GameState gameState;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
             gameManager = this;
         }
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        playerCam = GameObject.FindWithTag("MainCamera");
         loadedStats = ScriptableObject.CreateInstance<Stats>();
     }
     
@@ -52,11 +55,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(gameState != GameState.Gameplay)
-        {
-            player.gameObject.transform.position = GameObject.FindWithTag("Start").transform.position;
-            player.gameObject.transform.rotation = GameObject.FindWithTag("Start").transform.rotation;
-        }
+
     }
     
     /// <summary>
@@ -91,11 +90,13 @@ public class GameManager : MonoBehaviour
 
     void Results()
     {
-        uIManager.SetUIResults();
+        StartCoroutine(LandingExplosion());
     }
 
     void ReloadGame()
     {
+        player.gameObject.SetActive(true);
+        playerCam.transform.SetParent(player.playerTransform);
         SceneManager.sceneLoaded += OnSceneLoaded;
         LoadScene("MainLevel");
     }
@@ -170,8 +171,9 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.ResetForNewRun();
-        player.playerTransform.position = GameObject.FindWithTag("Start").transform.position;
-        player.playerTransform.rotation = GameObject.FindWithTag("Start").transform.rotation;
+        player.spawnPoint = GameObject.FindWithTag("Start").transform;
+        player.playerTransform.position = player.spawnPoint.position;
+        player.playerTransform.rotation = player.spawnPoint.rotation;
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -241,5 +243,16 @@ public class GameManager : MonoBehaviour
     {
         runDistance = 0;
         collectedMoney = 0;
+    }
+
+    public IEnumerator LandingExplosion()
+    {
+        playerCam.transform.SetParent(this.gameObject.transform, true);
+        playerCam.transform.position.Set(playerCam.transform.position.x,playerCam.transform.position.y+cameraOffset,playerCam.transform.position.z);
+        playerCam.transform.rotation.Set(0,90,0,1);
+        player.Explode();
+        player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(player.explodeTime);
+        uIManager.SetUIResults();
     }
 }
