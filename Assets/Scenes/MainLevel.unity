@@ -1260,8 +1260,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293720318
-  m_fontColor: {r: 0.9960785, g: 0.9725491, b: 0.92549026, a: 1}
+    rgba: 4281929491
+  m_fontColor: {r: 0.07450981, g: 0.058823533, b: 0.22352943, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9328188, b: 0.7783019, a: 0.6117647}
+  m_Color: {r: 0.38679248, g: 0.31550923, b: 0.14778392, a: 0.43137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2017,8 +2017,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293654010
-  m_fontColor: {r: 0.9811321, g: 0.9610775, b: 0.92096835, a: 1}
+    rgba: 4281928725
+  m_fontColor: {r: 0.08235294, g: 0.04705883, b: 0.22352943, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3038,7 +3038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3422,7 +3422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3513,8 +3513,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294442239
-  m_fontColor: {r: 1, g: 0.9893174, b: 0.9669811, a: 1}
+    rgba: 4281732117
+  m_fontColor: {r: 0.08235294, g: 0.04705883, b: 0.21176472, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3731,7 +3731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &582234913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4370,7 +4370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4907,8 +4907,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293654783
-  m_fontColor: {r: 1, g: 0.97136116, b: 0.9198113, a: 1}
+    rgba: 4281998613
+  m_fontColor: {r: 0.08235294, g: 0.1137255, b: 0.227451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5178,8 +5178,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294048511
-  m_fontColor: {r: 1, g: 0.9803922, b: 0.9450981, a: 1}
+    rgba: 4281998613
+  m_fontColor: {r: 0.08235294, g: 0.1137255, b: 0.227451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5817,8 +5817,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293457919
-  m_fontColor: {r: 1, g: 0.9689768, b: 0.9103774, a: 1}
+    rgba: 4281998613
+  m_fontColor: {r: 0.08235294, g: 0.1137255, b: 0.227451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5951,8 +5951,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293720575
-  m_fontColor: {r: 1, g: 0.97647065, b: 0.92549026, a: 1}
+    rgba: 4281998613
+  m_fontColor: {r: 0.08235294, g: 0.1137255, b: 0.227451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6081,7 +6081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.77254903}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6898,7 +6898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06666667, g: 0.08627451, b: 0.18823531, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6908,7 +6908,7 @@ MonoBehaviour:
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -7880,8 +7880,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294114047
-  m_fontColor: {r: 1, g: 0.9806643, b: 0.9481132, a: 1}
+    rgba: 4282060308
+  m_fontColor: {r: 0.078431375, g: 0.054901965, b: 0.23137257, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8262,7 +8262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9105,8 +9105,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294442239
-  m_fontColor: {r: 1, g: 0.9889937, b: 0.9669811, a: 1}
+    rgba: 4281998613
+  m_fontColor: {r: 0.08235294, g: 0.1137255, b: 0.227451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9716,8 +9716,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294245375
-  m_fontColor: {r: 1, g: 0.98367196, b: 0.9575472, a: 1}
+    rgba: 4281535510
+  m_fontColor: {r: 0.08627451, g: 0.04705883, b: 0.20000002, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11136,7 +11136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.80784315}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17244,7 +17244,7 @@ GameObject:
   - component: {fileID: 9200914368031210122}
   - component: {fileID: 223455603195587984}
   m_Layer: 0
-  m_Name: ShopSlot
+  m_Name: ScrapMetal_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20575,7 +20575,7 @@ MonoBehaviour:
   cost: 100
   discription: Old, heavy Scrap Metal you found in a bin.
   modValue: 90
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 36f03811c52b44d4fb064517657ddf68, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -21036,7 +21036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: bca3cb61c3ed1424bb1fe055d9269581, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21066,7 +21066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f63023c6b772721419a654d3bf73be7c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21096,7 +21096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 865994a8a1a1b544db42664c355aaeac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21186,7 +21186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 665c180ba69d0b944ab7ca571db0ad92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21216,7 +21216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a51288280428fe14c990e87b370ab174, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21276,7 +21276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 14af75a9eaca6cc45af2fe860bef1774, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21306,7 +21306,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 751269c191fc3bb4f821371c1eb187eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21366,7 +21366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: d564dd543f297374bbe09be594cfd430, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21396,7 +21396,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 33c036c63d588464fb10805702d6dbaf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21426,7 +21426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 958c1d4de8a80054b88a94ad3a1f3e68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21456,7 +21456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a65dd279d96819144ba376ecc1dfa627, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21486,7 +21486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c7d27753de0c50f40ac8560f31ba5aba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21516,7 +21516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 7cc5775cdb472144a9657fc9df8bdbae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21546,7 +21546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f5c70e173014eec4ab30336c5b55bedc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21576,7 +21576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4561a62aa940b194695326092204b584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21666,7 +21666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 58da140029015e047b71116f2796a43f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21696,7 +21696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 05170cfe6c74c0346ab563a1d3552567, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21804,7 +21804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21834,7 +21834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21864,7 +21864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21894,7 +21894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21924,7 +21924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21954,7 +21954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21984,7 +21984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22014,7 +22014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22044,7 +22044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22074,7 +22074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22104,7 +22104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22134,7 +22134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22164,7 +22164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22194,7 +22194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22224,7 +22224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22254,7 +22254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22284,7 +22284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22314,7 +22314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22344,7 +22344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22374,7 +22374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22404,7 +22404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22434,7 +22434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22464,7 +22464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24239,7 +24239,7 @@ GameObject:
   - component: {fileID: 4109956697293203767}
   - component: {fileID: 5017175625952443949}
   m_Layer: 0
-  m_Name: ShopSlot (4)
+  m_Name: CustomCarEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24259,7 +24259,7 @@ GameObject:
   - component: {fileID: 4109956697339375111}
   - component: {fileID: 5017175626006935837}
   m_Layer: 0
-  m_Name: ShopSlot (10)
+  m_Name: Dynamite_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24279,7 +24279,7 @@ GameObject:
   - component: {fileID: 4109956696903713765}
   - component: {fileID: 5017175625839777023}
   m_Layer: 0
-  m_Name: ShopSlot (19)
+  m_Name: ShipGasTank_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24299,7 +24299,7 @@ GameObject:
   - component: {fileID: 4109956696895322604}
   - component: {fileID: 5017175625814535926}
   m_Layer: 0
-  m_Name: ShopSlot (21)
+  m_Name: C4_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24319,7 +24319,7 @@ GameObject:
   - component: {fileID: 4109956697137253972}
   - component: {fileID: 5017175625804814670}
   m_Layer: 0
-  m_Name: ShopSlot (5)
+  m_Name: ShipEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24339,7 +24339,7 @@ GameObject:
   - component: {fileID: 4109956697148636472}
   - component: {fileID: 5017175625791351330}
   m_Layer: 0
-  m_Name: ShopSlot (18)
+  m_Name: TruckGasTank_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24359,7 +24359,7 @@ GameObject:
   - component: {fileID: 4109956696642477214}
   - component: {fileID: 5017175626635692932}
   m_Layer: 0
-  m_Name: ShopSlot (15)
+  m_Name: HybridEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24379,7 +24379,7 @@ GameObject:
   - component: {fileID: 4109956696622191861}
   - component: {fileID: 5017175626623599599}
   m_Layer: 0
-  m_Name: ShopSlot (13)
+  m_Name: Aluminum_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24399,7 +24399,7 @@ GameObject:
   - component: {fileID: 4109956696769986315}
   - component: {fileID: 5017175626511345681}
   m_Layer: 0
-  m_Name: ShopSlot (7)
+  m_Name: LargeJug_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24419,7 +24419,7 @@ GameObject:
   - component: {fileID: 4109956696352344039}
   - component: {fileID: 5017175626353955069}
   m_Layer: 0
-  m_Name: ShopSlot (11)
+  m_Name: DynamiteBundle_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24439,7 +24439,7 @@ GameObject:
   - component: {fileID: 4109956696406704642}
   - component: {fileID: 5017175626399733016}
   m_Layer: 0
-  m_Name: ShopSlot (12)
+  m_Name: HCSteel_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24459,7 +24459,7 @@ GameObject:
   - component: {fileID: 4109956696451149160}
   - component: {fileID: 5017175626461215346}
   m_Layer: 0
-  m_Name: ShopSlot (23)
+  m_Name: Warp_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24479,7 +24479,7 @@ GameObject:
   - component: {fileID: 4109956698240873867}
   - component: {fileID: 5017175625004278417}
   m_Layer: 0
-  m_Name: ShopSlot (8)
+  m_Name: CarGasTank_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24499,7 +24499,7 @@ GameObject:
   - component: {fileID: 4109956698369539735}
   - component: {fileID: 5017175624873093517}
   m_Layer: 0
-  m_Name: ShopSlot (20)
+  m_Name: ExpirementalTank_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24519,7 +24519,7 @@ GameObject:
   - component: {fileID: 4109956698404782203}
   - component: {fileID: 5017175624908085089}
   m_Layer: 0
-  m_Name: ShopSlot (6)
+  m_Name: 2JerryCans_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24539,7 +24539,7 @@ GameObject:
   - component: {fileID: 4109956698051793996}
   - component: {fileID: 5017175624823849814}
   m_Layer: 0
-  m_Name: ShopSlot (9)
+  m_Name: FireworkSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24559,7 +24559,7 @@ GameObject:
   - component: {fileID: 4109956698053275641}
   - component: {fileID: 5017175624825010403}
   m_Layer: 0
-  m_Name: ShopSlot (22)
+  m_Name: HBooster_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24579,7 +24579,7 @@ GameObject:
   - component: {fileID: 4109956698063701553}
   - component: {fileID: 5017175624843890987}
   m_Layer: 0
-  m_Name: ShopSlot (3)
+  m_Name: OldTruckEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24599,7 +24599,7 @@ GameObject:
   - component: {fileID: 4109956698066660294}
   - component: {fileID: 5017175624838724828}
   m_Layer: 0
-  m_Name: ShopSlot (16)
+  m_Name: PrototypeJetEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24619,7 +24619,7 @@ GameObject:
   - component: {fileID: 4109956697770960894}
   - component: {fileID: 5017175625608376548}
   m_Layer: 0
-  m_Name: ShopSlot (2)
+  m_Name: LCSteelEquipment_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24639,7 +24639,7 @@ GameObject:
   - component: {fileID: 4109956697884375614}
   - component: {fileID: 5017175625461411108}
   m_Layer: 0
-  m_Name: ShopSlot (1)
+  m_Name: IronMat_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24659,7 +24659,7 @@ GameObject:
   - component: {fileID: 4109956697456486669}
   - component: {fileID: 5017175625319005719}
   m_Layer: 0
-  m_Name: ShopSlot (14)
+  m_Name: TitaniumSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24679,7 +24679,7 @@ GameObject:
   - component: {fileID: 4109956697644952975}
   - component: {fileID: 5017175625230711445}
   m_Layer: 0
-  m_Name: ShopSlot (17)
+  m_Name: RoteryHybridEngine_Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25145,9 +25145,9 @@ MonoBehaviour:
   type: 2
   equipmentName: Ship Gas Tank
   cost: 1000
-  discription: Gas tank taken from an old cargo ship
+  discription: Gas tank taken from an old cargo ship.
   modValue: 30
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: d564dd543f297374bbe09be594cfd430, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25189,7 +25189,7 @@ MonoBehaviour:
   cost: 750
   discription: 'Old gas tank taken from an old truck '
   modValue: 25
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 14af75a9eaca6cc45af2fe860bef1774, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25210,7 +25210,7 @@ MonoBehaviour:
   cost: 500
   discription: An old ship engine used for transport ships
   modValue: 20
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 751269c191fc3bb4f821371c1eb187eb, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25231,7 +25231,7 @@ MonoBehaviour:
   cost: 250
   discription: A custom engine designed for fancy cars
   modValue: 20
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: a51288280428fe14c990e87b370ab174, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25250,7 +25250,7 @@ MonoBehaviour:
   type: 3
   equipmentName: Dynamite Booster
   cost: 250
-  discription: This dosent feel safe
+  discription: This cannot be safe.
   modValue: 10
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
@@ -25271,7 +25271,7 @@ MonoBehaviour:
   type: 3
   equipmentName: Dynamite Bundle
   cost: 500
-  discription: No way this is safe!
+  discription: DEFINITELY not safe.
   modValue: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
@@ -25294,7 +25294,7 @@ MonoBehaviour:
   cost: 750
   discription: High Carbon Steel alloy. Ordered in from another village.
   modValue: 60
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 665c180ba69d0b944ab7ca571db0ad92, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25313,7 +25313,7 @@ MonoBehaviour:
   type: 3
   equipmentName: WarpBooster
   cost: 1000
-  discription: An unknow piece of tech, you donw know what it will do...
+  discription: An unknown piece of tech, you don't know what it will do...
   modValue: 25
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 0
@@ -25334,9 +25334,9 @@ MonoBehaviour:
   type: 1
   equipmentName: Hybrid Engine
   cost: 750
-  discription: A hybrid Engine, increse fuel eficency.
+  discription: A hybrid Engine that increases fuel efficiency.
   modValue: 20
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 865994a8a1a1b544db42664c355aaeac, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25355,9 +25355,9 @@ MonoBehaviour:
   type: 0
   equipmentName: Aluminum
   cost: 1000
-  discription: Light weight aluminum
+  discription: Light weight aluminum.
   modValue: 40
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: f63023c6b772721419a654d3bf73be7c, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25378,7 +25378,7 @@ MonoBehaviour:
   cost: 250
   discription: A large jug used for storing any liquid.
   modValue: 15
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: bca3cb61c3ed1424bb1fe055d9269581, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25439,9 +25439,10 @@ MonoBehaviour:
   type: 1
   equipmentName: Prototype Jet Engine
   cost: 1000
-  discription: A Prototype Jet Engine, your not sure how you got your hands on it
+  discription: A Prototype Jet Engine, you're not sure how you got your hands on
+    it.
   modValue: 30
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 58da140029015e047b71116f2796a43f, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25460,9 +25461,9 @@ MonoBehaviour:
   type: 1
   equipmentName: Old Truck Engine
   cost: 100
-  discription: An Old Truck Engine, better thank a car engine.
+  discription: An Old Truck Engine, better than a car engine.
   modValue: 15
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 05170cfe6c74c0346ab563a1d3552567, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25483,7 +25484,7 @@ MonoBehaviour:
   cost: 500
   discription: Old gas tank taken from an old car
   modValue: 20
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 4561a62aa940b194695326092204b584, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25502,9 +25503,9 @@ MonoBehaviour:
   type: 2
   equipmentName: Eperimental Tank
   cost: 1000
-  discription: An Eperimental Tank that increse the fuel you aquire during a run.
+  discription: An Experimental Tank that increse the fuel you aquire during a run.
   modValue: 20
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 7cc5775cdb472144a9657fc9df8bdbae, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25525,7 +25526,7 @@ MonoBehaviour:
   cost: 100
   discription: Twice as much!
   modValue: 10
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: f5c70e173014eec4ab30336c5b55bedc, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25544,9 +25545,9 @@ MonoBehaviour:
   type: 0
   equipmentName: Titanium
   cost: 1000
-  discription: Found only in the rarest of places, Reduces Impact Damage
+  discription: Found only in the rarest of places. Reduces Impact Damage.
   modValue: 70
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: c7d27753de0c50f40ac8560f31ba5aba, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25565,9 +25566,9 @@ MonoBehaviour:
   type: 1
   equipmentName: Rotery Hybrid Engine
   cost: 1000
-  discription: A Rotery Hybrid engine, has a good boost and effiecny.
+  discription: A Rotery Hybrid engine, has a good boost and efficiency.
   modValue: 25
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: a65dd279d96819144ba376ecc1dfa627, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25588,7 +25589,7 @@ MonoBehaviour:
   cost: 500
   discription: Low Carbon Steel alloy.
   modValue: 70
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 958c1d4de8a80054b88a94ad3a1f3e68, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25609,7 +25610,7 @@ MonoBehaviour:
   cost: 250
   discription: Heavy iron. Found in most hardware stores
   modValue: 80
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 33c036c63d588464fb10805702d6dbaf, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -25817,7 +25818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 36f03811c52b44d4fb064517657ddf68, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26324,7 +26325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
