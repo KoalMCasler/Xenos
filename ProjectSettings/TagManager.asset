@@ -12,6 +12,7 @@ TagManager:
   - BestRun
   - CamStart
   - CamMenu
+  - Lake
   layers:
   - Default
   - TransparentFX

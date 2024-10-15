@@ -1141,10 +1141,10 @@ Transform:
   m_LocalScale: {x: 0.0074999994, y: 0.0075, z: 0.0075000003}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 157290140537500030}
   - {fileID: 1070001992911188151}
   - {fileID: 275826700820825806}
   - {fileID: 1734440088958642090}
+  - {fileID: 157290140537500030}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3774524278110894262
@@ -1282,6 +1282,7 @@ MonoBehaviour:
   hasLanded: 0
   isOffRamp: 0
   explodeTime: 1
+  hitWater: 0
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237
@@ -1592,7 +1593,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 12f3bc39be2ccca4682c0ca69f0e272b, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 12f3bc39be2ccca4682c0ca69f0e272b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

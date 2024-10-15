@@ -71,17 +71,26 @@ public class GameManager : MonoBehaviour
         Debug.Log("Changing to " + gameState + " Gamestate");
         switch(gameState)
         {
-            case GameState.MainMenu: MainMenu(); break;
-            case GameState.Gameplay: Gameplay(); break;
-            case GameState.Upgrades: Upgrades(); break;
-            case GameState.Results: Results(); break;
+            case GameState.MainMenu:
+                MainMenu();
+                SetCameraPosition();
+                break;
+            case GameState.Gameplay:
+                Gameplay();
+                SetCameraPosition();
+                break;
+            case GameState.Upgrades:
+                Upgrades(); 
+                break;
+            case GameState.Results: 
+                Results(); 
+                break;
         }
     }
 
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
-        SetCameraPosition();
     }
 
     void Gameplay()
@@ -89,13 +98,11 @@ public class GameManager : MonoBehaviour
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
-        SetCameraPosition();
     }
 
     void Upgrades()
     {
         ReloadGame();
-        SetCameraPosition();
     }
 
     void Results()
@@ -181,29 +188,29 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
         player.ResetForNewRun();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
-        camStartPosition = GameObject.FindWithTag("CamStart").transform;
         camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
         SetPlayerToSpawn();
-        SetCameraPosition();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void SetCameraPosition()
+    public void SetCameraPosition()
     {
         if(gameState == GameState.MainMenu)
         {
+            playerCam.transform.SetParent(this.gameObject.transform);
             playerCam.transform.position = camMenuPosition.position;
             playerCam.transform.rotation = camMenuPosition.rotation;
-            playerCam.transform.SetParent(this.gameObject.transform);
+            //Debug.Log("Moveing Camera to Menu point, " + playerCam.transform.position);
         }
         else
         {
-            playerCam.transform.SetParent(this.gameObject.transform);
+            //playerCam.transform.SetParent(this.gameObject.transform);
+            playerCam.transform.SetParent(player.playerTransform);
             playerCam.transform.position = camStartPosition.position;
             playerCam.transform.rotation = camStartPosition.rotation;
-            playerCam.transform.SetParent(player.playerTransform);
+            //Debug.Log("Moveing Camera to Gameplay point, " + playerCam.transform.position);
         }
     }
 
@@ -211,7 +218,7 @@ public class GameManager : MonoBehaviour
     {
         player.playerTransform.position = player.spawnPoint.position;
         player.playerTransform.rotation = player.spawnPoint.rotation;
-        Debug.Log("Moveing Player to start point, " + player.playerTransform.position);
+        //Debug.Log("Moveing Player to start point, " + player.playerTransform.position);
     }
 
     public void LoadScene(string sceneName)
@@ -279,6 +286,7 @@ public class GameManager : MonoBehaviour
     {
         runDistance = 0;
         collectedMoney = 0;
+        uIManager.SetUIGameplay();
     }
 
     public IEnumerator LandingExplosion()
@@ -286,7 +294,17 @@ public class GameManager : MonoBehaviour
         playerCam.transform.SetParent(this.gameObject.transform, true);
         playerCam.transform.position.Set(playerCam.transform.position.x,playerCam.transform.position.y+cameraOffset,playerCam.transform.position.z);
         player.PlaceBestRunMarker();
-        player.Explode();
+        if(player.hitWater)
+        {
+            player.hitWater = false;
+            player.Explode();
+            Debug.Log("Water Death");
+        }
+        else
+        {
+            player.Explode();
+            Debug.Log("Standard Death");
+        }
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(player.explodeTime);
         uIManager.SetUIResults();

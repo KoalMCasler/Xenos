@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool hasLanded;
     public bool isOffRamp;
     public float explodeTime;
+    public bool hitWater;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -170,6 +171,14 @@ public class PlayerController : MonoBehaviour
         {
             hasLanded = true;
         }
+        if(other.gameObject.CompareTag("Lake"))
+        {
+            if(playerBody.velocity.x < 4*playerBody.mass)
+            {
+                hitWater = true;
+                hasLanded = true;
+            }
+        }
     }
 
     /// <summary>
@@ -206,6 +215,7 @@ public class PlayerController : MonoBehaviour
         hasLanded = false;
         hasLaunched = false;
         isOffRamp = false;
+        hitWater = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }
