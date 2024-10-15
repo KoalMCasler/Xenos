@@ -24099,7 +24099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 865994a8a1a1b544db42664c355aaeac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7baaed0de59d0e94eaa4ad43e6668d7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24219,7 +24219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a51288280428fe14c990e87b370ab174, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b93a336b215aa74b8bc7ccf2a6700c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24309,7 +24309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 751269c191fc3bb4f821371c1eb187eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a94f16256245354184e0cc8d1b26449, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24459,7 +24459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a65dd279d96819144ba376ecc1dfa627, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b1f38d66f2324645953f4438baab725, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24669,7 +24669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58da140029015e047b71116f2796a43f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aa8a6bfd32163c4cb0a921a7be09fb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24699,7 +24699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 05170cfe6c74c0346ab563a1d3552567, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c9d583983bf4e44d9b1d05118504070, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28213,7 +28213,7 @@ MonoBehaviour:
   cost: 500
   discription: An old ship engine used for transport ships
   modValue: 20
-  icon: {fileID: 21300000, guid: 751269c191fc3bb4f821371c1eb187eb, type: 3}
+  icon: {fileID: 21300000, guid: 5a94f16256245354184e0cc8d1b26449, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -28234,7 +28234,7 @@ MonoBehaviour:
   cost: 250
   discription: A custom engine designed for fancy cars
   modValue: 20
-  icon: {fileID: 21300000, guid: a51288280428fe14c990e87b370ab174, type: 3}
+  icon: {fileID: 21300000, guid: 1b93a336b215aa74b8bc7ccf2a6700c4, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -28339,7 +28339,7 @@ MonoBehaviour:
   cost: 750
   discription: A hybrid Engine that increases fuel efficiency.
   modValue: 20
-  icon: {fileID: 21300000, guid: 865994a8a1a1b544db42664c355aaeac, type: 3}
+  icon: {fileID: 21300000, guid: 7baaed0de59d0e94eaa4ad43e6668d7e, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -28445,7 +28445,7 @@ MonoBehaviour:
   discription: A Prototype Jet Engine, you're not sure how you got your hands on
     it.
   modValue: 30
-  icon: {fileID: 21300000, guid: 58da140029015e047b71116f2796a43f, type: 3}
+  icon: {fileID: 21300000, guid: 8aa8a6bfd32163c4cb0a921a7be09fb6, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -28466,7 +28466,7 @@ MonoBehaviour:
   cost: 100
   discription: An Old Truck Engine, better than a car engine.
   modValue: 15
-  icon: {fileID: 21300000, guid: 05170cfe6c74c0346ab563a1d3552567, type: 3}
+  icon: {fileID: 21300000, guid: 0c9d583983bf4e44d9b1d05118504070, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
@@ -28571,7 +28571,7 @@ MonoBehaviour:
   cost: 1000
   discription: A Rotery Hybrid engine, has a good boost and efficiency.
   modValue: 25
-  icon: {fileID: 21300000, guid: a65dd279d96819144ba376ecc1dfa627, type: 3}
+  icon: {fileID: 21300000, guid: 0b1f38d66f2324645953f4438baab725, type: 3}
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
