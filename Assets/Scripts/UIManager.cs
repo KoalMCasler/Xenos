@@ -33,6 +33,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI bestRunText;
     public TextMeshProUGUI objectiveText;
     private float distanceFromWall;
+    public GameObject materialTab;
+    public GameObject engineTab;
+    public GameObject fuelTab;
+    public GameObject boosterTab;
     [Header("Run Results")]
     public GameObject newBestRunObject;
     public DistanceTracker distanceTracker;
@@ -323,5 +327,27 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         ResetAllMenus();
         uiPanel.SetActive(true);
+    }
+
+    public void SwapTab(string tab)
+    {
+        switch (tab)
+        {
+            case "Material":
+                materialTab.transform.SetAsLastSibling();
+                break;
+            case "Engine":
+                engineTab.transform.SetAsLastSibling();
+                break;
+            case "Fuel":
+                fuelTab.transform.SetAsLastSibling();
+                break;
+            case "Booster":
+                boosterTab.transform.SetAsLastSibling();
+                break;
+            default:
+                materialTab.transform.SetAsLastSibling();
+                break;
+        }
     }
 }

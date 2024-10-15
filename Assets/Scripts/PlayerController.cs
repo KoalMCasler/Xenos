@@ -222,7 +222,7 @@ public class PlayerController : MonoBehaviour
         explodeRotation.Set(0,0,0,1);
         GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
-        Destroy(playerExplosion,1);
+        Destroy(playerExplosion,2);
     }
 
     public void PlaceBestRunMarker()
