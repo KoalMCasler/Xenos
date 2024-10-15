@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         if(gameState == GameState.MainMenu)
         {
             ChangeGameState();
+            SetPlayerToSpawn();
         }
     }
 
@@ -183,8 +184,7 @@ public class GameManager : MonoBehaviour
         camStartPosition = GameObject.FindWithTag("CamStart").transform;
         camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
-        player.playerTransform.position = player.spawnPoint.position;
-        player.playerTransform.rotation = player.spawnPoint.rotation;
+        SetPlayerToSpawn();
         SetCameraPosition();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -207,6 +207,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void SetPlayerToSpawn()
+    {
+        player.playerTransform.position = player.spawnPoint.position;
+        player.playerTransform.rotation = player.spawnPoint.rotation;
+        Debug.Log("Moveing Player to start point, " + player.playerTransform.position);
+    }
+
     public void LoadScene(string sceneName)
     {
         switch (sceneName)
@@ -226,7 +233,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitForScreenLoad(string sceneName)
     {
         yield return new WaitForSeconds(uIManager.fadeTime);
-        Debug.Log("Loading Scene Starting");
+        //Debug.Log("Loading Scene Starting");
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.completed += OperationCompleted;
