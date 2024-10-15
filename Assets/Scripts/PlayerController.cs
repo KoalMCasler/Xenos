@@ -107,7 +107,13 @@ public class PlayerController : MonoBehaviour
             playerBody.isKinematic = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        if(playerBody.velocity.x > 0 )
+
+        if(gameManager.gameState == GameManager.GameState.MainMenu)
+        {
+            propellorAnim.SetBool("isMoving", true);
+            propellorAnim.speed = 0.5f;
+        }
+        else if(playerBody.velocity.x > 0 )
         {
             propellorAnim.SetBool("isMoving", true);
             propellorAnim.speed = playerBody.velocity.x/2;

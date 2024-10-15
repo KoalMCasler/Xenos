@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public GameObject playerCam;
     public Transform camStartPosition;
+    public Transform camMenuPosition;
     public float cameraOffset;
     public static GameManager gameManager;
     public enum GameState{MainMenu, Gameplay, Upgrades, Results}
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         playerCam = GameObject.FindWithTag("MainCamera");
         camStartPosition = GameObject.FindWithTag("CamStart").transform;
+        camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         loadedStats = ScriptableObject.CreateInstance<Stats>();
     }
     
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
+        SetCameraPosition();
     }
 
     void Gameplay()
@@ -85,11 +88,13 @@ public class GameManager : MonoBehaviour
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
+        SetCameraPosition();
     }
 
     void Upgrades()
     {
         ReloadGame();
+        SetCameraPosition();
     }
 
     void Results()
@@ -172,18 +177,34 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player.ResetForNewRun();
         player.gameObject.SetActive(true);
+        player.ResetForNewRun();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         camStartPosition = GameObject.FindWithTag("CamStart").transform;
+        camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
         player.playerTransform.position = player.spawnPoint.position;
         player.playerTransform.rotation = player.spawnPoint.rotation;
-        playerCam.transform.position = camStartPosition.position;
-        playerCam.transform.rotation = camStartPosition.rotation;
-        playerCam.transform.SetParent(player.playerTransform);
+        SetCameraPosition();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void SetCameraPosition()
+    {
+        if(gameState == GameState.MainMenu)
+        {
+            playerCam.transform.position = camMenuPosition.position;
+            playerCam.transform.rotation = camMenuPosition.rotation;
+            playerCam.transform.SetParent(this.gameObject.transform);
+        }
+        else
+        {
+            playerCam.transform.SetParent(this.gameObject.transform);
+            playerCam.transform.position = camStartPosition.position;
+            playerCam.transform.rotation = camStartPosition.rotation;
+            playerCam.transform.SetParent(player.playerTransform);
+        }
     }
 
     public void LoadScene(string sceneName)

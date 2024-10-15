@@ -12,7 +12,20 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     void Awake()
     {
         tTM =  FindObjectOfType<ToolTipManager>();
-        toolTipWindow = GameObject.FindWithTag("ToolTip");
+        toolTipWindow = tTM.toolTipWindow;
+    }
+    void Update()
+    {
+        if(toolTipWindow == null)
+        {
+            toolTipWindow = tTM.toolTipWindow;
+        }
+
+    }
+
+    void OnEnable()
+    {
+        toolTipWindow = tTM.toolTipWindow;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
