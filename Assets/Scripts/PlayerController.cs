@@ -270,13 +270,19 @@ public class PlayerController : MonoBehaviour
             playerStats.bestRunPositon = this.transform.position;
         }
     }
-
+    /// <summary>
+    /// Returns the distance from the ramp for each run. 
+    /// </summary>
+    /// <returns></returns>
     public float ReturnDistance()
     {
         float distance = Vector3.Distance(GameObject.FindWithTag("Marker").transform.position,playerTransform.position);
         return distance;
     }
-
+    /// <summary>
+    /// Returns speed, converted from m/s to knots. 
+    /// </summary>
+    /// <returns></returns>
     public float GetSpeed()
     {
         float speed = 0;
