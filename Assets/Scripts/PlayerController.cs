@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             playerForce.force = new Vector3(0,0,0);
             playerForce.relativeForce = new Vector3(0,0,0);
+            soundManager.contSFXSource.Stop();
         }
         else
         {
@@ -132,6 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
+            soundManager.PlayContinuesSFX(2); //index 2 is engine sound in lest of SFX
             if(!hasLaunched)
             {
                 hasLaunched = true;
