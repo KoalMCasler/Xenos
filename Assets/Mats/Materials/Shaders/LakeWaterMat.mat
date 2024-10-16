@@ -26,22 +26,25 @@ Material:
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
-    - _Distance: 0.38
-    - _FoamPower: 4.34
+    - _Distance: 0.48
+    - _FoamPower: 1.28
     - _FoamThickness: 0.24
-    - _NoiseScale: 5.79
+    - _NoiseScale: 0.02
     - _NormalDistortionG: 0.6
     - _NormalDistortionR: 0.87
-    - _RefractionScale: 6.27
-    - _RefractionStrength: 3.48
+    - _RefractionScale: -2.77
+    - _RefractionSpeed: 7.14
+    - _RefractionStrength: 2.99
     - _RippleDensity: 4.47
+    - _RippleSlimness: 4.82
+    - _WaterLevel: 0.5
     - _WaterSpeed: 0.03
-    - _WaveHeight: 2
-    - _WaveSpeed: 5.21
+    - _WaveHeight: 0.65
+    - _WaveSpeed: 9.6
     m_Colors:
     - _BaseColour: {r: 0.16470584, g: 0.7196243, b: 0.8117647, a: 0.95686275}
     - _DeepWater: {r: 0.052687727, g: 0.05772201, b: 0.30188668, a: 1}
-    - _RippleColour: {r: 2.6964712, g: 4.3637547, b: 3.8079937, a: 0}
+    - _RippleColour: {r: 0.6741178, g: 1.0909387, b: 0.9519984, a: 0}
     - _WaterColour: {r: 0.0033819948, g: 0.38430625, b: 0.7169812, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3676336000245273406

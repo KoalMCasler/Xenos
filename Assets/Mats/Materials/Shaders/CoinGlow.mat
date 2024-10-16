@@ -29,7 +29,7 @@ Material:
     - _GlowIntensity: 8.67
     - _PulseSpeed: 8.23
     m_Colors:
-    - _GlowColor: {r: 1.6142805, g: 1.2134907, b: 0.19036324, a: 0}
+    - _GlowColor: {r: 3.2285607, g: 2.4269812, b: 0.38072646, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6183699723349883470
 MonoBehaviour:
