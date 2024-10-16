@@ -99,7 +99,10 @@ public class GameManager : MonoBehaviour
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
-        soundManager.PlayMusic(1); //2nd in music list is gameplay music
+        if(soundManager.musicSource.clip != soundManager.music[1])
+        {
+            soundManager.PlayMusic(1); //2nd in music list is gameplay music
+        }
     }
 
     void Upgrades()
@@ -188,11 +191,11 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.gameObject.SetActive(true);
-        player.ResetForNewRun();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
         SetPlayerToSpawn();
+        player.ResetForNewRun();
         uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -288,6 +291,7 @@ public class GameManager : MonoBehaviour
     {
         runDistance = 0;
         collectedMoney = 0;
+        player.playerStats.fuel = player.playerStats.maxFuel;
         uIManager.SetUIGameplay();
     }
 

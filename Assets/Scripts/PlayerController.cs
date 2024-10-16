@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("player speed = " + playerBody.velocity.x);
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
             CheckForRunEnd();
@@ -90,9 +91,11 @@ public class PlayerController : MonoBehaviour
                 if(boostAction.IsPressed())
                 {
                     Boost();
+                    soundManager.contSFXSource.volume = 0.75f;
                 }
                 else
                 {
+                    soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
                 }
             }
@@ -133,10 +136,10 @@ public class PlayerController : MonoBehaviour
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
-            soundManager.PlayContinuesSFX(2); //index 2 is engine sound in lest of SFX
             if(!hasLaunched)
             {
                 hasLaunched = true;
+                soundManager.PlaySFX(3);//See list in editor for index. 
             }
         }
     }
@@ -165,6 +168,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void LaunchBoost()
     {
+        soundManager.PlayContinuesSFX(2); //index 2 is engine sound in lest of SFX
         isOffRamp = true;
         playerBody.AddForce(Vector3.right * playerStats.startBoost);
     }
@@ -177,7 +181,7 @@ public class PlayerController : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Lake"))
         {
-            if(playerBody.velocity.x < 5*playerBody.mass) 
+            if(playerBody.velocity.x < 100*playerBody.mass) 
             {
                 hitWater = true;
                 hasLanded = true;

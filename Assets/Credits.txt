@@ -5,3 +5,6 @@ Gameplay Music: "Lost in the Beat" by Ciderlei Castro from Pixabay
 Water Crash SFX: David Dumais from Pixabay
 Explosion SFX: Sound Effect from Pixabay
 Plane engine SFX: Sound Effect from Pixabay
+Coin SFX: Ribhav Agrawal from Pixabay
+Fuel SFX: Sound Effect from Pixabay
+Plane Startup sound: Sound Effect from Pixabay

@@ -5,9 +5,16 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     public GameManager gameManager;
+    public SoundManager soundManager;
     public enum CollectableType{Money, Fuel}
     public CollectableType type;
     public float gainValue;
+
+    void Start()
+    {
+        gameManager = GameManager.gameManager;
+        soundManager = gameManager.soundManager;
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -29,6 +36,7 @@ public class Collectable : MonoBehaviour
 
     void CollectFuel(GameObject player)
     {
+        soundManager.PlaySFX(5); //See list in editor for index. 
         player.GetComponent<PlayerController>().playerStats.fuel += gainValue;
         if(player.GetComponent<PlayerController>().playerStats.fuel > player.GetComponent<PlayerController>().playerStats.maxFuel)
         {
@@ -39,6 +47,7 @@ public class Collectable : MonoBehaviour
 
     void CollectMoney()
     {
+        soundManager.PlaySFX(4); //See list in editor for index. 
         gameManager.collectedMoney += gainValue;
         Destroy(this.gameObject);
     }

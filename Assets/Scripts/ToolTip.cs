@@ -9,6 +9,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private ToolTipManager tTM;
     public GameObject toolTipWindow;
     public Vector3 toolTipOffset;
+    public GameObject ownedMarker;
     void Awake()
     {
         tTM =  FindObjectOfType<ToolTipManager>();
@@ -20,7 +21,14 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             toolTipWindow = tTM.toolTipWindow;
         }
-
+        if(equipment.isOwned)
+        {
+            ownedMarker.SetActive(true);
+        }
+        else
+        {
+            ownedMarker.SetActive(false);
+        }
     }
 
     void OnEnable()

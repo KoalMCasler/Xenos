@@ -75,6 +75,7 @@ public class UIManager : MonoBehaviour
             {
                 loadButton.interactable = false;
             }
+            UpdateHud();
         }
         if(optionsMenu.activeSelf)
         {
