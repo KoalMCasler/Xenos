@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
+        soundManager.PlayMusic(0); //Fist in music list is menu music.
     }
 
     void Gameplay()
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
+        soundManager.PlayMusic(1); //2nd in music list is gameplay music
     }
 
     void Upgrades()
@@ -297,7 +299,7 @@ public class GameManager : MonoBehaviour
         if(player.hitWater)
         {
             player.hitWater = false;
-            player.Explode();
+            player.Splash();
             Debug.Log("Water Death");
         }
         else

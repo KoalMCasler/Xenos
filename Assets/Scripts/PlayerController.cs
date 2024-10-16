@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        soundManager = gameManager.soundManager;
         playerBody = this.gameObject.GetComponent<Rigidbody>();
         playerTransform = this.transform;
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
@@ -232,6 +233,17 @@ public class PlayerController : MonoBehaviour
         Quaternion explodeRotation = new Quaternion();
         explodeRotation.Set(0,0,0,1);
         GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
+        soundManager.PlaySFX(0); //first in sfx list is always explosion
+        gameManager.playerCam.transform.LookAt(playerExplosion.transform);
+        Destroy(playerExplosion,2);
+    }
+
+    public void Splash()
+    {
+        Quaternion explodeRotation = new Quaternion();
+        explodeRotation.Set(0,0,0,1);
+        GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
+        soundManager.PlaySFX(1); //2nd in sfx list is always water explosion
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
     }
