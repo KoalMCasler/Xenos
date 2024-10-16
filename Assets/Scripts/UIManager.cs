@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     private GameManager gameManager;
     [SerializeField]
     private UpgradeManager upgradeManager;
+    [SerializeField]
+    private SoundManager soundManager;
     [Header("Menus")]
     public GameObject mainMenu;
     public Button loadButton;

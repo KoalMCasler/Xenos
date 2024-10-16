@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Header("Object Referances")]
     public GameManager gameManager;
     [SerializeField]
+    private SoundManager soundManager;
     private Camera mainCamera;
     public Transform spawnPoint;
     [Header("Compnent Referances")]
@@ -173,7 +174,7 @@ public class PlayerController : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Lake"))
         {
-            if(playerBody.velocity.x < 4*playerBody.mass)
+            if(playerBody.velocity.x < 5*playerBody.mass) 
             {
                 hitWater = true;
                 hasLanded = true;
