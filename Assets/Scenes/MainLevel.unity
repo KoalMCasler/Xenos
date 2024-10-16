@@ -24567,6 +24567,10 @@ PrefabInstance:
       propertyPath: gainValue
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8455797749002490591, guid: 122ebace41acb7e42bad090daf893c83, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7eef4c65195b0d4caa52cf44f348102, type: 2}
     - target: {fileID: 8692587629679531370, guid: 122ebace41acb7e42bad090daf893c83, type: 3}
       propertyPath: m_Enabled
       value: 0
