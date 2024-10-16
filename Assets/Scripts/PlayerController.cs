@@ -24,12 +24,15 @@ public class PlayerController : MonoBehaviour
     public InputActionAsset playerInputs;
     public InputAction boostAction;
     public GameObject explosion;
+    public GameObject splashDown;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
     public bool isOffRamp;
     public float explodeTime;
     public bool hitWater;
+    public float altitude;
+    private int maxRayDistance = 1000;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -88,16 +91,17 @@ public class PlayerController : MonoBehaviour
             }
             if(hasLaunched && isOffRamp)
             {
-                if(boostAction.IsPressed())
+                if(boostAction.IsPressed() && playerStats.fuel > 0)
                 {
-                    Boost();
                     soundManager.contSFXSource.volume = 0.75f;
+                    Boost();
                 }
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
                 }
+                GetAltitude();
             }
             //Debug.Log(playerBody.velocity);
         }
@@ -156,12 +160,9 @@ public class PlayerController : MonoBehaviour
 
     void Boost()
     {
-        if(playerStats.fuel > 0)
-        {
-            //Debug.Log(playerStats.fuel);
-            playerStats.fuel -= Time.deltaTime;
-            playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerBody.mass*3,0);
-        }
+        //Debug.Log(playerStats.fuel);
+        playerStats.fuel -= Time.deltaTime;
+        playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerBody.mass*3,0);
     }
     /// <summary>
     /// Launches player at end of ramp based on upgrades
@@ -230,7 +231,15 @@ public class PlayerController : MonoBehaviour
 
     public float GetAltitude()
     {
-        float altitude = 0;
+        Debug.DrawLine(playerTransform.position,Vector3.down * maxRayDistance);
+        if(Physics.Raycast(playerTransform.position,Vector3.down, out RaycastHit hit, maxRayDistance))
+        {
+            if(hit.collider.gameObject.CompareTag("Ground") || hit.collider.gameObject.CompareTag("Lake"))
+            {
+                altitude = hit.distance;
+            }
+        }
+
         return altitude;
     }
 
@@ -248,7 +257,7 @@ public class PlayerController : MonoBehaviour
     {
         Quaternion explodeRotation = new Quaternion();
         explodeRotation.Set(0,0,0,1);
-        GameObject playerExplosion = Instantiate(explosion,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
+        GameObject playerExplosion = Instantiate(splashDown,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
         soundManager.PlaySFX(1); //2nd in sfx list is always water explosion
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
@@ -266,5 +275,14 @@ public class PlayerController : MonoBehaviour
     {
         float distance = Vector3.Distance(GameObject.FindWithTag("Marker").transform.position,playerTransform.position);
         return distance;
+    }
+
+    public float GetSpeed()
+    {
+        float speed = 0;
+        float speedKn;
+        speed = (playerBody.velocity.x * 3600)/1000; //Converts m/s to km/h 
+        speedKn = speed * 0.539957f; // converts km/h to knots.
+        return speedKn;
     }
 }

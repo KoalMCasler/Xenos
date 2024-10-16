@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     public float runTotal;
     [Header("HUD")]
     public TextMeshProUGUI altitudeText;
-    public TextMeshProUGUI distanceText;
+    public TextMeshProUGUI speedText;
     public Image fuelBar;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
@@ -97,15 +97,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateHud()
     {
-        if(gameManager.player.isOffRamp)
+        if(gameManager.player.hasLaunched)
         {
-            distanceText.text = string.Format("{0:0.00}m",gameManager.player.ReturnDistance());
-            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.GetAltitude());
+            speedText.text = string.Format("{0:0.0}kn",gameManager.player.GetSpeed());
+            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.altitude);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
         }
         else
         {
-            distanceText.text = string.Format("{0:0.00}m",0);
+            speedText.text = string.Format("{0:0.0}kn",0);
             altitudeText.text = string.Format("{0:0.00}m",0);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
         }
@@ -220,7 +220,6 @@ public class UIManager : MonoBehaviour
         {
             gameManager.runDistance = gameManager.player.ReturnDistance();
             distanceResultsText.text = string.Format("Distance = {0:0.00}m",gameManager.runDistance);
-            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.gameObject.transform.position.y);
             moneyResultsText.text = string.Format("Money Colected = {0}$",gameManager.collectedMoney);
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
             totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
