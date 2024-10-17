@@ -187,6 +187,10 @@ public class PlayerController : MonoBehaviour
                 hitWater = true;
                 hasLanded = true;
             }
+            else
+            {
+                soundManager.PlaySFX(6); //See list for index
+            }
         }
     }
 

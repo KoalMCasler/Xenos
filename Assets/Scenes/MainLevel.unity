@@ -17078,6 +17078,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d8b14c992d993db4c898c66d9a782aa3, type: 3}
   - {fileID: 8300000, guid: 1267735ed89bb5d45b01da65d7d623df, type: 3}
   - {fileID: 8300000, guid: fc6631cd0b7e6884790cf22ff850dba5, type: 3}
+  - {fileID: 8300000, guid: c1148f148dd9f1e4a9f1c4ebbfa2ae5f, type: 3}
   musicSource: {fileID: 1360199156}
   sfxSource: {fileID: 449073936}
   contSFXSource: {fileID: 1513429660}
@@ -33824,6 +33825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedText (TMP)
       objectReference: {fileID: 0}
+    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: splashDown
+      value: 
+      objectReference: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
     - target: {fileID: 3193828950608621237, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_Drag
       value: 0.05
