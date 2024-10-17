@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource sfxSource;
     public AudioSource contSFXSource;
+    public AudioMixer mixer;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,5 +73,9 @@ public class SoundManager : MonoBehaviour
         {
             Debug.Log("SFX index out of range");
         }
+    }
+    public void ChangeVolume(string group, float value)
+    {
+        mixer.SetFloat(group,value);
     }
 }

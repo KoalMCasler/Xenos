@@ -47,9 +47,15 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI totalResultsText;
     public float runTotal;
     [Header("HUD")]
+    public GameObject HUD;
+    public Slider progressBar;
     public TextMeshProUGUI altitudeText;
     public TextMeshProUGUI speedText;
     public Image fuelBar;
+    [Header("Options Menu")]
+    public Slider masterVolSlider;
+    public Slider musicVolSlider;
+    public Slider sFXVolSlider;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
     public Color halfFuel;
@@ -60,6 +66,12 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameManager.gameManager;
         upgradeManager = gameManager.upgradeManager;
+        soundManager = gameManager.soundManager;
+    }
+
+    void Start()
+    {
+        GetStartingVolume();
     }
 
     // Update is called once per frame
@@ -102,12 +114,14 @@ public class UIManager : MonoBehaviour
             speedText.text = string.Format("{0:0.0}kn",gameManager.player.GetSpeed());
             altitudeText.text = string.Format("{0:0.00}m",gameManager.player.altitude);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
+            progressBar.value = gameManager.player.ReturnDistance();
         }
         else
         {
             speedText.text = string.Format("{0:0.0}kn",0);
             altitudeText.text = string.Format("{0:0.00}m",0);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
+            progressBar.value = 0;
         }
         CheckFuel();
     }
@@ -139,6 +153,7 @@ public class UIManager : MonoBehaviour
         upgradeMenu.SetActive(false);
         resultsMenu.SetActive(false);
         storyMenu.SetActive(false);
+        HUD.SetActive(false);
     }
     /// <summary>
     /// Sets UI to main menu
@@ -207,6 +222,7 @@ public class UIManager : MonoBehaviour
     public void SetUIGameplay()
     {
         ResetAllMenus();
+        HUD.SetActive(true);
         if(gameManager.gameState != GameManager.GameState.Gameplay)
         {
             gameManager.gameState = GameManager.GameState.Gameplay;
@@ -349,6 +365,38 @@ public class UIManager : MonoBehaviour
                 break;
             default:
                 materialTab.transform.SetAsLastSibling();
+                break;
+        }
+    }
+
+    public void GetStartingVolume()
+    {
+        if(soundManager.mixer.GetFloat("MasterVol",out float masterValue))
+        {
+            masterVolSlider.value = masterValue;
+        }
+        if(soundManager.mixer.GetFloat("MusicVol",out float musicValue))
+        {
+            musicVolSlider.value = musicValue;
+        }
+        if(soundManager.mixer.GetFloat("SFXVol", out float sfxValue))
+        {
+            sFXVolSlider.value = sfxValue;
+        }
+    }
+
+    public void SliderVolume(string group)
+    {
+        switch(group)
+        {
+            case "MasterVol":
+                soundManager.ChangeVolume(group,masterVolSlider.value);
+                break;
+            case "MusicVol":
+                soundManager.ChangeVolume(group,musicVolSlider.value);
+                break;
+            case "SFXVol":
+                soundManager.ChangeVolume(group,sFXVolSlider.value);
                 break;
         }
     }

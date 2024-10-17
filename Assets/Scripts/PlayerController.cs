@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     public bool hitWater;
     public float altitude;
     private int maxRayDistance = 1000;
+    [Range(1,5)] //in seconds
+    public float altitudeTimer; 
+    public float downForce = 1;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -134,6 +137,7 @@ public class PlayerController : MonoBehaviour
             propellorAnim.SetBool("isMoving", false);
             propellorAnim.speed = 1;
         }
+        LimitAltitude(GetAltitude());
     }
 
     void OnLaunch()
@@ -265,6 +269,24 @@ public class PlayerController : MonoBehaviour
         soundManager.PlaySFX(1); //2nd in sfx list is always water explosion
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
+    }
+
+    private void LimitAltitude(float altitude)
+    {
+        if(altitude > 400)
+        {
+            altitudeTimer -= Time.deltaTime;
+            if(altitudeTimer <= 0)
+            {
+                altitudeTimer = 1;
+                downForce += 1;
+            }
+            playerBody.AddForce(Vector3.down*downForce);
+        }
+        else
+        {
+            downForce = 1;
+        }
     }
 
     public void PlaceBestRunMarker()
