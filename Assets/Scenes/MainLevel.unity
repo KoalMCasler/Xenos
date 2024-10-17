@@ -4208,8 +4208,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1123991872}
   m_HandleRect: {fileID: 1123991871}
   m_Direction: 0
-  m_Value: -0.00000007832617
-  m_Size: 0.50090754
+  m_Value: 0
+  m_Size: 0.5009076
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16875,7 +16875,6 @@ MonoBehaviour:
   fuelTab: {fileID: 1223541728}
   boosterTab: {fileID: 1527694823}
   newBestRunObject: {fileID: 1909527683}
-  distanceTracker: {fileID: 0}
   distanceResultsText: {fileID: 696390968}
   moneyResultsText: {fileID: 1041579715}
   totalResultsText: {fileID: 319049289}
