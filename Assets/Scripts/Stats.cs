@@ -15,7 +15,9 @@ public class Stats : ScriptableObject
     public bool[] ownedEquipment = new bool[24];
     public Vector3 bestRunPositon;
     public float bestDistance;
-
+    /// <summary>
+    /// Resets stats for new game. 
+    /// </summary>
     public void ResetStats()
     {
         money = 0;

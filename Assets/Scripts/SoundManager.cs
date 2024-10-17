@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+/// <summary>
+/// Handels all sounds and music. 
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
 
@@ -12,17 +15,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource sfxSource;
     public AudioSource contSFXSource;
     public AudioMixer mixer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     /// <summary>
     /// Plays music from list of music, see editor for list and indexs
     /// </summary>
@@ -33,7 +25,7 @@ public class SoundManager : MonoBehaviour
         {
             musicSource.clip = music[songIndex];
             musicSource.Play();
-            Debug.Log("Playing " + music[songIndex].name);
+            //Debug.Log("Playing " + music[songIndex].name);
         }
         else
         {
@@ -49,7 +41,7 @@ public class SoundManager : MonoBehaviour
         if(sfxIndex < sfx.Count && sfxIndex >= 0)
         {
             sfxSource.PlayOneShot(sfx[sfxIndex]);
-            Debug.Log("Playing one shot of " + sfx[sfxIndex].name);
+            //Debug.Log("Playing one shot of " + sfx[sfxIndex].name);
         }
         else
         {
@@ -67,13 +59,18 @@ public class SoundManager : MonoBehaviour
             contSFXSource.clip = sfx[sfxIndex];
             contSFXSource.loop = true;
             contSFXSource.Play();
-            Debug.Log("Playing " + sfx[sfxIndex].name);
+            //Debug.Log("Playing " + sfx[sfxIndex].name);
         }
         else
         {
             Debug.Log("SFX index out of range");
         }
     }
+    /// <summary>
+    /// Changes volume based on exposed group, and input value
+    /// </summary>
+    /// <param name="group"></param>
+    /// <param name="value"></param>
     public void ChangeVolume(string group, float value)
     {
         mixer.SetFloat(group,value);

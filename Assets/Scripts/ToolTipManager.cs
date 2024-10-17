@@ -4,7 +4,9 @@ using UnityEngine;
 using TMPro;
 using System.Diagnostics;
 using System;
-
+/// <summary>
+/// Manages tooltip window.
+/// </summary>
 public class ToolTipManager : MonoBehaviour
 {
     public TextMeshProUGUI equipmentName;

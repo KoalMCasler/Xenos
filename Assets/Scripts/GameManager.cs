@@ -11,11 +11,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Object Referances")]
-    [SerializeField]
     public UIManager uIManager;
-    [SerializeField]
     public UpgradeManager upgradeManager;
-    [SerializeField]
     public SoundManager soundManager;
     public PlayerController player;
     public GameObject playerCam;
@@ -30,6 +27,7 @@ public class GameManager : MonoBehaviour
     [Header("Run stats")]
     public float runDistance;
     public float collectedMoney;
+
     void Awake()
     {
         if(gameManager != null)
@@ -47,21 +45,15 @@ public class GameManager : MonoBehaviour
         camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         loadedStats = ScriptableObject.CreateInstance<Stats>();
     }
-    
+
     void Start()
     {
         if(gameState == GameState.MainMenu)
         {
             ChangeGameState();
-            SetPlayerToSpawn();
+            player.SetPlayerToSpawn();
         }
-    }
-
-    void Update()
-    {
-
-    }
-    
+    } 
     /// <summary>
     /// Used to change game state at specific points, runing methods only once instead of every frame.
     /// </summary>
@@ -86,13 +78,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    /// <summary>
+    /// Main menu gamestate function
+    /// </summary>
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
         soundManager.PlayMusic(0); //Fist in music list is menu music.
     }
-
+    /// <summary>
+    /// Gameplay gamestate function
+    /// </summary>
     void Gameplay()
     {
         player.ResetForNewRun();
@@ -103,17 +99,23 @@ public class GameManager : MonoBehaviour
             soundManager.PlayMusic(1); //2nd in music list is gameplay music
         }
     }
-
+    /// <summary>
+    /// Upgrades gamestate function
+    /// </summary>
     void Upgrades()
     {
         ReloadGame();
     }
-
+    /// <summary>
+    /// Results gamestate function
+    /// </summary>
     void Results()
     {
         StartCoroutine(LandingExplosion());
     }
-
+    /// <summary>
+    /// Reloads game for next run.
+    /// </summary>
     void ReloadGame()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -183,22 +185,27 @@ public class GameManager : MonoBehaviour
             player.playerStats = loadedStats;
         }
         gameState = GameState.Upgrades;
+        upgradeManager.OnLoadGame();
         upgradeManager.CheckEquptment();
         ChangeGameState();
     }
-
+    /// <summary>
+    /// OnSceneLoaded event
+    /// </summary>
+    /// <param name="scene"></param>
+    /// <param name="mode"></param>
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.gameObject.SetActive(true);
-        uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         camMenuPosition = GameObject.FindWithTag("CamMenu").transform;
         player.spawnPoint = GameObject.FindWithTag("Start").transform;
-        SetPlayerToSpawn();
+        player.SetPlayerToSpawn();
         player.ResetForNewRun();
-        uIManager.distanceTracker = GameObject.FindWithTag("Marker").GetComponent<DistanceTracker>();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
+    /// <summary>
+    /// Sets camera to correct position depending on gamestate
+    /// </summary>
     public void SetCameraPosition()
     {
         if(gameState == GameState.MainMenu)
@@ -218,13 +225,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SetPlayerToSpawn()
-    {
-        player.playerTransform.position = player.spawnPoint.position;
-        player.playerTransform.rotation = player.spawnPoint.rotation;
-        //Debug.Log("Moveing Player to start point, " + player.playerTransform.position);
-    }
-
+    /// <summary>
+    /// Load target scene
+    /// </summary>
+    /// <param name="sceneName"></param>
     public void LoadScene(string sceneName)
     {
         switch (sceneName)
@@ -293,7 +297,10 @@ public class GameManager : MonoBehaviour
         player.playerStats.fuel = player.playerStats.maxFuel;
         uIManager.SetUIGameplay();
     }
-
+    /// <summary>
+    /// Has player explode and waits effect to finish before showing results. 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator LandingExplosion()
     {
         playerCam.transform.SetParent(this.gameObject.transform, true);

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+/// <summary>
+/// Used to launch player at end of ramp
+/// </summary>
 public class LaunchTrigger : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)

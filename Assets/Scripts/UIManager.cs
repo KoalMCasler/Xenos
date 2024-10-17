@@ -41,7 +41,6 @@ public class UIManager : MonoBehaviour
     public GameObject boosterTab;
     [Header("Run Results")]
     public GameObject newBestRunObject;
-    public DistanceTracker distanceTracker;
     public TextMeshProUGUI distanceResultsText;
     public TextMeshProUGUI moneyResultsText;
     public TextMeshProUGUI totalResultsText;
@@ -229,7 +228,9 @@ public class UIManager : MonoBehaviour
             gameManager.ChangeGameState();
         }
     }
-
+    /// <summary>
+    /// Updates results for each run. 
+    /// </summary>
     void UpdateResults()
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay)
@@ -242,7 +243,9 @@ public class UIManager : MonoBehaviour
             distanceFromWall = 9000 - gameManager.runDistance;
         }
     }
-
+    /// <summary>
+    /// Closes the results, ups player money, if best run it overwrites saved run.
+    /// </summary>
     public void EndResults()
     {
         gameManager.player.playerStats.money += runTotal;
@@ -251,7 +254,9 @@ public class UIManager : MonoBehaviour
             gameManager.player.playerStats.bestDistance = gameManager.runDistance;
         }
     }
-
+    /// <summary>
+    /// Updates the upgrades menu.
+    /// </summary>
     void UpdateUpgrades()
     {
         currentMoneyText.text = string.Format("{0:0.00}$",gameManager.player.playerStats.money);
@@ -346,7 +351,10 @@ public class UIManager : MonoBehaviour
         ResetAllMenus();
         uiPanel.SetActive(true);
     }
-
+    /// <summary>
+    /// Shop tab swap function for tab button
+    /// </summary>
+    /// <param name="tab"></param>
     public void SwapTab(string tab)
     {
         switch (tab)
@@ -368,7 +376,9 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
-
+    /// <summary>
+    /// Sets sliders value to base volume level
+    /// </summary>
     public void GetStartingVolume()
     {
         if(soundManager.mixer.GetFloat("MasterVol",out float masterValue))
@@ -384,7 +394,10 @@ public class UIManager : MonoBehaviour
             sFXVolSlider.value = sfxValue;
         }
     }
-
+    /// <summary>
+    /// Used by slider to pass value to sound manager
+    /// </summary>
+    /// <param name="group"></param>
     public void SliderVolume(string group)
     {
         switch(group)

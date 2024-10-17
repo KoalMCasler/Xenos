@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// holds base info for equipment
+/// </summary>
 public class Equipment : MonoBehaviour
 {
     [Serializable]

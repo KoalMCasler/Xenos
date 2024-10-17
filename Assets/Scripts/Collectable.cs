@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Makes item a collectable, ether money or fuel
+/// </summary>
 public class Collectable : MonoBehaviour
 {
     public GameManager gameManager;
@@ -16,6 +18,10 @@ public class Collectable : MonoBehaviour
         soundManager = gameManager.soundManager;
     }
 
+    /// <summary>
+    /// Trigger event used for collection
+    /// </summary>
+    /// <param name="other"></param>
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -33,7 +39,10 @@ public class Collectable : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// If type is fuel, ups player current fuel on collection
+    /// </summary>
+    /// <param name="player"></param>
     void CollectFuel(GameObject player)
     {
         soundManager.PlaySFX(5); //See list in editor for index. 
@@ -44,7 +53,9 @@ public class Collectable : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
-
+    /// <summary>
+    /// If tpye is money, adds money to player end results. 
+    /// </summary>
     void CollectMoney()
     {
         soundManager.PlaySFX(4); //See list in editor for index. 

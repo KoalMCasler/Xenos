@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Marks wether item in shop slot is owned. 
+/// </summary>
 public class ShopSlot : MonoBehaviour
 {
     public Equipment equip;

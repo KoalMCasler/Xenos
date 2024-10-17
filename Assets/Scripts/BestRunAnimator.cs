@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// animates the text for the best run indicator
+/// </summary>
 public class BestRunAnimator : MonoBehaviour
 {
     public Animator textAnim;

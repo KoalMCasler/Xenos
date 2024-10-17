@@ -30,18 +30,16 @@ public class UpgradeManager : MonoBehaviour
             equipment[i].upgradeIndex = i;
         }
     }
-
-    void OnLoadGame()
+    /// <summary>
+    /// Gets stats on game load. 
+    /// </summary>
+    public void OnLoadGame()
     {
         playerStats = gameManager.player.playerStats;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Checks what the player owns.
+    /// </summary>
     public void CheckEquptment()
     {
         for(int i = 0; i < equipment.Count();i++)
@@ -52,7 +50,10 @@ public class UpgradeManager : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Used by shop buttons, buys or equips if already owned.
+    /// </summary>
+    /// <param name="eq"></param>
     public void BuyOrEquip(GameObject eq)
     {
         Equipment equip = eq.GetComponent<Equipment>(); 
@@ -97,7 +98,9 @@ public class UpgradeManager : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Sets player stats based on current equipmemnt
+    /// </summary>
     public void GetStats()
     {
         if(engSlot.currentEquipment != null)
@@ -107,6 +110,7 @@ public class UpgradeManager : MonoBehaviour
         if(fuelSlot.currentEquipment != null)
         {
             playerStats.maxFuel = fuelSlot.currentEquipment.modValue;
+            playerStats.fuel = playerStats.maxFuel;
         }
         if(matSlot.currentEquipment != null)
         {

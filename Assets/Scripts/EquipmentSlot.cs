@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+/// <summary>
+/// Holds current player equipment
+/// </summary>
 public class EquipmentSlot : MonoBehaviour
 {
     public enum SlotType{Material, Engine, Fuel, Booster}
@@ -17,6 +19,9 @@ public class EquipmentSlot : MonoBehaviour
         CheckCurrentEquipment();
     }
 
+    /// <summary>
+    /// Checks what is currently equip and updates UI.
+    /// </summary>
     void CheckCurrentEquipment()
     {
         if(currentEquipment == null)

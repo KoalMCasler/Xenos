@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public bool hitWater;
     public float altitude;
     private int maxRayDistance = 1000;
+    public int altitudeLimit;
     [Range(1,5)] //in seconds
     public float altitudeTimer; 
     public float downForce = 1;
@@ -139,7 +140,9 @@ public class PlayerController : MonoBehaviour
         }
         LimitAltitude(GetAltitude());
     }
-
+    /// <summary>
+    /// Lunch input feedback
+    /// </summary>
     void OnLaunch()
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay)
@@ -151,7 +154,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+    /// <summary>
+    /// Move input reader
+    /// </summary>
+    /// <param name="movementValue"></param>
     void OnMove(InputValue movementValue)
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
@@ -161,7 +167,9 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
         }
     }
-
+    /// <summary>
+    /// Boosts player when they use engine.
+    /// </summary>
     void Boost()
     {
         //Debug.Log(playerStats.fuel);
@@ -177,7 +185,10 @@ public class PlayerController : MonoBehaviour
         isOffRamp = true;
         playerBody.AddForce(Vector3.right * playerStats.startBoost);
     }
-
+    /// <summary>
+    /// Collison event
+    /// </summary>
+    /// <param name="other"></param>
     public void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Ground"))
@@ -197,7 +208,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     /// <summary>
     /// Checks to see if player has landed and has stoped moveing. 
     /// </summary>
@@ -209,7 +219,6 @@ public class PlayerController : MonoBehaviour
             gameManager.ChangeGameState();
         }
     }
-
     /// <summary>
     /// Keeps player on track for launch
     /// </summary>
@@ -226,7 +235,9 @@ public class PlayerController : MonoBehaviour
                 playerBody.constraints = constraints;
             }
     }
-
+    /// <summary>
+    /// Resets background stats for new run.
+    /// </summary>
     public void ResetForNewRun()
     {
         hasLanded = false;
@@ -236,7 +247,10 @@ public class PlayerController : MonoBehaviour
         playerStats.fuel = playerStats.maxFuel;
 
     }
-
+    /// <summary>
+    /// Gets current Altitude
+    /// </summary>
+    /// <returns></returns>
     public float GetAltitude()
     {
         Debug.DrawLine(playerTransform.position,Vector3.down * maxRayDistance);
@@ -250,7 +264,9 @@ public class PlayerController : MonoBehaviour
 
         return altitude;
     }
-
+    /// <summary>
+    /// Spawns explosion effect
+    /// </summary>
     public void Explode()
     {
         Quaternion explodeRotation = new Quaternion();
@@ -260,7 +276,9 @@ public class PlayerController : MonoBehaviour
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
     }
-
+    /// <summary>
+    /// Spawn spalsh down effect.
+    /// </summary>
     public void Splash()
     {
         Quaternion explodeRotation = new Quaternion();
@@ -270,10 +288,13 @@ public class PlayerController : MonoBehaviour
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
     }
-
+    /// <summary>
+    /// Adds increaseing force to the player as they are over altitude limit. 
+    /// </summary>
+    /// <param name="altitude"></param>
     private void LimitAltitude(float altitude)
     {
-        if(altitude > 400)
+        if(altitude > altitudeLimit)
         {
             altitudeTimer -= Time.deltaTime;
             if(altitudeTimer <= 0)
@@ -288,7 +309,9 @@ public class PlayerController : MonoBehaviour
             downForce = 1;
         }
     }
-
+    /// <summary>
+    /// If best run, moves in world marker to landing position
+    /// </summary>
     public void PlaceBestRunMarker()
     {
         if(gameManager.runDistance > playerStats.bestDistance)
@@ -316,5 +339,13 @@ public class PlayerController : MonoBehaviour
         speed = (playerBody.velocity.x * 3600)/1000; //Converts m/s to km/h 
         speedKn = speed * 0.539957f; // converts km/h to knots.
         return speedKn;
+    }
+    /// <summary>
+    /// Sets player to spawn position
+    /// </summary>
+    public void SetPlayerToSpawn()
+    {
+        transform.position = spawnPoint.position;
+        transform.rotation = spawnPoint.rotation;
     }
 }

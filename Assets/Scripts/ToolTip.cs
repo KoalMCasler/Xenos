@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// Used to pass info into tooltip window.
+/// </summary>
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Equipment equipment;
