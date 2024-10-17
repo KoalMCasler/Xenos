@@ -16874,7 +16874,6 @@ MonoBehaviour:
   engineTab: {fileID: 1650034407}
   fuelTab: {fileID: 1223541728}
   boosterTab: {fileID: 1527694823}
-  materialsButton: {fileID: 491346225}
   newBestRunObject: {fileID: 1909527683}
   distanceTracker: {fileID: 0}
   distanceResultsText: {fileID: 696390968}
@@ -36145,7 +36144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 251.15
+      value: 251
       objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.y
