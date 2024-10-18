@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 1302975186822031193}
   - component: {fileID: 4508940781398656632}
   m_Layer: 0
-  m_Name: DistanceText (TMP)
+  m_Name: SpeedText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DISTANCE
+  m_text: AIR SPEED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 7970029556420769071}
   - component: {fileID: 4561727695180251163}
   m_Layer: 0
-  m_Name: DistancePanel
+  m_Name: SpeedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5036434801527258498}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 251.15, y: 17.15, z: 500}
   m_LocalScale: {x: 0.0074999994, y: 0.0075, z: 0.0075000003}
   m_ConstrainProportionsScale: 1
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  mainCamera: {fileID: 6406359047245318601}
+  soundManager: {fileID: 0}
   spawnPoint: {fileID: 0}
   playerForce: {fileID: 0}
   playerTransform: {fileID: 0}
@@ -1310,11 +1310,16 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   explosion: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
+  splashDown: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
   hasLaunched: 0
   hasLanded: 0
   isOffRamp: 0
   explodeTime: 1
   hitWater: 0
+  altitude: 0
+  altitudeLimit: 500
+  altitudeTimer: 3
+  downForce: 1
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237
@@ -1326,7 +1331,7 @@ Rigidbody:
   m_GameObject: {fileID: 5036434801527258498}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: -0.2, y: -0.1, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1366,7 +1371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157290140537500030}
   - component: {fileID: 6406359047245318601}
-  - component: {fileID: 469557156225192273}
+  - component: {fileID: 8608108214045966796}
   - component: {fileID: 5042096633095725918}
   m_Layer: 0
   m_Name: Camera
@@ -1441,7 +1446,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &469557156225192273
+--- !u!81 &8608108214045966796
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1643,7 +1648,7 @@ GameObject:
   - component: {fileID: 5501130714257283623}
   - component: {fileID: 5255636756860886267}
   m_Layer: 0
-  m_Name: DistanceValueText (TMP)
+  m_Name: SpeedValueText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,7 +1701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0000.00m
+  m_text: ERROR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

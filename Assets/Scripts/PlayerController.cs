@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //Sets player at spawn position. 
-        spawnPoint = GameObject.FindWithTag("Start").transform;
-        //playerTransform.position = spawnPoint.position;
+        //spawnPoint = GameObject.FindWithTag("Start").transform;
+        playerTransform.position = spawnPoint.position;
         //Makes sure player has not launched. 
         ResetForNewRun();
         boostAction = playerInputs.FindAction("Boost", false);
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
             //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/2,moveVector2.y*playerStats.lookSensitivity);
+            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/4,moveVector2.y*playerStats.lookSensitivity);
         }
     }
     /// <summary>
