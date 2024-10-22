@@ -348,4 +348,10 @@ public class PlayerController : MonoBehaviour
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
     }
+
+    public void Updraft(float force)
+    {
+        Debug.Log("Updraft Triggered");
+        playerBody.AddForce(transform.up*force, ForceMode.Force);
+    }
 }

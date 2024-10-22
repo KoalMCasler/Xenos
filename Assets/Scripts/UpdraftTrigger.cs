@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class UpdraftTrigger : MonoBehaviour
 {
-    public float thrustBoost;
+    public float force;
     public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
-        {
-            Debug.Log("Updraft Triggered");
-            other.GetComponent<PlayerController>().playerBody.AddForce(other.gameObject.transform.up*thrustBoost, ForceMode.Force);
+        {  
+            other.GetComponent<PlayerController>().Updraft(force);
         }
     }
 }
