@@ -17,19 +17,19 @@ public class CollectableManager : MonoBehaviour
     public void SpawnCollectables()
     {
         activeCollectables.Clear();
-        bool isCoin = false;
+        int coinCounter = 0;
         for(int i = 0; i < spwanRate; i++)
         {
             Vector3 randomSpawnPosition = new Vector3(Random.Range(minXRange, maxXRange), Random.Range(minYRange,maxYRange), Random.Range(minZRange, maxZRange));
-            if(isCoin)
+            if(coinCounter < 5)
             {
                 activeCollectables.Add(Instantiate(collectables[0], randomSpawnPosition, Quaternion.identity));
-                isCoin = false;
+                coinCounter++;
             }
             else
             {
                 activeCollectables.Add(Instantiate(collectables[1], randomSpawnPosition, Quaternion.identity));
-                isCoin = true;
+                coinCounter = 0;
             }
         }
     }

@@ -128,10 +128,10 @@ public class PlayerController : MonoBehaviour
             propellorAnim.SetBool("isMoving", true);
             propellorAnim.speed = 0.5f;
         }
-        else if(playerBody.velocity.x > 0 )
+        else if(playerBody.velocity.magnitude > 0 )
         {
             propellorAnim.SetBool("isMoving", true);
-            propellorAnim.speed = playerBody.velocity.x/2;
+            propellorAnim.speed = playerBody.velocity.magnitude;
         }
         else
         {
@@ -336,7 +336,7 @@ public class PlayerController : MonoBehaviour
     {
         float speed = 0;
         float speedKn;
-        speed = (playerBody.velocity.x * 3600)/1000; //Converts m/s to km/h 
+        speed = (playerBody.velocity.magnitude * 3600)/1000; //Converts m/s to km/h 
         speedKn = speed * 0.539957f; // converts km/h to knots.
         return speedKn;
     }
