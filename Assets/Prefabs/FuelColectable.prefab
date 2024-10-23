@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 4f76757a673eeab4d83320d03043a0c2, type: 3}
+  - {fileID: 2100000, guid: a7eef4c65195b0d4caa52cf44f348102, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: -0.000030517576}
@@ -205,8 +205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  type: 0
-  gainValue: 100
+  soundManager: {fileID: 0}
+  type: 1
+  gainValue: 5
 --- !u!135 &7581786959697414846
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 200
+  m_Radius: 400
   m_Center: {x: 0, y: 92.054565, z: -2.4898643}
 --- !u!111 &2425518781660473686
 Animation:
