@@ -20,6 +20,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
         shopButton = this.GetComponent<Button>();
+        toolTipOffset.y = 160;
     }
     void Update()
     {
@@ -58,15 +59,15 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         toolTipWindow.SetActive(true);
         Vector3 offset = new Vector3();
         Debug.Log(eventData.position);
-        if(eventData.position.x > 1500)
+        if(eventData.position.x > (Screen.width - Screen.width/4))
         {
-            offset.Set(toolTipOffscreenOffset,toolTipOffset.y,toolTipOffset.z);
+            offset.Set(toolTipOffscreenOffset,toolTipOffset.y,0);
         }
         else
         {
             offset = toolTipOffset;
         }
-        toolTipWindow.transform.position = equipment.transform.position - offset;
+        toolTipWindow.GetComponent<RectTransform>().position = equipment.transform.position - offset;
         tTM.SetToolTip(equipment);
     }
     public void OnPointerExit(PointerEventData eventData)
