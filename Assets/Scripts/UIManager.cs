@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject resultsMenu;
     public GameObject storyMenu;
+    public GameObject controlsMenu;
+    public GameObject creditsMenu;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
@@ -153,6 +155,8 @@ public class UIManager : MonoBehaviour
         resultsMenu.SetActive(false);
         storyMenu.SetActive(false);
         HUD.SetActive(false);
+        creditsMenu.SetActive(false);
+        controlsMenu.SetActive(false);
     }
     /// <summary>
     /// Sets UI to main menu
@@ -174,6 +178,22 @@ public class UIManager : MonoBehaviour
     {
         ResetAllMenus();
         optionsMenu.SetActive(true);
+    }
+    /// <summary>
+    /// Sets UI to Credits
+    /// </summary>
+    public void SetUICredits()
+    {
+        ResetAllMenus();
+        creditsMenu.SetActive(true);
+    }
+    /// <summary>
+    /// Sets UI to controlls
+    /// </summary>
+    public void SetUIControls()
+    {
+        ResetAllMenus();
+        controlsMenu.SetActive(true);
     }
     /// <summary>
     /// Sets UI to Upgrades menu
