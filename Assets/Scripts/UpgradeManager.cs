@@ -51,6 +51,13 @@ public class UpgradeManager : MonoBehaviour
                 {
                     equipment[i].lockoutEquip.isLocked = true;
                 }
+                for(int j = 0; j < playerStats.currentEquipment.Count(); j++)
+                {
+                    if(equipment[i].equipmentName == playerStats.currentEquipment[j])
+                    {
+                        BuyOrEquip(equipment[i].gameObject);
+                    }
+                }
             }
         }
     }
@@ -73,15 +80,19 @@ public class UpgradeManager : MonoBehaviour
             switch(equip.type)
             {
                 case Equipment.equipType.Material:
+                    playerStats.currentEquipment[0] = equip.equipmentName;
                     matSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Engine:
+                    playerStats.currentEquipment[1] = equip.equipmentName;
                     engSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Fuel:
+                    playerStats.currentEquipment[2] = equip.equipmentName;
                     fuelSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Booster:
+                    playerStats.currentEquipment[3] = equip.equipmentName;
                     boostSlot.currentEquipment = equip;
                     break;
             }
@@ -92,15 +103,19 @@ public class UpgradeManager : MonoBehaviour
             switch(equip.type)
             {
                 case Equipment.equipType.Material:
+                    playerStats.currentEquipment[0] = equip.equipmentName;
                     matSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Engine:
+                    playerStats.currentEquipment[1] = equip.equipmentName;
                     engSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Fuel:
+                    playerStats.currentEquipment[2] = equip.equipmentName;
                     fuelSlot.currentEquipment = equip;
                     break;
                 case Equipment.equipType.Booster:
+                    playerStats.currentEquipment[3] = equip.equipmentName;
                     boostSlot.currentEquipment = equip;
                     break;
             }
@@ -140,6 +155,10 @@ public class UpgradeManager : MonoBehaviour
         {
             equipment[i].isOwned = false;
             equipment[i].isLocked = false;
+        }
+        for(int j = 0; j < playerStats.currentEquipment.Count(); j++)
+        {
+            playerStats.currentEquipment[j] = "";
         }
     }
 }

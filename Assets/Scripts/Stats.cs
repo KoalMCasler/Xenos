@@ -13,6 +13,7 @@ public class Stats : ScriptableObject
     public float boostSpeed;
     public float lookSensitivity;
     public bool[] ownedEquipment = new bool[24];
+    public string[] currentEquipment = new string[4];
     public Vector3 bestRunPositon;
     public float bestDistance;
     /// <summary>
