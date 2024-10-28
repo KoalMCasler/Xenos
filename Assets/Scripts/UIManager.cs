@@ -281,7 +281,7 @@ public class UIManager : MonoBehaviour
             moneyResultsText.text = string.Format("Money Colected = {0}$",gameManager.collectedMoney);
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
             totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
-            distanceFromWall = 9000 - gameManager.runDistance;
+            distanceFromWall = 15000 - gameManager.runDistance;
         }
     }
     /// <summary>
