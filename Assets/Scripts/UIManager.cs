@@ -176,8 +176,19 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void SetUIOptions()
     {
+        gameManager.prevState = gameManager.gameState;
+        gameManager.gameState = GameManager.GameState.Options;
         ResetAllMenus();
         optionsMenu.SetActive(true);
+    }
+    public void BackFromOptions()
+    {
+        gameManager.gameState = gameManager.prevState;
+        gameManager.ChangeGameState();
+        if(gameManager.prevState == GameManager.GameState.Upgrades)
+        {
+            SetUIUpgrades();
+        }
     }
     /// <summary>
     /// Sets UI to Credits
@@ -209,6 +220,11 @@ public class UIManager : MonoBehaviour
             ResetAllMenus();
             gameManager.gameState = GameManager.GameState.Upgrades;
             gameManager.ChangeGameState();
+        }
+        else
+        {
+            ResetAllMenus();
+            upgradeMenu.SetActive(true);
         }
     }
     /// <summary>

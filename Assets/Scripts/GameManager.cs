@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     public Transform camMenuPosition;
     public float cameraOffset;
     public static GameManager gameManager;
-    public enum GameState{MainMenu, Gameplay, Upgrades, Results}
+    public enum GameState{MainMenu, Gameplay, Upgrades, Results, Options}
     public GameState gameState;
+    public GameState prevState;
     private Stats loadedStats;
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     [Header("Run stats")]
@@ -71,10 +72,13 @@ public class GameManager : MonoBehaviour
                 SetCameraPosition();
                 break;
             case GameState.Upgrades:
-                Upgrades(); 
+                Upgrades();
                 break;
             case GameState.Results: 
                 Results(); 
+                break;
+            case GameState.Options:
+                Options();
                 break;
         }
     }
@@ -91,6 +95,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Gameplay()
     {
+        prevState = GameState.Gameplay;
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
@@ -104,7 +109,17 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Upgrades()
     {
-        ReloadGame();
+        if(prevState != GameState.Upgrades)
+        {
+            ReloadGame();
+        }
+    }
+    /// <summary>
+    /// Options gamestate function, used to set prev state for use in multiple places.
+    /// </summary>
+    void Options()
+    {
+
     }
     /// <summary>
     /// Results gamestate function
