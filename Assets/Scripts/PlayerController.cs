@@ -194,7 +194,6 @@ public class PlayerController : MonoBehaviour
     public void LaunchBoost()
     {
         soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
-        isOffRamp = true;
         RollForWoo();
         if(upgradeManager.boostSlot.currentEquipment != null)
         {
@@ -208,6 +207,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Warp());
             }
         }
+        isOffRamp = true;
     }
 
     void RollForWoo()

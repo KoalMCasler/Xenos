@@ -9674,7 +9674,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -7856548436676677813, guid: 3bbe19120b633824d92c95b14e70037b, type: 3}
+  m_Mesh: {fileID: 5503723287245709050, guid: 8f6fd800bca18ba49abca0629972b812, type: 3}
 --- !u!1001 &645616976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49963,7 +49963,7 @@ MonoBehaviour:
   equipmentName: C4 Booster
   cost: 5000
   discription: A lump of plastic explosive. HOW IS THIS SAFE?!
-  modValue: 200
+  modValue: 600
   icon: {fileID: 21300000, guid: 1063e5680a743274ea1ecbccd68f1d60, type: 3}
   isEquipped: 0
   isOwned: 0
@@ -50063,7 +50063,7 @@ MonoBehaviour:
   equipmentName: Dynamite Booster
   cost: 1000
   discription: This cannot be safe.
-  modValue: 100
+  modValue: 300
   icon: {fileID: 21300000, guid: a5b56ddd314558d448999207ca72ae1d, type: 3}
   isEquipped: 0
   isOwned: 0
@@ -50088,7 +50088,7 @@ MonoBehaviour:
   equipmentName: Dynamite Bundle
   cost: 2500
   discription: DEFINITELY not safe.
-  modValue: 150
+  modValue: 450
   icon: {fileID: 21300000, guid: 439b667d71180f249bebb6ca7859b6ad, type: 3}
   isEquipped: 0
   isOwned: 0
@@ -50238,7 +50238,7 @@ MonoBehaviour:
   equipmentName: Firework Booster
   cost: 250
   discription: Some fireworks strapped to the back.
-  modValue: 50
+  modValue: 150
   icon: {fileID: 21300000, guid: bbc9b388c364b9645af4db71e48c6a96, type: 3}
   isEquipped: 0
   isOwned: 0
@@ -50263,7 +50263,7 @@ MonoBehaviour:
   equipmentName: Hydrogen Booster
   cost: 10000
   discription: There is no way OHS would allow this!
-  modValue: 250
+  modValue: 750
   icon: {fileID: 21300000, guid: b1b6812a26617614bb41e19975e807d9, type: 3}
   isEquipped: 0
   isOwned: 0
