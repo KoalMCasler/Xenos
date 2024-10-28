@@ -1,5 +1,5 @@
-Programming and Design: Koal Casler
-Assets and Art: Abby Jones
+Programmer: Koal Casler
+Artist: Abby Jones
 Menu Music: "Together we thrive" by Peter Nesterouk from Pixabay.
 Gameplay Music: "Lost in the Beat" by Ciderlei Castro from Pixabay
 Water Crash SFX: David Dumais from Pixabay
@@ -9,3 +9,8 @@ Coin SFX: Ribhav Agrawal from Pixabay
 Fuel SFX: Sound Effect from Pixabay
 Plane Startup sound: Sound Effect from Pixabay
 Water Splash Sound: Sound Effect from Pixabay
+Impact noise: Sound Effect by Finnegan Cramer from Pixabay
+Boost explosin: Sound Effect from Pixabay
+Warp SFX: Sound Effect from Pixabay
+Player "Voice": Sound Effect from Pixabay
+Shop Perchase: Sound Effect from Pixabay

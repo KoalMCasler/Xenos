@@ -193,15 +193,14 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void LaunchBoost()
     {
+        soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
+        isOffRamp = true;
         if(!willWarp)
         {
-            soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
-            isOffRamp = true;
             playerBody.AddForce(Vector3.right * playerStats.startBoost);
         }
         else
         {
-            isOffRamp = true;
             StartCoroutine(Warp());
         }
     }
@@ -213,7 +212,6 @@ public class PlayerController : MonoBehaviour
         Transform warpPoint = GameObject.FindWithTag("Warp").transform;
         playerBody.transform.position = warpPoint.position;
         playerBody.transform.rotation = warpPoint.rotation;
-        warpEffect.SetActive(false);
     }
     /// <summary>
     /// Collison event
@@ -279,6 +277,7 @@ public class PlayerController : MonoBehaviour
         isOffRamp = false;
         hitWater = false;
         canBounce = false;
+        warpEffect.SetActive(false);
         playerStats.fuel = playerStats.maxFuel;
 
     }
