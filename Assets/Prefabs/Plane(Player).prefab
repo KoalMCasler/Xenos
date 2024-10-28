@@ -1295,6 +1295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   soundManager: {fileID: 0}
+  upgradeManager: {fileID: 0}
   spawnPoint: {fileID: 0}
   playerForce: {fileID: 0}
   playerTransform: {fileID: 0}
@@ -1311,15 +1312,19 @@ MonoBehaviour:
     m_Flags: 0
   explosion: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
   splashDown: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
-  hasLaunched: 0
+  hasLaunched: 1
   hasLanded: 0
   isOffRamp: 0
   explodeTime: 1
   hitWater: 0
   altitude: 0
-  altitudeLimit: 700
+  altitudeLimit: 1200
   altitudeTimer: 3
   downForce: 1
+  canBounce: 0
+  willWarp: 0
+  fuelGain: 1
+  eficency: 1
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237

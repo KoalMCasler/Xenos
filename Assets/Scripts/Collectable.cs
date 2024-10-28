@@ -46,7 +46,7 @@ public class Collectable : MonoBehaviour
     void CollectFuel(GameObject player)
     {
         soundManager.PlaySFX(5); //See list in editor for index. 
-        player.GetComponent<PlayerController>().playerStats.fuel += gainValue;
+        player.GetComponent<PlayerController>().playerStats.fuel += gainValue * player.GetComponent<PlayerController>().fuelGain;
         if(player.GetComponent<PlayerController>().playerStats.fuel > player.GetComponent<PlayerController>().playerStats.maxFuel)
         {
             player.GetComponent<PlayerController>().playerStats.fuel = player.GetComponent<PlayerController>().playerStats.maxFuel;

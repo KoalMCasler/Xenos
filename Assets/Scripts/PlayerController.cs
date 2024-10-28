@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     public float altitudeTimer; 
     public float downForce = 1;
     public bool canBounce;
+    public bool willWarp;
+    public int fuelGain;
+    public float eficency;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -155,10 +158,7 @@ public class PlayerController : MonoBehaviour
             {
                 hasLaunched = true;
                 soundManager.PlaySFX(3);//See list in editor for index. 
-                if(upgradeManager.matSlot.currentEquipment.equipmentName == "Titanium")
-                {
-                    canBounce = true;
-                }
+                CheckForSpecialEquip();
             }
         }
     }
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
     void Boost()
     {
         //Debug.Log(playerStats.fuel);
-        playerStats.fuel -= Time.deltaTime;
+        playerStats.fuel -= Time.deltaTime/eficency;
         playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerBody.mass*3,0);
     }
     /// <summary>
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"></param>
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Ground") && canBounce == false)
+        if(other.gameObject.CompareTag("Ground") && !canBounce)
         {
             hasLanded = true;
         }
@@ -256,6 +256,7 @@ public class PlayerController : MonoBehaviour
         hasLaunched = false;
         isOffRamp = false;
         hitWater = false;
+        canBounce = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }
@@ -365,5 +366,53 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Updraft Triggered");
         playerBody.AddForce(transform.up*force, ForceMode.Force);
+    }
+
+    void CheckForSpecialEquip()
+    {
+        if(upgradeManager.matSlot.currentEquipment != null)
+        {
+            if(upgradeManager.matSlot.currentEquipment.isSpecial)
+            {
+                canBounce = true;
+            }
+            else
+            {
+                canBounce = false;
+            }
+        }
+        if(upgradeManager.engSlot.currentEquipment != null)
+        {
+            if(upgradeManager.engSlot.currentEquipment.isSpecial)
+            {
+                eficency = 1.5f;
+            }
+            else
+            {
+                eficency = 1;
+            }
+        }
+        if(upgradeManager.fuelSlot.currentEquipment != null)
+        {
+            if(upgradeManager.fuelSlot.currentEquipment.isSpecial)
+            {
+                fuelGain = 2;
+            }
+            else
+            {
+                fuelGain = 1;
+            }
+        }
+        if(upgradeManager.boostSlot.currentEquipment != null)
+        {
+            if(upgradeManager.boostSlot.currentEquipment.isSpecial)
+            {
+                willWarp = true;
+            }
+            else
+            {
+                willWarp = false;
+            }
+        }
     }
 }

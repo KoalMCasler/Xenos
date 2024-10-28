@@ -3370,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5247,6 +5251,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Name
       value: BrickRows (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8997,6 +9005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10234,6 +10246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11294,6 +11310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickRows (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11742,6 +11762,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
       propertyPath: m_Name
       value: Tower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12890,6 +12914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickRows (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13163,6 +13191,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Name
       value: BrickRows
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -13879,6 +13911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickRows (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13982,6 +14018,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 99bf713eeb2e1134a9c14ddbc05e8894, type: 3}
       propertyPath: m_Name
       value: Plain_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 99bf713eeb2e1134a9c14ddbc05e8894, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15947,6 +15987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruined_Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa34ef08f117fc6478f8f413fc25c820, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16845,6 +16889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition_Stage04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a61d58ff43d25a4bb86be449b2ce3c3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17089,6 +17137,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
       propertyPath: m_Name
       value: Cactus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17780,6 +17832,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
       propertyPath: m_Name
       value: Cactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19452,6 +19508,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eff537004ac1479469859f8d5e0776c8, type: 3}
       propertyPath: m_Name
       value: Ruin_Arch
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eff537004ac1479469859f8d5e0776c8, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27934,7 +27994,7 @@ MonoBehaviour:
   engineTab: {fileID: 1650034407}
   fuelTab: {fileID: 1223541728}
   boosterTab: {fileID: 1527694823}
-  newBestRunObject: {fileID: 1909527683}
+  newBestRunObject: {fileID: 1481066814}
   distanceResultsText: {fileID: 696390968}
   moneyResultsText: {fileID: 1041579715}
   totalResultsText: {fileID: 319049289}
@@ -28176,6 +28236,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
       propertyPath: m_Name
       value: Tower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30602,6 +30666,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37519,6 +37587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f098c300b3f85a640a546d664ec23d5b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38156,6 +38228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5f9284994c7b0048ae92a689da59ed4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38780,6 +38856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Ruined
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 03f760e71a8ecd640a0e423b657acd07, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39275,6 +39355,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Name
       value: BrickRows (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: b7a805de84b8dee4d9a2f03db2b00be7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -47360,7 +47444,7 @@ MonoBehaviour:
   isOwned: 0
   upgradeIndex: 0
   isSpecial: 0
-  isLockout: 0
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588828018811521}
 --- !u!114 &6005588826544596474
@@ -47559,8 +47643,8 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
-  isSpecial: 0
-  isLockout: 0
+  isSpecial: 1
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588827666904047}
 --- !u!114 &6005588827329839240
@@ -47610,7 +47694,7 @@ MonoBehaviour:
   isOwned: 0
   upgradeIndex: 0
   isSpecial: 0
-  isLockout: 0
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588828196287771}
 --- !u!114 &6005588827474125597
@@ -47685,7 +47769,7 @@ MonoBehaviour:
   isOwned: 0
   upgradeIndex: 0
   isSpecial: 0
-  isLockout: 0
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588827188851070}
 --- !u!114 &6005588827715942352
@@ -47711,7 +47795,7 @@ MonoBehaviour:
   isOwned: 0
   upgradeIndex: 0
   isSpecial: 0
-  isLockout: 0
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588828349100441}
 --- !u!114 &6005588827727665703
@@ -47785,8 +47869,8 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
-  isSpecial: 0
-  isLockout: 0
+  isSpecial: 1
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588826536222707}
 --- !u!114 &6005588828054068333
@@ -47835,8 +47919,8 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
-  isSpecial: 0
-  isLockout: 0
+  isSpecial: 1
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588827361986787}
 --- !u!114 &6005588828349100441
@@ -47860,8 +47944,8 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
-  isSpecial: 0
-  isLockout: 0
+  isSpecial: 1
+  isLockout: 1
   isLocked: 0
   lockoutEquip: {fileID: 6005588827715942352}
 --- !u!114 &6005588828493986792
@@ -49024,33 +49108,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062007548}
     m_Modifications:
-    - target: {fileID: 2314462477120126642, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_Name
-      value: SpeedText (TMP)
+    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: eficency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: fuelGain
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 6877044191134396226}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: splashDown
-      value: 
-      objectReference: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
+      propertyPath: hasLaunched
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: altitudeLimit
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: altitudeTimer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193828950608621237, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_Drag
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3291115940681743264, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_Name
-      value: SpeedPanel
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49092,21 +49168,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4508940781398656632, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_text
-      value: AIR SPEED
-      objectReference: {fileID: 0}
     - target: {fileID: 5036434801527258498, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_Name
       value: Plane(Player)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5255636756860886267, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_text
-      value: ERROR
-      objectReference: {fileID: 0}
-    - target: {fileID: 7957280890109117556, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_Name
-      value: SpeedValueText (TMP)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
