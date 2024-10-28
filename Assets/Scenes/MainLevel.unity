@@ -11165,6 +11165,7 @@ MonoBehaviour:
   maxYRange: 600
   minZRange: 250
   maxZRange: 850
+  coinToFuelRatio: 4
   collectables:
   - {fileID: 1015947326248060071, guid: dfb5b641d08d65545b75edf6f9b5bb07, type: 3}
   - {fileID: 7456167386868816769, guid: 122ebace41acb7e42bad090daf893c83, type: 3}
@@ -24876,7 +24877,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 0.2.2'
+  m_text: 'Version: 0.3.0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -11,6 +11,7 @@ public class CollectableManager : MonoBehaviour
     public float maxYRange;
     public float minZRange;
     public float maxZRange;
+    public int coinToFuelRatio;
     public GameObject[] collectables;
     public List<GameObject> activeCollectables;
 
@@ -21,7 +22,7 @@ public class CollectableManager : MonoBehaviour
         for(int i = 0; i < spwanRate; i++)
         {
             Vector3 randomSpawnPosition = new Vector3(Random.Range(minXRange, maxXRange), Random.Range(minYRange,maxYRange), Random.Range(minZRange, maxZRange));
-            if(coinCounter < 5)
+            if(coinCounter < coinToFuelRatio)
             {
                 activeCollectables.Add(Instantiate(collectables[0], randomSpawnPosition, Quaternion.identity));
                 coinCounter++;
