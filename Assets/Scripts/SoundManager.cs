@@ -31,10 +31,7 @@ public class SoundManager : MonoBehaviour
     /// <param name="songIndex"></param>
     public void PlayMusic(int songIndex)
     {
-        if(songIndex == 1)
-        {
-            activeSongIndex = 1;
-        }
+        activeSongIndex = songIndex;
         if(songIndex < music.Count && songIndex >= 0)
         {
             musicSource.clip = music[songIndex];
