@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Handels all sounds and music. 
@@ -15,12 +18,23 @@ public class SoundManager : MonoBehaviour
     public AudioSource sfxSource;
     public AudioSource contSFXSource;
     public AudioMixer mixer;
+    public string audioPath;
+    public int activeSongIndex;
+    void Start()
+    {
+        audioPath = Application.streamingAssetsPath;
+        GetMusic();
+    }
     /// <summary>
     /// Plays music from list of music, see editor for list and indexs
     /// </summary>
     /// <param name="songIndex"></param>
     public void PlayMusic(int songIndex)
     {
+        if(songIndex == 1)
+        {
+            activeSongIndex = 1;
+        }
         if(songIndex < music.Count && songIndex >= 0)
         {
             musicSource.clip = music[songIndex];
@@ -75,4 +89,56 @@ public class SoundManager : MonoBehaviour
     {
         mixer.SetFloat(group,value);
     }
+    public void NextSong()
+    {
+        activeSongIndex += 1;
+        if(activeSongIndex >= music.Count())
+        {
+            activeSongIndex = 0;
+        }
+        PlayMusic(activeSongIndex);
+    }
+    public void PrevSong()
+    {
+        activeSongIndex -= 1;
+        if(activeSongIndex < 0)
+        {
+            activeSongIndex = music.Count() - 1;
+        }
+        PlayMusic(activeSongIndex);
+    }
+    /// <summary>
+    /// Gets all user added music and adds them to the music list. 
+    /// </summary>
+    public void GetMusic()
+    {
+        string[] songs = Directory.GetFiles(audioPath,"*.mp3");
+        foreach (string song in songs)
+        {
+            StartCoroutine(LoadAudioClip(song));
+        }
+    }
+    /// <summary>
+    /// Loads File using Unity WebRequest on internal File Structure. 
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    IEnumerator LoadAudioClip(string path)
+    {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(path, AudioType.MPEG))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(www.error);
+                yield break;
+            }
+            AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+            string clipName = Path.GetFileNameWithoutExtension(path);
+            clip.name = clipName;
+            music.Add(clip);
+        }
+    }
+
+   
 }

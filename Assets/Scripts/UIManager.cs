@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviour
     public Slider masterVolSlider;
     public Slider musicVolSlider;
     public Slider sFXVolSlider;
+    public TextMeshProUGUI currentSongText;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
     public Color halfFuel;
@@ -92,7 +93,7 @@ public class UIManager : MonoBehaviour
         }
         if(optionsMenu.activeSelf)
         {
-
+            DisplayActiveSong();
         }
         if(gameManager.gameState == GameManager.GameState.Upgrades)
         {
@@ -189,6 +190,10 @@ public class UIManager : MonoBehaviour
         {
             SetUIUpgrades();
         }
+    }
+    public void DisplayActiveSong()
+    {
+        currentSongText.text = soundManager.music[soundManager.activeSongIndex].name;
     }
     /// <summary>
     /// Sets UI to Credits

@@ -99,9 +99,9 @@ public class GameManager : MonoBehaviour
         player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
-        if(soundManager.musicSource.clip != soundManager.music[1])
+        if(soundManager.musicSource.clip != soundManager.music[soundManager.activeSongIndex])
         {
-            soundManager.PlayMusic(1); //2nd in music list is gameplay music
+            soundManager.PlayMusic(soundManager.activeSongIndex); //2nd in music list is gameplay music
         }
     }
     /// <summary>
