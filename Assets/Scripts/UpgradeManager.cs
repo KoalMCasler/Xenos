@@ -85,6 +85,7 @@ public class UpgradeManager : MonoBehaviour
                     boostSlot.currentEquipment = equip;
                     break;
             }
+            gameManager.soundManager.PlaySFX(12);
         }
         else if(equip.isOwned)
         {

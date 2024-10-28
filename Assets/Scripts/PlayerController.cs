@@ -195,20 +195,38 @@ public class PlayerController : MonoBehaviour
     {
         soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
         isOffRamp = true;
-        if(!willWarp)
+        RollForWoo();
+        if(upgradeManager.boostSlot.currentEquipment != null)
         {
-            playerBody.AddForce(Vector3.right * playerStats.startBoost);
+            if(!willWarp)
+            {
+                soundManager.PlaySFX(8);
+                playerBody.AddForce(Vector3.right * playerStats.startBoost);
+            }
+            else
+            {
+                StartCoroutine(Warp());
+            }
         }
-        else
+    }
+
+    void RollForWoo()
+    {
+        float roll;
+        roll = UnityEngine.Random.Range(1, 5);
+        Debug.Log("Woo Roll =" + roll);
+        if(roll <= 2)
         {
-            StartCoroutine(Warp());
+            soundManager.PlaySFX(7);
         }
     }
 
     public IEnumerator Warp()
     {
+        soundManager.PlaySFX(10);
         warpEffect.SetActive(true);
         yield return new WaitForSeconds(warpEffectTime);
+        soundManager.PlaySFX(11);
         Transform warpPoint = GameObject.FindWithTag("Warp").transform;
         playerBody.transform.position = warpPoint.position;
         playerBody.transform.rotation = warpPoint.rotation;
@@ -225,6 +243,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Ground") && canBounce)
         {
+            soundManager.PlaySFX(9);
             canBounce = false;
         }
         if(other.gameObject.CompareTag("Lake"))
