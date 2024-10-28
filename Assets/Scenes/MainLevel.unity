@@ -49219,6 +49219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: far clip plane
+      value: 25000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
