@@ -128,4 +128,17 @@ public class UpgradeManager : MonoBehaviour
             playerStats.startBoost = boostSlot.currentEquipment.modValue;
         }
     }
+
+    public void ClearEquipSlots()
+    {
+        matSlot.currentEquipment = null;
+        engSlot.currentEquipment = null; 
+        fuelSlot.currentEquipment = null;
+        boostSlot.currentEquipment = null;
+        for(int i = 0; i < equipment.Count();i++)
+        {
+            equipment[i].isOwned = false;
+            equipment[i].isLocked = false;
+        }
+    }
 }

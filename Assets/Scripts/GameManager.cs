@@ -285,6 +285,7 @@ public class GameManager : MonoBehaviour
     public void ResetPlayerStats()
     {
         player.playerStats.ResetStats();
+        upgradeManager.ClearEquipSlots();
     }
 
     /// <summary>

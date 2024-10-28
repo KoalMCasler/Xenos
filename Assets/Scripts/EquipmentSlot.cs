@@ -13,6 +13,7 @@ public class EquipmentSlot : MonoBehaviour
     public Equipment currentEquipment;
     public TextMeshProUGUI currentStats;
     public Image currentImage;
+    public Sprite defultIcon;
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +42,7 @@ public class EquipmentSlot : MonoBehaviour
                     currentStats.text = "None\nStarting Boost = 0N";
                     break;
             }
+            currentImage.sprite = defultIcon;
         }
         else
         {
@@ -48,7 +50,6 @@ public class EquipmentSlot : MonoBehaviour
             {
                 case SlotType.Material:
                     currentStats.text = string.Format("{0}\nMass = {1}kg",currentEquipment.equipmentName,currentEquipment.modValue);
-                    
                     break;
                 case SlotType.Engine:
                     currentStats.text = string.Format("{0}\nThrust = {1}N",currentEquipment.equipmentName,currentEquipment.modValue);
