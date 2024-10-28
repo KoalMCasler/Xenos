@@ -13,6 +13,7 @@ TagManager:
   - CamStart
   - CamMenu
   - Lake
+  - Warp
   layers:
   - Default
   - TransparentFX

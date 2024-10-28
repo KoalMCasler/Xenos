@@ -128,5 +128,4 @@ public class UpgradeManager : MonoBehaviour
             playerStats.startBoost = boostSlot.currentEquipment.modValue;
         }
     }
-
 }

@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Video;
 
 /// <summary>
 /// Handels all player movement and holds active stats for gameplay
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
     public float explodeTime;
     public bool hitWater;
     public float altitude;
-    private int maxRayDistance = 1000;
+    private int maxRayDistance = 2000;
     public int altitudeLimit;
     [Range(1,5)] //in seconds
     public float altitudeTimer; 
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
     public bool willWarp;
     public int fuelGain;
     public float eficency;
+    public float warpEffectTime;
+    public GameObject warpEffect;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -189,9 +193,27 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void LaunchBoost()
     {
-        soundManager.PlayContinuesSFX(2); //index 2 is engine sound in lest of SFX
-        isOffRamp = true;
-        playerBody.AddForce(Vector3.right * playerStats.startBoost);
+        if(!willWarp)
+        {
+            soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
+            isOffRamp = true;
+            playerBody.AddForce(Vector3.right * playerStats.startBoost);
+        }
+        else
+        {
+            isOffRamp = true;
+            StartCoroutine(Warp());
+        }
+    }
+
+    public IEnumerator Warp()
+    {
+        warpEffect.SetActive(true);
+        yield return new WaitForSeconds(warpEffectTime);
+        Transform warpPoint = GameObject.FindWithTag("Warp").transform;
+        playerBody.transform.position = warpPoint.position;
+        playerBody.transform.rotation = warpPoint.rotation;
+        warpEffect.SetActive(false);
     }
     /// <summary>
     /// Collison event
@@ -203,7 +225,7 @@ public class PlayerController : MonoBehaviour
         {
             hasLanded = true;
         }
-        else
+        else if(other.gameObject.CompareTag("Ground") && canBounce)
         {
             canBounce = false;
         }
@@ -385,7 +407,7 @@ public class PlayerController : MonoBehaviour
         {
             if(upgradeManager.engSlot.currentEquipment.isSpecial)
             {
-                eficency = 1.5f;
+                eficency = 1.25f;
             }
             else
             {

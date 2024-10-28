@@ -12473,11 +12473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545d84e91aa268841bd10a68b07701e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwanRate: 1000
+  spwanRate: 2000
   minXRange: 450
   maxXRange: 9700
-  minYRange: 50
-  maxYRange: 600
+  minYRange: 25
+  maxYRange: 700
   minZRange: 250
   maxZRange: 850
   coinToFuelRatio: 4
@@ -37420,6 +37420,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1062007548}
   m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
+--- !u!1 &1972760085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972760086}
+  m_Layer: 0
+  m_Name: WarpPoint
+  m_TagString: Warp
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1972760086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972760085}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3000, y: 500, z: 506}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1978113456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd92959cfb64e574e8e88d238d307e3d, type: 3}
@@ -39601,6 +39632,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1458241498}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!1 &361854691537112961
 GameObject:
   m_ObjectHideFlags: 0
@@ -46143,6 +46175,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 821258162}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175624825010403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46160,6 +46193,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 764006756}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175624838724828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46177,6 +46211,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1204869429}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175624843890987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46194,6 +46229,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 613690498}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175624873093517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46211,6 +46247,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1783815796}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175624908085089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46228,6 +46265,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1160908093}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625004278417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46245,6 +46283,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1690884552}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625230711445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46262,6 +46301,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1710512858}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625319005719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46279,6 +46319,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1767692594}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625461411108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46296,6 +46337,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 165463412}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625608376548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46313,6 +46355,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 105253319}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625791351330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46330,6 +46373,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1336801656}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625804814670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46347,6 +46391,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 581559418}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625814535926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46364,6 +46409,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 56304668}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625839777023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46381,6 +46427,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 134917658}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175625952443949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46398,6 +46445,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1707890815}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626006935837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46415,6 +46463,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1402117717}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626353955069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46432,6 +46481,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1220890611}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626399733016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46449,6 +46499,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 62117135}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626461215346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46466,6 +46517,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1432999098}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626511345681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46483,6 +46535,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 404032091}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626623599599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46500,6 +46553,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 71006807}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!114 &5017175626635692932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46517,6 +46571,7 @@ MonoBehaviour:
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1999066182}
   shopButton: {fileID: 0}
+  toolTipOffscreenOffset: 275
 --- !u!1 &5497055939250293749
 GameObject:
   m_ObjectHideFlags: 0
@@ -47668,7 +47723,7 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
-  isSpecial: 0
+  isSpecial: 1
   isLockout: 0
   isLocked: 0
   lockoutEquip: {fileID: 0}
@@ -48597,7 +48652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1430, y: -155.8402}
+  m_AnchoredPosition: {x: 1584, y: -155.8402}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7690090016614012935
@@ -49109,24 +49164,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1062007548}
     m_Modifications:
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: eficency
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: fuelGain
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 6877044191134396226}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: hasLaunched
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: warpEffect
+      value: 
+      objectReference: {fileID: 8998379392506847721}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: altitudeLimit
-      value: 1200
+      propertyPath: warpEffectTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49177,6 +49224,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+--- !u!1 &8998379392506847721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8547959394064973255, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+  m_PrefabInstance: {fileID: 8998379392506847720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9142211638471543515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49526,6 +49578,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1972760086}
   - {fileID: 1161396203}
   - {fileID: 63885868}
   - {fileID: 1864137566}
