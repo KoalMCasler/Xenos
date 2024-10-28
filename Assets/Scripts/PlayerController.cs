@@ -229,7 +229,6 @@ public class PlayerController : MonoBehaviour
         soundManager.PlaySFX(11);
         Transform warpPoint = GameObject.FindWithTag("Warp").transform;
         playerBody.transform.position = warpPoint.position;
-        playerBody.transform.rotation = warpPoint.rotation;
     }
     /// <summary>
     /// Collison event
