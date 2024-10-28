@@ -39516,6 +39516,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1458241498}
+  shopButton: {fileID: 0}
 --- !u!1 &361854691537112961
 GameObject:
   m_ObjectHideFlags: 0
@@ -42802,6 +42803,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!33 &1998307875545954924
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46053,6 +46058,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 821258162}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175624825010403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46069,6 +46075,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 764006756}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175624838724828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46085,6 +46092,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1204869429}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175624843890987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46101,6 +46109,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 613690498}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175624873093517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46117,6 +46126,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1783815796}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175624908085089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46133,6 +46143,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1160908093}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625004278417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46149,6 +46160,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1690884552}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625230711445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46165,6 +46177,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1710512858}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625319005719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46181,6 +46194,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1767692594}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625461411108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46197,6 +46211,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 165463412}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625608376548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46213,6 +46228,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 105253319}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625791351330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46229,6 +46245,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1336801656}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625804814670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46245,6 +46262,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 581559418}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625814535926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46261,6 +46279,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 56304668}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625839777023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46277,6 +46296,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 134917658}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175625952443949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46293,6 +46313,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1707890815}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626006935837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46309,6 +46330,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1402117717}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626353955069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46325,6 +46347,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1220890611}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626399733016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46341,6 +46364,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 62117135}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626461215346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46357,6 +46381,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1432999098}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626511345681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46373,6 +46398,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 404032091}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626623599599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46389,6 +46415,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 0}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 71006807}
+  shopButton: {fileID: 0}
 --- !u!114 &5017175626635692932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46405,6 +46432,7 @@ MonoBehaviour:
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: {x: 0, y: 260, z: 0}
   ownedMarker: {fileID: 1999066182}
+  shopButton: {fileID: 0}
 --- !u!1 &5497055939250293749
 GameObject:
   m_ObjectHideFlags: 0
@@ -47331,6 +47359,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588828018811521}
 --- !u!114 &6005588826544596474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47352,6 +47384,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588826764353838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47373,6 +47409,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588826767659586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47394,6 +47434,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588826959263009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47415,6 +47459,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588826971877905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47436,6 +47484,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827090050033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47457,6 +47509,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827096178196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47478,6 +47534,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827188851070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47499,6 +47559,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588827666904047}
 --- !u!114 &6005588827329839240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47520,6 +47584,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827361986787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47541,6 +47609,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588828196287771}
 --- !u!114 &6005588827474125597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47562,6 +47634,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827665418330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47583,6 +47659,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827666904047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47604,6 +47684,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588827188851070}
 --- !u!114 &6005588827715942352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47626,6 +47710,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588828349100441}
 --- !u!114 &6005588827727665703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47647,6 +47735,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588827890149789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47668,6 +47760,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588828018811521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47689,6 +47785,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588826536222707}
 --- !u!114 &6005588828054068333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47710,6 +47810,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588828196287771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47731,6 +47835,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588827361986787}
 --- !u!114 &6005588828349100441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47752,6 +47860,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 6005588827715942352}
 --- !u!114 &6005588828493986792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47773,6 +47885,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!114 &6005588828573836840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47794,6 +47910,10 @@ MonoBehaviour:
   isEquipped: 0
   isOwned: 0
   upgradeIndex: 0
+  isSpecial: 0
+  isLockout: 0
+  isLocked: 0
+  lockoutEquip: {fileID: 0}
 --- !u!222 &6327152836877052051
 CanvasRenderer:
   m_ObjectHideFlags: 0
