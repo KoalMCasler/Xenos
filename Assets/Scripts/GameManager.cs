@@ -88,7 +88,10 @@ public class GameManager : MonoBehaviour
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
-        soundManager.PlayMusic(0); //Fist in music list is menu music.
+        if(soundManager.musicSource.clip != soundManager.music[soundManager.activeSongIndex])
+        {
+            soundManager.PlayMusic(soundManager.activeSongIndex); 
+        }
     }
     /// <summary>
     /// Gameplay gamestate function
@@ -101,7 +104,7 @@ public class GameManager : MonoBehaviour
         runMarker.transform.position = player.playerStats.bestRunPositon;
         if(soundManager.musicSource.clip != soundManager.music[soundManager.activeSongIndex])
         {
-            soundManager.PlayMusic(soundManager.activeSongIndex); //2nd in music list is gameplay music
+            soundManager.PlayMusic(soundManager.activeSongIndex); 
         }
     }
     /// <summary>
@@ -202,6 +205,7 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Upgrades;
         upgradeManager.OnLoadGame();
         upgradeManager.CheckEquptment();
+        uIManager.SetUIUpgrades();
         ChangeGameState();
     }
     /// <summary>
