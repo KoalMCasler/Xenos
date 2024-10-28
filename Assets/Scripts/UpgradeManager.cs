@@ -47,6 +47,10 @@ public class UpgradeManager : MonoBehaviour
             if(playerStats.ownedEquipment[i])
             {
                 equipment[i].isOwned = true;
+                if(equipment[i].isLockout)
+                {
+                    equipment[i].lockoutEquip.isLocked = true;
+                }
             }
         }
     }
@@ -62,7 +66,10 @@ public class UpgradeManager : MonoBehaviour
             equip.isOwned = true;
             playerStats.ownedEquipment[equip.upgradeIndex] = true; 
             playerStats.money -= equip.cost;
-            //playerStats.ownedEquipment.Add(equip);
+            if(equip.isLockout)
+            {
+                equip.lockoutEquip.isLocked = true;
+            }
             switch(equip.type)
             {
                 case Equipment.equipType.Material:

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 /// <summary>
 /// Used to pass info into tooltip window.
 /// </summary>
@@ -12,10 +13,12 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public GameObject toolTipWindow;
     public Vector3 toolTipOffset;
     public GameObject ownedMarker;
+    public Button shopButton;
     void Awake()
     {
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
+        shopButton = this.GetComponent<Button>();
     }
     void Update()
     {
@@ -30,6 +33,17 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         else
         {
             ownedMarker.SetActive(false);
+        }
+        if(equipment.isLockout)
+        {
+            if(equipment.isLocked)
+            {
+                shopButton.interactable = false;
+            }
+            else
+            {
+                shopButton.interactable = true;
+            }
         }
     }
 

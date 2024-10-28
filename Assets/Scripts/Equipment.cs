@@ -19,6 +19,10 @@ public class Equipment : MonoBehaviour
     public bool isEquipped;
     public bool isOwned;
     public int upgradeIndex;
+    public bool isSpecial;
+    public bool isLockout;
+    public bool isLocked;
+    public Equipment lockoutEquip;
     
     // Start is called before the first frame update
     void Awake()

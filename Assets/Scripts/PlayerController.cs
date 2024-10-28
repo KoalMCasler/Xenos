@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     [SerializeField]
     private SoundManager soundManager;
+    [SerializeField]
+    private UpgradeManager upgradeManager;
     private Camera mainCamera;
     public Transform spawnPoint;
     [Header("Compnent Referances")]
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [Range(1,5)] //in seconds
     public float altitudeTimer; 
     public float downForce = 1;
+    public bool canBounce;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        upgradeManager = gameManager.upgradeManager;
         soundManager = gameManager.soundManager;
         playerBody = this.gameObject.GetComponent<Rigidbody>();
         playerTransform = this.transform;
@@ -151,6 +155,10 @@ public class PlayerController : MonoBehaviour
             {
                 hasLaunched = true;
                 soundManager.PlaySFX(3);//See list in editor for index. 
+                if(upgradeManager.matSlot.currentEquipment.equipmentName == "Titanium")
+                {
+                    canBounce = true;
+                }
             }
         }
     }
@@ -191,9 +199,13 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"></param>
     public void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground") && canBounce == false)
         {
             hasLanded = true;
+        }
+        else
+        {
+            canBounce = false;
         }
         if(other.gameObject.CompareTag("Lake"))
         {
