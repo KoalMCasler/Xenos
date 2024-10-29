@@ -39,5 +39,6 @@ Material:
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
+    - _GlowIntensity: 4.91
     m_Colors: []
   m_BuildTextureStacks: []
