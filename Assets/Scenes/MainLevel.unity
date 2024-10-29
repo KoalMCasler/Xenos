@@ -3034,6 +3034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition_04_05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd90b8d3c318ff44db92c7aedeb9a84f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5442,6 +5446,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e7428131427d3814792666955639f73d, type: 3}
       propertyPath: m_Name
       value: Cliff_01_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7428131427d3814792666955639f73d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10062,6 +10070,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b8d791155c87d4343aa344b183e6c5ae, type: 3}
       propertyPath: m_Name
       value: Cliff_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b8d791155c87d4343aa344b183e6c5ae, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15794,6 +15806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plain_05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ff605e6515df094a9515a7324a7d5ee, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18987,10 +19003,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67c7f99720b44644fa9fa40944fe17c1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2616696221470631704, guid: 67c7f99720b44644fa9fa40944fe17c1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5bb8812ff87afbc429124b3a020eed7e, type: 2}
+    - target: {fileID: 7899230212036606647, guid: 67c7f99720b44644fa9fa40944fe17c1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961893207155991277, guid: 67c7f99720b44644fa9fa40944fe17c1, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -19285,6 +19313,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e7428131427d3814792666955639f73d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7428131427d3814792666955639f73d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20950,6 +20982,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 934897ebde1aafd40b7aebfb904bd6e9, type: 3}
       propertyPath: m_Name
       value: Cliffs_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 934897ebde1aafd40b7aebfb904bd6e9, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31538,6 +31574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OuterCliff_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c2a494a55770e642b061818296f2ebd, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32771,6 +32811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSign
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4fc41b9803681d54baa575106bae3122, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32840,6 +32884,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b8d791155c87d4343aa344b183e6c5ae, type: 3}
       propertyPath: m_Name
       value: Cliff_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b8d791155c87d4343aa344b183e6c5ae, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34616,6 +34664,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c6a5c338abb0654a9dc527372cb3334, type: 3}
       propertyPath: m_Name
       value: Cliff_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c6a5c338abb0654a9dc527372cb3334, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
