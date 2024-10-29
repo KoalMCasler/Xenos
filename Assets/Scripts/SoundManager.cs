@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
     public int activeSongIndex;
     void Start()
     {
-        audioPath = Application.streamingAssetsPath;
+        audioPath = Application.streamingAssetsPath + "/Music/";
         GetMusic();
     }
     /// <summary>
