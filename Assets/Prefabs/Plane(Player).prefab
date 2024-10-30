@@ -1178,6 +1178,7 @@ Transform:
   - {fileID: 4519555599574833614}
   - {fileID: 157290140537500030}
   - {fileID: 9054069105351984912}
+  - {fileID: 7410522515187680851}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3774524278110894262
@@ -1312,7 +1313,8 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   explosion: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
-  splashDown: {fileID: 6795913138652321031, guid: 3aec86dfc0ba6204d83907a72e0a9f59, type: 3}
+  splashDown: {fileID: 6612273469586174724, guid: d43ea09723dc55848b6f52e5d24de918, type: 3}
+  boosterPosition: {fileID: 7410522515187680851}
   hasLaunched: 1
   hasLanded: 0
   isOffRamp: 0
@@ -1326,8 +1328,10 @@ MonoBehaviour:
   willWarp: 0
   fuelGain: 1
   eficency: 1
-  warpEffectTime: 2
+  warpEffectTime: 1.5
   warpEffect: {fileID: 8547959394064973255}
+  startBoostTime: 0.5
+  boostIsDone: 0
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237
@@ -1644,6 +1648,37 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &7917607327817462198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7410522515187680851}
+  m_Layer: 0
+  m_Name: Booster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7410522515187680851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917607327817462198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -178.4, y: -14.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3531414013835413276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7957280890109117556
 GameObject:
   m_ObjectHideFlags: 0

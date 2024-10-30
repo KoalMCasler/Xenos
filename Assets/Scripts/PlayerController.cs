@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public InputAction boostAction;
     public GameObject explosion;
     public GameObject splashDown;
+    public Transform boosterPosition;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public float eficency;
     public float warpEffectTime;
     public GameObject warpEffect;
+    public float startBoostTime;
+    public bool boostIsDone;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -88,11 +91,14 @@ public class PlayerController : MonoBehaviour
         {
             CheckForRunEnd();
         }
+        if(!boostIsDone)
+        {
+            HoldYRotation();
+        }
         if(gameManager.gameState == GameManager.GameState.Gameplay && !hasLanded)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
-            HoldYRotation();
             if(hasLaunched)
             {
                 //Releases player from spawn position when launch it activated. 
@@ -186,28 +192,30 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(playerStats.fuel);
         playerStats.fuel -= Time.deltaTime/eficency;
-        playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerBody.mass*3,0);
+        playerForce.relativeForce = new Vector3(playerStats.boostSpeed,playerStats.boostSpeed/2,0);
     }
     /// <summary>
     /// Launches player at end of ramp based on upgrades
     /// </summary>
     public void LaunchBoost()
     {
+        Debug.Log("Start Boost triggered");
         soundManager.PlayContinuesSFX(2); //index 2 is engine sound in list of SFX
         RollForWoo();
+        isOffRamp = true;
         if(upgradeManager.boostSlot.currentEquipment != null)
         {
             if(!willWarp)
             {
                 soundManager.PlaySFX(8);
-                playerBody.AddForce(Vector3.right * playerStats.startBoost);
+                playerBody.AddExplosionForce(playerStats.startBoost*5,boosterPosition.position,5f);
             }
             else
             {
                 StartCoroutine(Warp());
             }
         }
-        isOffRamp = true;
+        boostIsDone = true;
     }
 
     void RollForWoo()
@@ -296,6 +304,7 @@ public class PlayerController : MonoBehaviour
         hitWater = false;
         canBounce = false;
         warpEffect.SetActive(false);
+        boostIsDone = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }

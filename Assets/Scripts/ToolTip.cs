@@ -11,16 +11,15 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Equipment equipment;
     private ToolTipManager tTM;
     public GameObject toolTipWindow;
-    public Vector3 toolTipOffset;
+    public float toolTipOffset;
     public GameObject ownedMarker;
     public Button shopButton;
-    public float toolTipOffscreenOffset;
     void Awake()
     {
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
         shopButton = this.GetComponent<Button>();
-        toolTipOffset.y = 160;
+        toolTipOffset = 250;
     }
     void Update()
     {
@@ -57,17 +56,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         toolTipWindow.SetActive(true);
-        Vector3 offset = new Vector3();
-        Debug.Log(eventData.position);
-        if(eventData.position.x > (Screen.width - Screen.width/4))
-        {
-            offset.Set(toolTipOffscreenOffset,toolTipOffset.y,0);
-        }
-        else
-        {
-            offset = toolTipOffset;
-        }
-        toolTipWindow.GetComponent<RectTransform>().position = equipment.transform.position - offset;
+        toolTipWindow.GetComponent<RectTransform>().position = new Vector3(equipment.transform.position.x-toolTipOffset,eventData.position.y, 0);    
         tTM.SetToolTip(equipment);
     }
     public void OnPointerExit(PointerEventData eventData)
