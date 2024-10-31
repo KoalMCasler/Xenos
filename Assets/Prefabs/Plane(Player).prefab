@@ -1332,6 +1332,8 @@ MonoBehaviour:
   warpEffect: {fileID: 8547959394064973255}
   startBoostTime: 0.5
   boostIsDone: 0
+  endTime: 1
+  hitWall: 0
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237
@@ -1439,7 +1441,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 25000
+  far clip plane: 200000
   field of view: 58.715508
   orthographic: 0
   orthographic size: 5

@@ -5,6 +5,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.Video;
 
 /// <summary>
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public GameObject warpEffect;
     public float startBoostTime;
     public bool boostIsDone;
+    public float endTime;
+    public bool hitWall;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -265,13 +268,23 @@ public class PlayerController : MonoBehaviour
                 soundManager.PlaySFX(6); //See list for index
             }
         }
+        if(other.gameObject.CompareTag("Wall"))
+        {
+           hasLanded = true;
+           hitWall = true;
+        }
     }
     /// <summary>
     /// Checks to see if player has landed and has stoped moveing. 
     /// </summary>
     void CheckForRunEnd()
     {
-        if(hasLanded)
+        if(hasLanded && hitWall)
+        {
+            gameManager.gameState = GameManager.GameState.GameEnd;
+            gameManager.ChangeGameState();
+        }
+        else if(hasLanded)
         {
             gameManager.gameState = GameManager.GameState.Results;
             gameManager.ChangeGameState();
@@ -305,6 +318,7 @@ public class PlayerController : MonoBehaviour
         canBounce = false;
         warpEffect.SetActive(false);
         boostIsDone = false;
+        hitWall = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,13 +15,14 @@ public class GameManager : MonoBehaviour
     public UIManager uIManager;
     public UpgradeManager upgradeManager;
     public SoundManager soundManager;
+    public CollectableManager collectableManager;
     public PlayerController player;
     public GameObject playerCam;
     public Transform camStartPosition;
     public Transform camMenuPosition;
     public float cameraOffset;
     public static GameManager gameManager;
-    public enum GameState{MainMenu, Gameplay, Upgrades, Results, Options}
+    public enum GameState{MainMenu, Gameplay, Upgrades, Results, Options, GameEnd}
     public GameState gameState;
     public GameState prevState;
     private Stats loadedStats;
@@ -80,6 +82,9 @@ public class GameManager : MonoBehaviour
             case GameState.Options:
                 Options();
                 break;
+            case GameState.GameEnd:
+                GameEnd();
+                break;
         }
     }
     /// <summary>
@@ -88,9 +93,18 @@ public class GameManager : MonoBehaviour
     void MainMenu()
     {
         uIManager.SetUIMainMenu();
+        if(player.gameObject.activeSelf == false)
+        {
+            player.gameObject.SetActive(true);
+            player.SetPlayerToSpawn();
+        }
         if(soundManager.musicSource.clip != soundManager.music[soundManager.activeSongIndex])
         {
             soundManager.PlayMusic(soundManager.activeSongIndex); 
+        }
+        if(collectableManager.activeCollectables.Count > 0)
+        {
+            collectableManager.ClearCollectables();
         }
     }
     /// <summary>
@@ -123,6 +137,10 @@ public class GameManager : MonoBehaviour
     void Options()
     {
 
+    }
+    void GameEnd()
+    {
+        StartCoroutine(EndGame());
     }
     /// <summary>
     /// Results gamestate function
@@ -340,5 +358,15 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(player.explodeTime);
         uIManager.SetUIResults();
+    }
+    public IEnumerator EndGame()
+    {
+        playerCam.transform.SetParent(gameObject.transform, true);
+        playerCam.transform.position.Set(playerCam.transform.position.x,playerCam.transform.position.y+cameraOffset,playerCam.transform.position.z);
+        player.Explode();
+        player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(player.endTime);
+        uIManager.SetUIGameEnd();
+        player.ResetForNewRun();
     }
 }

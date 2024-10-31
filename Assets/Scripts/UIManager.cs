@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     public GameObject storyMenu;
     public GameObject controlsMenu;
     public GameObject creditsMenu;
+    public GameObject endGameMenu;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
@@ -158,6 +159,7 @@ public class UIManager : MonoBehaviour
         HUD.SetActive(false);
         creditsMenu.SetActive(false);
         controlsMenu.SetActive(false);
+        endGameMenu.SetActive(false);
     }
     /// <summary>
     /// Sets UI to main menu
@@ -181,6 +183,14 @@ public class UIManager : MonoBehaviour
         gameManager.gameState = GameManager.GameState.Options;
         ResetAllMenus();
         optionsMenu.SetActive(true);
+    }
+    /// <summary>
+    /// Sets UI to game end
+    /// </summary>
+    public void SetUIGameEnd()
+    {
+        ResetAllMenus();
+        endGameMenu.SetActive(true);
     }
     public void BackFromOptions()
     {
