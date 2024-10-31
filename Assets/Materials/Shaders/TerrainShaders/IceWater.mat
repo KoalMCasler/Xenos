@@ -42,6 +42,9 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _BUILTIN_DstBlend: 10
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_SrcBlend: 5
     - _DepthFade: 419.4
     - _FoamDepth: 127.1
     - _FoamNoiseScale: 18.4
