@@ -137,5 +137,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void OpenMusicFolder()
+    {
+        Application.OpenURL(audioPath);
+    }
+
    
 }
