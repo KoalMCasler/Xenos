@@ -123,16 +123,22 @@ public class PlayerController : MonoBehaviour
                 if(boostAction.IsPressed() && playerStats.fuel > 0)
                 {
                     soundManager.contSFXSource.volume = 0.75f;
-                    mainCamera.fieldOfView = 60.71551f;
                     windEffect.enableEmission = true;
                     Boost();
+                    if(mainCamera.fieldOfView < 60.71551f)  //weird fov number taken from editor.
+                    {
+                        mainCamera.fieldOfView += Time.deltaTime;
+                    }
                 }
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
-                    mainCamera.fieldOfView = 58.71551f; //weird fov number taken from editor.
                     windEffect.enableEmission = false;
+                    if(mainCamera.fieldOfView > 58.71551f) //weird fov number taken from editor.
+                    {
+                        mainCamera.fieldOfView -= Time.deltaTime;
+                    }
                 }
                 if(isMoveing == false)
                 {
@@ -517,11 +523,11 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.rotation.x >= 0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(-.05f,0,0);
+            playerForce.relativeTorque =  new Vector3(-Time.deltaTime,0,0);
         }
         else if(transform.rotation.x <= -0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(.05f,0,0);
+            playerForce.relativeTorque =  new Vector3(Time.deltaTime,0,0);
         }
         else
         {
