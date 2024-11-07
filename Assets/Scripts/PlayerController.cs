@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     public bool boostIsDone;
     public float endTime;
     public bool hitWall;
+    public bool isMoveing;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -94,10 +95,6 @@ public class PlayerController : MonoBehaviour
         {
             CheckForRunEnd();
         }
-        if(!boostIsDone)
-        {
-            HoldYRotation();
-        }
         if(gameManager.gameState == GameManager.GameState.Gameplay && !hasLanded)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -113,6 +110,10 @@ public class PlayerController : MonoBehaviour
                 playerBody.isKinematic = true;
                 playerTransform.rotation = spawnPoint.rotation;
             }
+            if(!isOffRamp)
+            {
+                HoldYRotation();
+            }
             if(hasLaunched && isOffRamp)
             {
                 if(boostAction.IsPressed() && playerStats.fuel > 0)
@@ -124,6 +125,10 @@ public class PlayerController : MonoBehaviour
                 {
                     soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
+                }
+                if(isMoveing == false)
+                {
+                    BalanceCraft();
                 }
                 GetAltitude();
             }
@@ -184,8 +189,17 @@ public class PlayerController : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
-            //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/4,moveVector2.y*playerStats.lookSensitivity);
+            if(moveVector2 != Vector2.zero)
+            {
+                isMoveing = true;
+                moveVector2.Normalize();
+                //Aims player towards mouse movement 
+                transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/3,moveVector2.x*playerStats.lookSensitivity/1.5f,moveVector2.y*playerStats.lookSensitivity);
+            }
+            else
+            {
+                isMoveing = false;
+            }
         }
     }
     /// <summary>
@@ -475,6 +489,22 @@ public class PlayerController : MonoBehaviour
             {
                 willWarp = false;
             }
+        }
+    }
+
+    void BalanceCraft()
+    {
+        if(transform.rotation.x >= 0.05f)
+        {
+            playerForce.relativeTorque =  new Vector3(-.05f,0,0);
+        }
+        else if(transform.rotation.x <= -0.05f)
+        {
+            playerForce.relativeTorque =  new Vector3(.05f,0,0);
+        }
+        else
+        {
+            playerForce.relativeTorque =  new Vector3(0,0,0);
         }
     }
 }
