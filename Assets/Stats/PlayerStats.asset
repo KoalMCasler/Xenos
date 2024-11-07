@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfb4cca0d3843743b2e75bec744878a, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  money: 0
+  money: 346.37695
   startBoost: 0
   maxFuel: 5
   fuel: 5
   boostSpeed: 10
-  lookSensitivity: 0.75
+  lookSensitivity: 0.66
   ownedEquipment: 000000000000000000000000000000000000000000000000
   currentEquipment:
   - 
   - 
   - 
   - 
-  bestRunPositon: {x: 353.6687, y: 4.679688, z: 500.1465}
-  bestDistance: 0
+  bestRunPositon: {x: 608.00494, y: -3.6940007, z: 510.2046}
+  bestDistance: 346.37695
