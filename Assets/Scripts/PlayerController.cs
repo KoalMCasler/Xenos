@@ -523,11 +523,11 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.rotation.x >= 0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(-Time.deltaTime,0,0);
+            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*2,0,0);
         }
         else if(transform.rotation.x <= -0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(Time.deltaTime,0,0);
+            playerForce.relativeTorque =  new Vector3(Time.deltaTime*2,0,0);
         }
         else
         {
