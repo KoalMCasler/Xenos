@@ -50126,6 +50126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 1576658105974498972}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -56668,6 +56669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827665418330}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56685,6 +56687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827666904047}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56702,6 +56705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827715942352}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56719,6 +56723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827727665703}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56736,6 +56741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828018811521}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56753,6 +56759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828054068333}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56770,6 +56777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827890149789}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56787,6 +56795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828349100441}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56804,6 +56813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828196287771}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -56821,6 +56831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828573836840}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -56838,6 +56849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588828493986792}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -56855,6 +56867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826764353838}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56872,6 +56885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826767659586}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56889,6 +56903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826544596474}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56906,6 +56921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826536222707}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56923,6 +56939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826959263009}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56940,6 +56957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588826971877905}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56957,6 +56975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827090050033}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -56974,6 +56993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827096178196}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -56991,6 +57011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827188851070}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -57008,6 +57029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827474125597}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -57025,6 +57047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827361986787}
   toolTipWindow: {fileID: 0}
   toolTipOffset: 0
@@ -57042,6 +57065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30953205666b3f5478359e13813d13e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   equipment: {fileID: 6005588827329839240}
   toolTipWindow: {fileID: 1262097863}
   toolTipOffset: 0
@@ -59638,9 +59662,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062007548}
     m_Modifications:
+    - target: {fileID: 500058320899959313, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500058320899959313, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244019729601115175, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: endTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: spawnPoint
@@ -59689,38 +59725,6 @@ PrefabInstance:
     - target: {fileID: 5036434801527258498, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_Name
       value: Plane(Player)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_Depth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: field of view
-      value: 58.715508
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_FocalLength
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: far clip plane
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_RenderingPath
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: near clip plane
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406359047245318601, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

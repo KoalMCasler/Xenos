@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public GameObject explosion;
     public GameObject splashDown;
     public Transform boosterPosition;
+    public GameObject[] debris;
+    public GameObject warpEffect;
+    public ParticleSystem windEffect;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
@@ -48,13 +51,11 @@ public class PlayerController : MonoBehaviour
     public int fuelGain;
     public float eficency;
     public float warpEffectTime;
-    public GameObject warpEffect;
     public float startBoostTime;
     public bool boostIsDone;
     public float endTime;
     public bool hitWall;
     public bool isMoveing;
-    public GameObject[] debris;
     public float debrisMinForce;
     public float debrisMaxForce;
     [Header("Player Stats")]
@@ -122,12 +123,16 @@ public class PlayerController : MonoBehaviour
                 if(boostAction.IsPressed() && playerStats.fuel > 0)
                 {
                     soundManager.contSFXSource.volume = 0.75f;
+                    mainCamera.fieldOfView = 60.71551f;
+                    windEffect.enableEmission = true;
                     Boost();
                 }
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
+                    mainCamera.fieldOfView = 58.71551f; //weird fov number taken from editor.
+                    windEffect.enableEmission = false;
                 }
                 if(isMoveing == false)
                 {
@@ -336,6 +341,7 @@ public class PlayerController : MonoBehaviour
         warpEffect.SetActive(false);
         boostIsDone = false;
         hitWall = false;
+        windEffect.enableEmission = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }
