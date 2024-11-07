@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public GameManager gameManager;
     public Equipment equipment;
     private ToolTipManager tTM;
     public GameObject toolTipWindow;
@@ -16,6 +17,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Button shopButton;
     void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
         shopButton = this.GetComponent<Button>();
@@ -34,6 +36,14 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         else
         {
             ownedMarker.SetActive(false);
+        }
+        if(equipment.cost > gameManager.player.playerStats.money)
+        {
+            shopButton.interactable = false;
+        }
+        else
+        {
+            shopButton.interactable = true;
         }
         if(equipment.isLockout)
         {
