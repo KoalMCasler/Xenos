@@ -1334,6 +1334,12 @@ MonoBehaviour:
   boostIsDone: 0
   endTime: 1
   hitWall: 0
+  isMoveing: 0
+  debris:
+  - {fileID: 8688267138075138473, guid: 124f0ef08684bea45aec9ef5eb9d9a8e, type: 3}
+  - {fileID: 8003135783391294558, guid: 07beda5b1e4379842b34f129b25e4978, type: 3}
+  debrisMinForce: 100
+  debrisMaxForce: 1000
   playerStats: {fileID: 11400000, guid: 31f0e04dd89cf594baee9ca958996dfc, type: 2}
   propellorAnim: {fileID: 2167395451830544888}
 --- !u!54 &3193828950608621237

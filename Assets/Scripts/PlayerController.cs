@@ -54,6 +54,9 @@ public class PlayerController : MonoBehaviour
     public float endTime;
     public bool hitWall;
     public bool isMoveing;
+    public GameObject[] debris;
+    public float debrisMinForce;
+    public float debrisMaxForce;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -364,6 +367,18 @@ public class PlayerController : MonoBehaviour
         soundManager.PlaySFX(0); //first in sfx list is always explosion
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
+        List<GameObject> activeDebirs = new List<GameObject>();
+        foreach(GameObject i in debris)
+        {
+            GameObject part = Instantiate(i,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
+            activeDebirs.Add(part);
+        }
+        foreach(GameObject i in activeDebirs)
+        {
+            Vector3 force = new Vector3();
+            force.Set(UnityEngine.Random.Range(debrisMinForce,debrisMaxForce),UnityEngine.Random.Range(debrisMinForce,debrisMaxForce),UnityEngine.Random.Range(debrisMinForce,debrisMaxForce));
+            i.GetComponent<Rigidbody>().AddForce(force);
+        }
     }
     /// <summary>
     /// Spawn spalsh down effect.
