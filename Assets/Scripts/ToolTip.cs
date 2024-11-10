@@ -21,7 +21,6 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
         shopButton = this.GetComponent<Button>();
-        toolTipOffset = 250;
     }
     void Update()
     {
