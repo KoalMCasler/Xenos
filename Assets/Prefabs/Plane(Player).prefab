@@ -754,7 +754,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6157,7 +6157,7 @@ MonoBehaviour:
   explodeTime: 1
   hitWater: 0
   altitude: 0
-  altitudeLimit: 1200
+  altitudeLimit: 2000
   altitudeTimer: 3
   downForce: 1
   canBounce: 0

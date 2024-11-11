@@ -13,7 +13,7 @@ public class ToolTipManager : MonoBehaviour
     public TextMeshProUGUI equipmentType;
     public TextMeshProUGUI statModified;
     public TextMeshProUGUI equipmentCost;
-    public TextMeshProUGUI discription;
+    public TextMeshProUGUI description;
     public GameObject toolTipWindow;
     void Awake()
     {
@@ -27,7 +27,7 @@ public class ToolTipManager : MonoBehaviour
     {
         equipmentName.text = eq.equipmentName;
         equipmentCost.text = string.Format("{0}$",eq.cost);
-        discription.text = eq.discription;
+        description.text = eq.discription;
         switch(eq.type)
         {
             case Equipment.equipType.Material:
@@ -47,5 +47,13 @@ public class ToolTipManager : MonoBehaviour
                 statModified.text = string.Format("Start Boost = {0}",eq.modValue);
                 break;
         }
+    }
+    public void ClearToolTip()
+    {
+        equipmentName.text = "Item Name";
+        equipmentCost.text = "Cost";
+        description.text = "Description";
+        equipmentType.text = "Type";
+        statModified.text = "Mod Value";
     }
 }

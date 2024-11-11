@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public float explodeTime;
     public bool hitWater;
     public float altitude;
-    private int maxRayDistance = 2000;
+    private int maxRayDistance = 3000;
     public int altitudeLimit;
     [Range(1,5)] //in seconds
     public float altitudeTimer; 
