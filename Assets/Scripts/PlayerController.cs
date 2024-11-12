@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
-                    playerForce.relativeForce = new Vector3(0,0,0);
+                    playerForce.relativeForce = new Vector3(playerStats.boostSpeed/4,0,0);
                     windEffect.enableEmission = false;
                     if(mainCamera.fieldOfView > 58.71551f) //weird fov number taken from editor.
                     {
@@ -523,11 +523,11 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.rotation.x >= 0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*2,0,0);
+            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*10,0,0);
         }
         else if(transform.rotation.x <= -0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(Time.deltaTime*2,0,0);
+            playerForce.relativeTorque =  new Vector3(Time.deltaTime*10,0,0);
         }
         else
         {

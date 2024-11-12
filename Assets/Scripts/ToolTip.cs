@@ -36,13 +36,12 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             ownedMarker.SetActive(false);
         }
-        if(equipment.cost > gameManager.player.playerStats.money && !equipment.isOwned)
+        if(equipment.cost > gameManager.player.playerStats.money && !equipment.isOwned || equipment.isLocked)
         {
             shopButton.interactable = false;
         }
         else
         {
-            shopButton.interactable = true;
             if(equipment.isLockout)
             {
                 if(equipment.isLocked)
@@ -53,6 +52,10 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 {
                     shopButton.interactable = true;
                 }
+            }
+            else
+            {
+                shopButton.interactable = true;
             }
         }
     }
