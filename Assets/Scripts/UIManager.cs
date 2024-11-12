@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using System.Linq;
+using Unity.VisualScripting;
 
 /// <summary>
 /// Controls all UI elements
@@ -114,15 +115,15 @@ public class UIManager : MonoBehaviour
     {
         if(gameManager.player.hasLaunched)
         {
-            speedText.text = string.Format("{0:0.0}kn",gameManager.player.GetSpeed());
-            altitudeText.text = string.Format("{0:0.00}m",gameManager.player.altitude);
+            speedText.text = string.Format("{0}kn",Math.Round(gameManager.player.GetSpeed()));
+            altitudeText.text = string.Format("{0}m",Math.Round(gameManager.player.altitude));
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = gameManager.player.ReturnDistance();
         }
         else
         {
-            speedText.text = string.Format("{0:0.0}kn",0);
-            altitudeText.text = string.Format("{0:0.00}m",0);
+            speedText.text = string.Format("{0}kn",0);
+            altitudeText.text = string.Format("{0}m",0);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = 0;
         }
@@ -287,10 +288,10 @@ public class UIManager : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.Gameplay)
         {
             gameManager.runDistance = gameManager.player.ReturnDistance();
-            distanceResultsText.text = string.Format("Distance = {0:0.00}m",gameManager.runDistance);
-            moneyResultsText.text = string.Format("Coins Collected = {0}$",gameManager.collectedMoney);
+            distanceResultsText.text = string.Format("Distance = {0}m",Math.Round(gameManager.runDistance));
+            moneyResultsText.text = string.Format("Coins Collected = {0}$",Math.Round(gameManager.collectedMoney));
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
-            totalResultsText.text = string.Format("Total = {0:0.00}$",runTotal);
+            totalResultsText.text = string.Format("Total = {0}$",Math.Round(runTotal));
             distanceFromWall = 20200 - gameManager.runDistance;
         }
     }
@@ -310,9 +311,9 @@ public class UIManager : MonoBehaviour
     /// </summary>
     void UpdateUpgrades()
     {
-        currentMoneyText.text = string.Format("{0:0.00}$",gameManager.player.playerStats.money);
-        bestRunText.text = string.Format("{0:0.00}M",gameManager.player.playerStats.bestDistance);
-        objectiveText.text = string.Format("You were {0:0.00}M away from THE WALL",distanceFromWall);
+        currentMoneyText.text = string.Format("{0}$",Math.Round(gameManager.player.playerStats.money));
+        bestRunText.text = string.Format("{0}M",Math.Round(gameManager.player.playerStats.bestDistance));
+        objectiveText.text = string.Format("You were {0}M away from THE WALL",Math.Round(distanceFromWall));
     }
 
     /// <summary>
