@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
     public GameObject explosion;
     public GameObject splashDown;
     public Transform boosterPosition;
+    public GameObject[] debris;
+    public GameObject warpEffect;
+    public ParticleSystem windEffect;
     [Header("Background Stats")]
     public bool hasLaunched;
     public bool hasLanded;
@@ -38,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public float explodeTime;
     public bool hitWater;
     public float altitude;
-    private int maxRayDistance = 2000;
+    private int maxRayDistance = 3000;
     public int altitudeLimit;
     [Range(1,5)] //in seconds
     public float altitudeTimer; 
@@ -48,11 +51,13 @@ public class PlayerController : MonoBehaviour
     public int fuelGain;
     public float eficency;
     public float warpEffectTime;
-    public GameObject warpEffect;
     public float startBoostTime;
     public bool boostIsDone;
     public float endTime;
     public bool hitWall;
+    public bool isMoveing;
+    public float debrisMinForce;
+    public float debrisMaxForce;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -94,10 +99,6 @@ public class PlayerController : MonoBehaviour
         {
             CheckForRunEnd();
         }
-        if(!boostIsDone)
-        {
-            HoldYRotation();
-        }
         if(gameManager.gameState == GameManager.GameState.Gameplay && !hasLanded)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -113,17 +114,35 @@ public class PlayerController : MonoBehaviour
                 playerBody.isKinematic = true;
                 playerTransform.rotation = spawnPoint.rotation;
             }
+            if(!isOffRamp)
+            {
+                HoldYRotation();
+            }
             if(hasLaunched && isOffRamp)
             {
                 if(boostAction.IsPressed() && playerStats.fuel > 0)
                 {
                     soundManager.contSFXSource.volume = 0.75f;
+                    windEffect.enableEmission = true;
                     Boost();
+                    if(mainCamera.fieldOfView < 60.71551f)  //weird fov number taken from editor.
+                    {
+                        mainCamera.fieldOfView += Time.deltaTime;
+                    }
                 }
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
                     playerForce.relativeForce = new Vector3(0,0,0);
+                    windEffect.enableEmission = false;
+                    if(mainCamera.fieldOfView > 58.71551f) //weird fov number taken from editor.
+                    {
+                        mainCamera.fieldOfView -= Time.deltaTime;
+                    }
+                }
+                if(isMoveing == false)
+                {
+                    BalanceCraft();
                 }
                 GetAltitude();
             }
@@ -184,8 +203,17 @@ public class PlayerController : MonoBehaviour
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
             Vector2 moveVector2 = movementValue.Get<Vector2>();
-            //Aims player towards mouse movement 
-            transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/4,moveVector2.x*playerStats.lookSensitivity/4,moveVector2.y*playerStats.lookSensitivity);
+            if(moveVector2 != Vector2.zero)
+            {
+                isMoveing = true;
+                moveVector2.Normalize();
+                //Aims player towards mouse movement 
+                transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/3,moveVector2.x*playerStats.lookSensitivity/1.5f,moveVector2.y*playerStats.lookSensitivity);
+            }
+            else
+            {
+                isMoveing = false;
+            }
         }
     }
     /// <summary>
@@ -319,6 +347,7 @@ public class PlayerController : MonoBehaviour
         warpEffect.SetActive(false);
         boostIsDone = false;
         hitWall = false;
+        windEffect.enableEmission = false;
         playerStats.fuel = playerStats.maxFuel;
 
     }
@@ -350,6 +379,18 @@ public class PlayerController : MonoBehaviour
         soundManager.PlaySFX(0); //first in sfx list is always explosion
         gameManager.playerCam.transform.LookAt(playerExplosion.transform);
         Destroy(playerExplosion,2);
+        List<GameObject> activeDebirs = new List<GameObject>();
+        foreach(GameObject i in debris)
+        {
+            GameObject part = Instantiate(i,new Vector3(playerTransform.position.x+5,playerTransform.position.y,playerTransform.position.z),explodeRotation);
+            activeDebirs.Add(part);
+        }
+        foreach(GameObject i in activeDebirs)
+        {
+            Vector3 force = new Vector3();
+            force.Set(UnityEngine.Random.Range(debrisMinForce,debrisMaxForce),UnityEngine.Random.Range(debrisMinForce,debrisMaxForce),UnityEngine.Random.Range(debrisMinForce,debrisMaxForce));
+            i.GetComponent<Rigidbody>().AddForce(force);
+        }
     }
     /// <summary>
     /// Spawn spalsh down effect.
@@ -475,6 +516,22 @@ public class PlayerController : MonoBehaviour
             {
                 willWarp = false;
             }
+        }
+    }
+
+    void BalanceCraft()
+    {
+        if(transform.rotation.x >= 0.05f)
+        {
+            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*2,0,0);
+        }
+        else if(transform.rotation.x <= -0.05f)
+        {
+            playerForce.relativeTorque =  new Vector3(Time.deltaTime*2,0,0);
+        }
+        else
+        {
+            playerForce.relativeTorque =  new Vector3(0,0,0);
         }
     }
 }

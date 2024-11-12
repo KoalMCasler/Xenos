@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public GameManager gameManager;
     public Equipment equipment;
     private ToolTipManager tTM;
     public GameObject toolTipWindow;
@@ -16,10 +17,10 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Button shopButton;
     void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         tTM =  FindObjectOfType<ToolTipManager>();
         toolTipWindow = tTM.toolTipWindow;
         shopButton = this.GetComponent<Button>();
-        toolTipOffset = 250;
     }
     void Update()
     {
@@ -35,15 +36,23 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             ownedMarker.SetActive(false);
         }
-        if(equipment.isLockout)
+        if(equipment.cost > gameManager.player.playerStats.money && !equipment.isOwned)
         {
-            if(equipment.isLocked)
+            shopButton.interactable = false;
+        }
+        else
+        {
+            shopButton.interactable = true;
+            if(equipment.isLockout)
             {
-                shopButton.interactable = false;
-            }
-            else
-            {
-                shopButton.interactable = true;
+                if(equipment.isLocked)
+                {
+                    shopButton.interactable = false;
+                }
+                else
+                {
+                    shopButton.interactable = true;
+                }
             }
         }
     }
@@ -55,12 +64,13 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        toolTipWindow.SetActive(true);
-        toolTipWindow.GetComponent<RectTransform>().position = new Vector3(equipment.transform.position.x-toolTipOffset,eventData.position.y, 0);    
+        //toolTipWindow.SetActive(true);
+        //toolTipWindow.GetComponent<RectTransform>().position = new Vector3(equipment.transform.position.x-toolTipOffset,eventData.position.y, 0);    
         tTM.SetToolTip(equipment);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        toolTipWindow.SetActive(false);
+        //toolTipWindow.SetActive(false);
+        tTM.ClearToolTip();
     }
 }
