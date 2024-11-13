@@ -57,8 +57,11 @@ public class UIManager : MonoBehaviour
     public Image fuelBar;
     [Header("Options Menu")]
     public Slider masterVolSlider;
+    public GameObject masterKnob;
     public Slider musicVolSlider;
+    public GameObject musicKnob;
     public Slider sFXVolSlider;
+    public GameObject sfxKnob;
     public TextMeshProUGUI currentSongText;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
