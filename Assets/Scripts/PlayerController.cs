@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     soundManager.contSFXSource.volume = 0.25f;
-                    playerForce.relativeForce = new Vector3(playerStats.boostSpeed/4,0,0);
+                    playerForce.relativeForce = new Vector3(playerStats.boostSpeed/3,0,0);
                     windEffect.enableEmission = false;
                     if(mainCamera.fieldOfView > 58.71551f) //weird fov number taken from editor.
                     {
