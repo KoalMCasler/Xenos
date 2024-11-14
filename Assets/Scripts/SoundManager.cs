@@ -109,6 +109,16 @@ public class SoundManager : MonoBehaviour
     /// </summary>
     public void GetMusic()
     {
+        if(music.Count > 2)
+        {
+            for(int i = 0; i < music.Count;i ++)
+            {
+                if(i > 1)
+                {
+                    music.Remove(music[i]);
+                }
+            }
+        }
         string[] songs = Directory.GetFiles(audioPath,"*.mp3");
         foreach (string song in songs)
         {
@@ -140,6 +150,13 @@ public class SoundManager : MonoBehaviour
     public void OpenMusicFolder()
     {
         Application.OpenURL(audioPath);
+        StartCoroutine(GetNewMusic());
+    }
+
+    IEnumerator GetNewMusic()
+    {
+        yield return new WaitForSeconds(1);
+        GetMusic();
     }
 
    

@@ -40,7 +40,7 @@ public class ToolTipManager : MonoBehaviour
                 break;
             case Equipment.equipType.Fuel:
                 equipmentType.text = "Fuel";
-                statModified.text = string.Format("Fuel = {0}/s",eq.modValue);
+                statModified.text = string.Format("Fuel = {0}L",eq.modValue);
                 break;
             case Equipment.equipType.Booster:
                 equipmentType.text = "Booster";

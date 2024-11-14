@@ -54,6 +54,9 @@ public class UIManager : MonoBehaviour
     public Slider progressBar;
     public TextMeshProUGUI altitudeText;
     public TextMeshProUGUI speedText;
+    public CanvasGroup launchPrompt;
+    private float promptTimer;
+    private bool promptSwitch;
     public Image fuelBar;
     [Header("Options Menu")]
     public Slider masterVolSlider;
@@ -74,6 +77,7 @@ public class UIManager : MonoBehaviour
         gameManager = GameManager.gameManager;
         upgradeManager = gameManager.upgradeManager;
         soundManager = gameManager.soundManager;
+        promptTimer = 0;
     }
 
     void Start()
@@ -108,6 +112,7 @@ public class UIManager : MonoBehaviour
         {
             UpdateHud();
         }
+        
         UpdateResults();
     }
 
@@ -122,15 +127,46 @@ public class UIManager : MonoBehaviour
             altitudeText.text = string.Format("{0}m",Math.Round(gameManager.player.altitude));
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = gameManager.player.ReturnDistance();
+            launchPrompt.gameObject.SetActive(false);
         }
         else
         {
+            if(launchPrompt.gameObject.activeSelf == false)
+            {
+                launchPrompt.gameObject.SetActive(true);
+            }
+            DisplayPrompt();
             speedText.text = string.Format("{0}kn",0);
             altitudeText.text = string.Format("{0}m",0);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = 0;
         }
         CheckFuel();
+    }
+
+    void DisplayPrompt()
+    {
+        promptTimer += Time.deltaTime;
+        if(promptTimer > 1)
+        {
+            promptTimer = 0;
+            if(promptSwitch)
+            {
+                promptSwitch = false;
+            }
+            else
+            {
+                promptSwitch = true;
+            }
+        }
+        if(promptSwitch)
+        {
+            launchPrompt.alpha += Time.deltaTime;
+        }
+        else
+        {
+            launchPrompt.alpha -= Time.deltaTime;
+        }
     }
     /// <summary>
     /// Used to set the color of the fuel gage as it lowers.
