@@ -6,7 +6,6 @@ using System;
 using UnityEngine.UI;
 using System.Linq;
 using Unity.VisualScripting;
-using DG.Tweening;
 
 /// <summary>
 /// Controls all UI elements
@@ -59,7 +58,6 @@ public class UIManager : MonoBehaviour
     private float promptTimer;
     private bool promptSwitch;
     public Image fuelBar;
-    public GameObject[] progressIcons;
     [Header("Options Menu")]
     public Slider masterVolSlider;
     public GameObject masterKnob;
@@ -505,10 +503,5 @@ public class UIManager : MonoBehaviour
                 soundManager.ChangeVolume(group,sFXVolSlider.value);
                 break;
         }
-    }
-
-    void EaseIcon(GameObject icon)
-    {
-
     }
 }
