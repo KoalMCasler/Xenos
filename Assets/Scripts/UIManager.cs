@@ -70,6 +70,9 @@ public class UIManager : MonoBehaviour
     public Color fullFuel;
     public Color halfFuel;
     public Color lowFuel;
+    [Header("Credits")]
+    public Scrollbar creditScroll;
+    bool scrollingUp;
 
 
     void Awake()
@@ -103,6 +106,10 @@ public class UIManager : MonoBehaviour
         if(optionsMenu.activeSelf)
         {
             DisplayActiveSong();
+        }
+        if(creditsMenu.activeSelf)
+        {
+            UpdateCredits();
         }
         if(gameManager.gameState == GameManager.GameState.Upgrades)
         {
@@ -252,6 +259,7 @@ public class UIManager : MonoBehaviour
     {
         ResetAllMenus();
         creditsMenu.SetActive(true);
+        creditScroll.value = 1;
     }
     /// <summary>
     /// Sets UI to controlls
@@ -353,6 +361,26 @@ public class UIManager : MonoBehaviour
         currentMoneyText.text = string.Format("{0}$",Math.Round(gameManager.player.playerStats.money));
         bestRunText.text = string.Format("{0}M",Math.Round(gameManager.player.playerStats.bestDistance));
         objectiveText.text = string.Format("You were {0}M away from THE WALL",Math.Round(distanceFromWall));
+    }
+
+    void UpdateCredits()
+    {
+        if(creditScroll.value >= 1)
+        {
+            scrollingUp = false;
+        }
+        if(creditScroll.value <= 0)
+        {
+            scrollingUp = true;
+        }
+        if(scrollingUp)
+        {
+            creditScroll.value += Time.deltaTime /20;
+        }
+        else
+        {
+            creditScroll.value -= Time.deltaTime /20;
+        }
     }
 
     /// <summary>
