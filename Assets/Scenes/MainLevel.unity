@@ -65074,6 +65074,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 6877044191134396226}
+    - target: {fileID: 3025328838504760370, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
+      propertyPath: altitudeLimit
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 3531414013835413276, guid: 1d5305abb88c3484a85455b039a030d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 254.9
