@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3973236
 Transform:
   m_ObjectHideFlags: 0
@@ -5176,7 +5176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &316108778
 Transform:
   m_ObjectHideFlags: 0
@@ -15733,13 +15733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545d84e91aa268841bd10a68b07701e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwanRate: 150
-  minXRange: 450
+  spwanRate: 50
+  minXRange: 1000
   maxXRange: 20000
-  minYRange: 25
-  maxYRange: 2000
-  minZRange: 0
-  maxZRange: 1000
+  minYRange: 200
+  maxYRange: 1250
+  minZRange: 200
+  maxZRange: 800
   coinToFuelRatio: 5
   collectables:
   - {fileID: 1015947326248060071, guid: dfb5b641d08d65545b75edf6f9b5bb07, type: 3}
@@ -17209,7 +17209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &977331263
 Transform:
   m_ObjectHideFlags: 0
@@ -21025,7 +21025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1129488795
 Transform:
   m_ObjectHideFlags: 0
@@ -39633,7 +39633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1536872461
 Light:
   m_ObjectHideFlags: 0
@@ -47234,7 +47234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970219489
 Transform:
   m_ObjectHideFlags: 0
@@ -53762,7 +53762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2067021542
 Transform:
   m_ObjectHideFlags: 0
@@ -55188,7 +55188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.2519, y: 30.484512}
+  m_AnchoredPosition: {x: -5.2519, y: -8.58}
   m_SizeDelta: {x: 932.34, y: 752.2106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138539201
@@ -63526,7 +63526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   equipmentName: Ship Gas Tank
-  cost: 10000
+  cost: 20000
   discription: Gas tank taken from an old cargo ship.
   modValue: 30
   icon: {fileID: 21300000, guid: d564dd543f297374bbe09be594cfd430, type: 3}
@@ -63551,7 +63551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   equipmentName: C4 Booster
-  cost: 5000
+  cost: 10000
   discription: A lump of plastic explosive. HOW IS THIS SAFE?!
   modValue: 1200
   icon: {fileID: 21300000, guid: 1063e5680a743274ea1ecbccd68f1d60, type: 3}
@@ -63576,7 +63576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   equipmentName: Truck Gas Tank
-  cost: 5000
+  cost: 10000
   discription: 'Old gas tank taken from an old truck '
   modValue: 25
   icon: {fileID: 21300000, guid: 14af75a9eaca6cc45af2fe860bef1774, type: 3}
@@ -63601,7 +63601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   equipmentName: Ship Engine
-  cost: 2500
+  cost: 5000
   discription: An old ship engine used for transport ships
   modValue: 25
   icon: {fileID: 21300000, guid: 5a94f16256245354184e0cc8d1b26449, type: 3}
@@ -63676,7 +63676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   equipmentName: Dynamite Bundle
-  cost: 2500
+  cost: 5000
   discription: DEFINITELY not safe.
   modValue: 900
   icon: {fileID: 21300000, guid: 439b667d71180f249bebb6ca7859b6ad, type: 3}
@@ -63701,7 +63701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   equipmentName: HC Steel
-  cost: 5000
+  cost: 10000
   discription: High Carbon Steel alloy. Ordered in from another village.
   modValue: 60
   icon: {fileID: 21300000, guid: 665c180ba69d0b944ab7ca571db0ad92, type: 3}
@@ -63726,7 +63726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   equipmentName: WarpBooster
-  cost: 10000
+  cost: 20000
   discription: An unknown piece of tech, you don't know what it will do...
   modValue: 0
   icon: {fileID: 21300000, guid: 1776ef51277a140498b1618ceb81a43c, type: 3}
@@ -63751,7 +63751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   equipmentName: Hybrid Engine
-  cost: 5000
+  cost: 10000
   discription: A hybrid Engine that increases fuel efficiency.
   modValue: 20
   icon: {fileID: 21300000, guid: 7baaed0de59d0e94eaa4ad43e6668d7e, type: 3}
@@ -63776,7 +63776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   equipmentName: Aluminum
-  cost: 10000
+  cost: 20000
   discription: Light weight aluminum.
   modValue: 40
   icon: {fileID: 21300000, guid: f63023c6b772721419a654d3bf73be7c, type: 3}
@@ -63851,7 +63851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   equipmentName: Hydrogen Booster
-  cost: 10000
+  cost: 20000
   discription: There is no way OHS would allow this!
   modValue: 1500
   icon: {fileID: 21300000, guid: b1b6812a26617614bb41e19975e807d9, type: 3}
@@ -63876,7 +63876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   equipmentName: Prototype Jet Engine
-  cost: 10000
+  cost: 20000
   discription: A Prototype Jet Engine, you're not sure how you got your hands on
     it.
   modValue: 30
@@ -63927,7 +63927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   equipmentName: Car Gas Tank
-  cost: 2500
+  cost: 5000
   discription: Old gas tank taken from an old car
   modValue: 20
   icon: {fileID: 21300000, guid: 4561a62aa940b194695326092204b584, type: 3}
@@ -63952,7 +63952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   equipmentName: Eperimental Tank
-  cost: 10000
+  cost: 20000
   discription: An Experimental Tank that increse the fuel you aquire during a run.
   modValue: 20
   icon: {fileID: 21300000, guid: 7cc5775cdb472144a9657fc9df8bdbae, type: 3}
@@ -64002,7 +64002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   equipmentName: Titanium
-  cost: 10000
+  cost: 20000
   discription: Found only in the rarest of places. Reduces Impact Damage.
   modValue: 70
   icon: {fileID: 21300000, guid: c7d27753de0c50f40ac8560f31ba5aba, type: 3}
@@ -64027,7 +64027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   equipmentName: Rotery Hybrid Engine
-  cost: 10000
+  cost: 20000
   discription: A Rotery Hybrid engine, has a good boost and efficiency.
   modValue: 25
   icon: {fileID: 21300000, guid: 0b1f38d66f2324645953f4438baab725, type: 3}
@@ -64052,7 +64052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   equipmentName: LC Steel
-  cost: 2500
+  cost: 5000
   discription: Low Carbon Steel alloy.
   modValue: 70
   icon: {fileID: 21300000, guid: 958c1d4de8a80054b88a94ad3a1f3e68, type: 3}
