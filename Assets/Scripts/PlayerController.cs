@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                playerBody.velocity = Vector3.zero;
+                //playerBody.velocity = Vector3.zero;
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
                 playerTransform.rotation = spawnPoint.rotation;

@@ -5,7 +5,6 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using System.Linq;
-using Unity.VisualScripting;
 
 /// <summary>
 /// Controls all UI elements
