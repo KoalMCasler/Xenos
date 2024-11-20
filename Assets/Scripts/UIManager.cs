@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using System.Linq;
+using DG.Tweening;
 
 /// <summary>
 /// Controls all UI elements
@@ -57,6 +58,8 @@ public class UIManager : MonoBehaviour
     private float promptTimer;
     private bool promptSwitch;
     public Image fuelBar;
+    public GameObject[] progressIcons;
+    public bool[] checkpointsHit;
     [Header("Options Menu")]
     public Slider masterVolSlider;
     public GameObject masterKnob;
@@ -133,6 +136,7 @@ public class UIManager : MonoBehaviour
             altitudeText.text = string.Format("{0}m",Math.Round(gameManager.player.altitude));
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = gameManager.player.ReturnDistance();
+            CheckProgress();
             launchPrompt.gameObject.SetActive(false);
         }
         else
@@ -148,6 +152,42 @@ public class UIManager : MonoBehaviour
             progressBar.value = 0;
         }
         CheckFuel();
+    }
+
+    void CheckProgress()
+    {
+        if(progressBar.value >= 2800 && checkpointsHit[0] == false)//Value taken from slider in editor.
+        {
+            TweenIcon(progressIcons[0]);
+            checkpointsHit[0] = true;
+        }
+        if(progressBar.value >= 4800 && checkpointsHit[1] == false)//Value taken from slider in editor.
+        {
+            TweenIcon(progressIcons[1]);
+            checkpointsHit[1] = true;
+        }
+        if(progressBar.value >= 7800 && checkpointsHit[2] == false)//Value taken from slider in editor.
+        {
+            TweenIcon(progressIcons[2]);
+            checkpointsHit[2] = true;
+        }
+        if(progressBar.value >= 12200 && checkpointsHit[3] == false)//Value taken from slider in editor.
+        {
+            TweenIcon(progressIcons[3]);
+            checkpointsHit[3] = true;
+        }
+        if(progressBar.value >= 20000 && checkpointsHit[4] == false)//Value taken from slider in editor.
+        {
+            TweenIcon(progressIcons[4]);
+            checkpointsHit[4] = true;
+        }
+    }
+
+    void TweenIcon(GameObject icon)
+    {
+        Vector3 scale = icon.transform.localScale;
+        icon.transform.localScale = Vector3.zero;
+        icon.transform.DOScale(scale, 1f).SetEase(Ease.OutElastic);
     }
 
     void DisplayPrompt()

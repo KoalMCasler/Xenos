@@ -347,6 +347,7 @@ public class PlayerController : MonoBehaviour
         hitWall = false;
         windEffect.enableEmission = false;
         playerStats.fuel = playerStats.maxFuel;
+        gameManager.uIManager.checkpointsHit = new bool[5];
 
     }
     /// <summary>
@@ -519,11 +520,11 @@ public class PlayerController : MonoBehaviour
 
     void BalanceCraft()
     {
-        if(transform.rotation.x >= 0.05f)
+        if(transform.rotation.x >= 0.1f)
         {
             playerForce.relativeTorque =  new Vector3(-Time.deltaTime*10,0,0);
         }
-        else if(transform.rotation.x <= -0.05f)
+        else if(transform.rotation.x <= -0.1f)
         {
             playerForce.relativeTorque =  new Vector3(Time.deltaTime*10,0,0);
         }
