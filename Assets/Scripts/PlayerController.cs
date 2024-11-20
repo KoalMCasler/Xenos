@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                playerBody.velocity = Vector3.zero;
                 //holds player in spawn position, until launch it activated. 
                 playerBody.isKinematic = true;
                 playerTransform.rotation = spawnPoint.rotation;
@@ -140,10 +141,7 @@ public class PlayerController : MonoBehaviour
                         mainCamera.fieldOfView -= Time.deltaTime;
                     }
                 }
-                if(isMoveing == false)
-                {
-                    BalanceCraft();
-                }
+                BalanceCraft();
                 GetAltitude();
             }
             //Debug.Log(playerBody.velocity);
@@ -523,11 +521,11 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.rotation.x >= 0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*2,0,0);
+            playerForce.relativeTorque =  new Vector3(-Time.deltaTime*10,0,0);
         }
         else if(transform.rotation.x <= -0.05f)
         {
-            playerForce.relativeTorque =  new Vector3(Time.deltaTime*2,0,0);
+            playerForce.relativeTorque =  new Vector3(Time.deltaTime*10,0,0);
         }
         else
         {

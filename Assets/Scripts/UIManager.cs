@@ -257,9 +257,9 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void SetUICredits()
     {
+        creditScroll.value = 1;
         ResetAllMenus();
         creditsMenu.SetActive(true);
-        creditScroll.value = 1;
     }
     /// <summary>
     /// Sets UI to controlls
