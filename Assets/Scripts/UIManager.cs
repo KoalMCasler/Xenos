@@ -132,7 +132,7 @@ public class UIManager : MonoBehaviour
     {
         if(gameManager.player.hasLaunched)
         {
-            speedText.text = string.Format("{0}km",Math.Round(gameManager.player.GetSpeed()));
+            speedText.text = string.Format("{0}kn",Math.Round(gameManager.player.GetSpeed()));
             altitudeText.text = string.Format("{0}m",Math.Round(gameManager.player.altitude));
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = gameManager.player.ReturnDistance();
@@ -146,7 +146,7 @@ public class UIManager : MonoBehaviour
                 launchPrompt.gameObject.SetActive(true);
             }
             DisplayPrompt();
-            speedText.text = string.Format("{0}km",0);
+            speedText.text = string.Format("{0}kn",0);
             altitudeText.text = string.Format("{0}m",0);
             fuelBar.fillAmount = gameManager.player.playerStats.fuel/gameManager.player.playerStats.maxFuel;
             progressBar.value = 0;
