@@ -6,6 +6,7 @@ using System;
 using UnityEngine.UI;
 using System.Linq;
 using DG.Tweening;
+using System.Data.Common;
 
 /// <summary>
 /// Controls all UI elements
@@ -63,10 +64,14 @@ public class UIManager : MonoBehaviour
     [Header("Options Menu")]
     public Slider masterVolSlider;
     public GameObject masterKnob;
+    private float masterValue;
     public Slider musicVolSlider;
     public GameObject musicKnob;
+    private float musicValue;
     public Slider sFXVolSlider;
     public GameObject sfxKnob;
+    private float sfxValue;
+    public int knobRotationSpeed;
     public TextMeshProUGUI currentSongText;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
@@ -83,6 +88,9 @@ public class UIManager : MonoBehaviour
         upgradeManager = gameManager.upgradeManager;
         soundManager = gameManager.soundManager;
         promptTimer = 0;
+        masterVolSlider.onValueChanged.AddListener (delegate {RotateKnob(masterKnob, "master");});
+        musicVolSlider.onValueChanged.AddListener (delegate {RotateKnob(musicKnob, "music");});
+        sFXVolSlider.onValueChanged.AddListener (delegate {RotateKnob(sfxKnob, "sfx");});
     }
 
     void Start()
@@ -123,6 +131,55 @@ public class UIManager : MonoBehaviour
         }
         
         UpdateResults();
+    }
+
+    /// <summary>
+    /// Updates slider knobs to make them rotate when moved. 
+    /// </summary>
+    void RotateKnob(GameObject knob, string type)
+    {
+        switch (type)
+        {
+            case "master":
+                if(masterValue > masterVolSlider.value)
+                {
+                    float rotationValue = masterValue - masterVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);
+                }
+                else if(masterValue < masterVolSlider.value)
+                {
+                    float rotationValue = masterValue - masterVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);
+                }
+                masterValue = masterVolSlider.value;
+                break;
+            case "music":
+                if(musicValue > musicVolSlider.value)
+                {
+                    float rotationValue = musicValue - musicVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);
+                }
+                else if(musicValue < musicVolSlider.value)
+                {
+                    float rotationValue = musicValue - musicVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);  
+                }
+                musicValue = musicVolSlider.value;
+                break;
+            case "sfx":
+                if(sfxValue > sFXVolSlider.value)
+                {
+                    float rotationValue = sfxValue - sFXVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);
+                }
+                else if(sfxValue < sFXVolSlider.value)
+                {
+                    float rotationValue = sfxValue - sFXVolSlider.value;
+                    knob.transform.Rotate(0,0,rotationValue*knobRotationSpeed, Space.Self);
+                }
+                sfxValue = sFXVolSlider.value;
+                break;
+        }
     }
 
     /// <summary>
@@ -269,6 +326,9 @@ public class UIManager : MonoBehaviour
         gameManager.gameState = GameManager.GameState.Options;
         ResetAllMenus();
         optionsMenu.SetActive(true);
+        masterValue = masterVolSlider.value;
+        musicValue = musicVolSlider.value;
+        sfxValue = masterVolSlider.value;
     }
     /// <summary>
     /// Sets UI to game end
