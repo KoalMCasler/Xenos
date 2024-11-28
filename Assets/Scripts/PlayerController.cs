@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     public bool isMoveing;
     public float debrisMinForce;
     public float debrisMaxForce;
+    private Vector2 moveVector2;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
@@ -113,12 +114,23 @@ public class PlayerController : MonoBehaviour
                 playerBody.isKinematic = true;
                 playerTransform.rotation = spawnPoint.rotation;
             }
-            if(!isOffRamp)
+            if(!boostIsDone)
             {
                 HoldYRotation();
             }
             if(hasLaunched && isOffRamp)
             {
+                if(moveVector2 != Vector2.zero)
+                {
+                    isMoveing = true;
+                    moveVector2.Normalize();
+                    //Aims player towards mouse movement 
+                    transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/3,moveVector2.x*playerStats.lookSensitivity/1.5f,moveVector2.y*playerStats.lookSensitivity);
+                }
+                else
+                {
+                    isMoveing = false;
+                }
                 if(boostAction.IsPressed() && playerStats.fuel > 0)
                 {
                     soundManager.contSFXSource.volume = 0.75f;
@@ -198,18 +210,7 @@ public class PlayerController : MonoBehaviour
     {
         if(gameManager.gameState == GameManager.GameState.Gameplay && isOffRamp && !hasLanded)
         {
-            Vector2 moveVector2 = movementValue.Get<Vector2>();
-            if(moveVector2 != Vector2.zero)
-            {
-                isMoveing = true;
-                moveVector2.Normalize();
-                //Aims player towards mouse movement 
-                transform.Rotate(moveVector2.x*-playerStats.lookSensitivity/3,moveVector2.x*playerStats.lookSensitivity/1.5f,moveVector2.y*playerStats.lookSensitivity);
-            }
-            else
-            {
-                isMoveing = false;
-            }
+            moveVector2 = movementValue.Get<Vector2>();
         }
     }
     /// <summary>
@@ -243,6 +244,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         boostIsDone = true;
+        playerBody.angularVelocity = Vector3.zero;
     }
 
     void RollForWoo()
