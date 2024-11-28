@@ -19027,14 +19027,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1326, y: 2.378398, z: 1.1326}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1688061799}
+  m_Children: []
   m_Father: {fileID: 1143202423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68, y: -54.89}
-  m_SizeDelta: {x: 769.6406, y: 69.534}
+  m_AnchoredPosition: {x: 178.42, y: -54.89}
+  m_SizeDelta: {x: 315.06, y: 69.534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041579715
 MonoBehaviour:
@@ -19090,7 +19089,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -21029,6 +21028,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 696390967}
+  - {fileID: 1688061799}
   - {fileID: 1041579714}
   - {fileID: 319049288}
   m_Father: {fileID: 2004693325}
@@ -39556,8 +39556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'BETA V. 0.5
-
+  m_text: 'Version 1.0
 
 '
   m_isRightToLeft: 0
@@ -41396,14 +41395,14 @@ RectTransform:
   m_GameObject: {fileID: 1688061798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.203468, y: 0.81948566, z: 1.1884247}
+  m_LocalScale: {x: 1.3630477, y: 1.949063, z: 1.3460097}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1041579714}
+  m_Father: {fileID: 1143202423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130.67285, y: 0.000030517578}
+  m_AnchoredPosition: {x: -79.99999, y: -54.889935}
   m_SizeDelta: {x: 109.7788, y: 109.779}
   m_Pivot: {x: 0.5000001, y: 0.5000003}
 --- !u!114 &1688061800

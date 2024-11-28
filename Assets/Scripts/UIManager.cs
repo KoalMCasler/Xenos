@@ -440,7 +440,7 @@ public class UIManager : MonoBehaviour
         {
             gameManager.runDistance = gameManager.player.ReturnDistance();
             distanceResultsText.text = string.Format("Distance = {0}m",Math.Round(gameManager.runDistance));
-            moneyResultsText.text = string.Format("Coins Collected = {0}$",Math.Round(gameManager.collectedMoney));
+            moneyResultsText.text = string.Format("= {0}$",Math.Round(gameManager.collectedMoney));
             runTotal = gameManager.runDistance + gameManager.collectedMoney;
             totalResultsText.text = string.Format("Total = {0}$",Math.Round(runTotal));
             distanceFromWall = 20200 - gameManager.runDistance;
