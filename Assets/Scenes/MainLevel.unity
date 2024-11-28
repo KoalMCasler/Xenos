@@ -44687,6 +44687,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e1f17cd9914c6094ab950d7e8f172a13, type: 3}
   - {fileID: 8300000, guid: 534397faa48f12440a89e45f03ae74f3, type: 3}
   - {fileID: 8300000, guid: 87370f80d4022eb4bb2c90c80702ecbd, type: 3}
+  - {fileID: 8300000, guid: 25fb8cf274e46364b895638ccf23f207, type: 3}
   musicSource: {fileID: 1360199156}
   sfxSource: {fileID: 449073936}
   contSFXSource: {fileID: 1513429660}

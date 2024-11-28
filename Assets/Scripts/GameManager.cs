@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour
                 Results(); 
                 break;
             case GameState.Options:
-                Options();
                 break;
             case GameState.GameEnd:
                 GameEnd();
@@ -129,13 +128,6 @@ public class GameManager : MonoBehaviour
         {
             ReloadGame();
         }
-    }
-    /// <summary>
-    /// Options gamestate function, used to set prev state for use in multiple places.
-    /// </summary>
-    void Options()
-    {
-
     }
     void GameEnd()
     {

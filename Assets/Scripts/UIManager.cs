@@ -216,26 +216,31 @@ public class UIManager : MonoBehaviour
         if(progressBar.value >= 2800 && checkpointsHit[0] == false)//Value taken from slider in editor.
         {
             TweenIcon(progressIcons[0]);
+            soundManager.PlaySFX(13);
             checkpointsHit[0] = true;
         }
         if(progressBar.value >= 4800 && checkpointsHit[1] == false)//Value taken from slider in editor.
         {
             TweenIcon(progressIcons[1]);
+            soundManager.PlaySFX(13);
             checkpointsHit[1] = true;
         }
         if(progressBar.value >= 7800 && checkpointsHit[2] == false)//Value taken from slider in editor.
         {
             TweenIcon(progressIcons[2]);
+            soundManager.PlaySFX(13);
             checkpointsHit[2] = true;
         }
         if(progressBar.value >= 12200 && checkpointsHit[3] == false)//Value taken from slider in editor.
         {
             TweenIcon(progressIcons[3]);
+            soundManager.PlaySFX(13);
             checkpointsHit[3] = true;
         }
         if(progressBar.value >= 20000 && checkpointsHit[4] == false)//Value taken from slider in editor.
         {
             TweenIcon(progressIcons[4]);
+            soundManager.PlaySFX(13);
             checkpointsHit[4] = true;
         }
     }
