@@ -57,16 +57,19 @@ public class PlayerController : MonoBehaviour
     public float debrisMinForce;
     public float debrisMaxForce;
     private Vector2 moveVector2;
+    public Vector3 pausedVelocity;
     [Header("Player Stats")]
     public Stats playerStats;
     [Header("Animation")]
     public Animator propellorAnim;
     void Awake()
     {
+        
         gameManager = FindObjectOfType<GameManager>();
         upgradeManager = gameManager.upgradeManager;
         soundManager = gameManager.soundManager;
         playerBody = this.gameObject.GetComponent<Rigidbody>();
+        playerBody.velocity = Vector3.zero;
         playerTransform = this.transform;
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         playerForce = this.GetComponent<ConstantForce>();
@@ -163,9 +166,9 @@ public class PlayerController : MonoBehaviour
             playerForce.relativeForce = new Vector3(0,0,0);
             soundManager.contSFXSource.Stop();
         }
-        else
+        else if(gameManager.gameState != GameManager.GameState.Gameplay && gameManager.gameState != GameManager.GameState.Paused)
         {
-            //holds player in spawn position, until launch it activated. 
+            //holds player in spawn position, for menu and upgrade screens. 
             playerBody.isKinematic = true;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -212,6 +215,38 @@ public class PlayerController : MonoBehaviour
         {
             moveVector2 = movementValue.Get<Vector2>();
         }
+    }
+    public void OnPause()
+    {
+        if(gameManager.gameState == GameManager.GameState.Gameplay || gameManager.gameState == GameManager.GameState.Paused)
+        {
+            
+            if(gameManager.isPaused)
+            {
+                UnPause();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void UnPause()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        gameManager.isPaused = false;
+        soundManager.contSFXSource.UnPause();
+        gameManager.gameState = GameManager.GameState.Gameplay;
+        gameManager.ChangeGameState();  
+    }
+    public void Pause()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        gameManager.isPaused = true;
+        soundManager.contSFXSource.Pause();
+        gameManager.gameState = GameManager.GameState.Paused;
+        gameManager.ChangeGameState();
     }
     /// <summary>
     /// Boosts player when they use engine.

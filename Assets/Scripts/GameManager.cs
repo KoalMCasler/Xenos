@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public Transform camMenuPosition;
     public float cameraOffset;
     public static GameManager gameManager;
-    public enum GameState{MainMenu, Gameplay, Upgrades, Results, Options, GameEnd}
+    public enum GameState{MainMenu, Gameplay, Upgrades, Results, Options, Paused, GameEnd}
+    public bool isPaused;
     public GameState gameState;
     public GameState prevState;
     private Stats loadedStats;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
             GameObject.DontDestroyOnLoad(this.gameObject);
             gameManager = this;
         }
+        isPaused = false;
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         playerCam = GameObject.FindWithTag("MainCamera");
         camStartPosition = GameObject.FindWithTag("CamStart").transform;
@@ -81,6 +83,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Options:
                 break;
+            case GameState.Paused:
+                Pause();
+                break;
             case GameState.GameEnd:
                 GameEnd();
                 break;
@@ -91,6 +96,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void MainMenu()
     {
+        Time.timeScale = 1;
         uIManager.SetUIMainMenu();
         if(player.gameObject.activeSelf == false)
         {
@@ -111,8 +117,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Gameplay()
     {
+        Time.timeScale = 1;
+        uIManager.SetUIGameplay();
         prevState = GameState.Gameplay;
-        player.ResetForNewRun();
         GameObject runMarker = GameObject.FindWithTag("BestRun");
         runMarker.transform.position = player.playerStats.bestRunPositon;
         if(soundManager.musicSource.clip != soundManager.music[soundManager.activeSongIndex])
@@ -125,6 +132,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Upgrades()
     {
+        player.playerBody.velocity = Vector3.zero;
+        isPaused = false;
+        Time.timeScale = 1;
         if(prevState != GameState.Upgrades)
         {
             ReloadGame();
@@ -132,6 +142,7 @@ public class GameManager : MonoBehaviour
     }
     void GameEnd()
     {
+        Time.timeScale = 1;
         StartCoroutine(EndGame());
     }
     /// <summary>
@@ -139,7 +150,13 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Results()
     {
+        Time.timeScale = 1;
         StartCoroutine(LandingExplosion());
+    }
+    void Pause()
+    {
+        Time.timeScale = 0;
+        uIManager.SetUIPause();
     }
     /// <summary>
     /// Reloads game for next run.
@@ -373,10 +390,31 @@ public class GameManager : MonoBehaviour
         if(autoSaveActive)
         {
             autoSaveActive = false;
+            player.playerStats.autoSaveActive = autoSaveActive;
         }
         else
         {
             autoSaveActive = true;
+            player.playerStats.autoSaveActive = autoSaveActive;
+        }
+    }
+
+    public void SetGameState(string state)
+    {
+        switch(state)
+        {
+            case "Gameplay":
+                gameState = GameState.Gameplay;
+                ChangeGameState();
+                break;
+            case "Menu":
+                gameState = GameState.MainMenu;
+                ChangeGameState();
+                break; 
+            case "Upgrades":
+                gameState = GameState.Upgrades;
+                ChangeGameState();
+                break;
         }
     }
 }

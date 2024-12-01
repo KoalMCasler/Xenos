@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public GameObject controlsMenu;
     public GameObject creditsMenu;
     public GameObject endGameMenu;
+    public GameObject pauseMenu;
     [Header("Loading Screen UI Elements")]
     public GameObject loadingScreen;
     public CanvasGroup loadingScreenCanvasGroup;
@@ -309,6 +310,7 @@ public class UIManager : MonoBehaviour
         creditsMenu.SetActive(false);
         controlsMenu.SetActive(false);
         endGameMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
     /// <summary>
     /// Sets UI to main menu
@@ -333,6 +335,7 @@ public class UIManager : MonoBehaviour
         ResetAllMenus();
         optionsMenu.SetActive(true);
         autoSaveToggle.isOn = gameManager.autoSaveActive;
+        gameManager.autoSaveActive = autoSaveToggle.isOn;
         masterValue = masterVolSlider.value;
         musicValue = musicVolSlider.value;
         sfxValue = masterVolSlider.value;
@@ -374,6 +377,11 @@ public class UIManager : MonoBehaviour
     {
         ResetAllMenus();
         controlsMenu.SetActive(true);
+    }
+    public void SetUIPause()
+    {
+        ResetAllMenus();
+        pauseMenu.SetActive(true);
     }
     /// <summary>
     /// Sets UI to Upgrades menu
