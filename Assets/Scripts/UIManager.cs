@@ -73,6 +73,7 @@ public class UIManager : MonoBehaviour
     private float sfxValue;
     public int knobRotationSpeed;
     public TextMeshProUGUI currentSongText;
+    public Toggle autoSaveToggle;
     [Header("Fuel Bar colors")]
     public Color fullFuel;
     public Color halfFuel;
@@ -331,6 +332,7 @@ public class UIManager : MonoBehaviour
         gameManager.gameState = GameManager.GameState.Options;
         ResetAllMenus();
         optionsMenu.SetActive(true);
+        autoSaveToggle.isOn = gameManager.autoSaveActive;
         masterValue = masterVolSlider.value;
         musicValue = musicVolSlider.value;
         sfxValue = masterVolSlider.value;

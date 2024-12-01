@@ -16,6 +16,7 @@ public class Stats : ScriptableObject
     public string[] currentEquipment = new string[4];
     public Vector3 bestRunPositon;
     public float bestDistance;
+    public bool autoSaveActive;
     /// <summary>
     /// Resets stats for new game. 
     /// </summary>

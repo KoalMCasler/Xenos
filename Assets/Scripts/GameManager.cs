@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameState prevState;
     private Stats loadedStats;
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
+    public bool autoSaveActive;
     [Header("Run stats")]
     public float runDistance;
     public float collectedMoney;
@@ -211,6 +212,7 @@ public class GameManager : MonoBehaviour
             JsonUtility.FromJsonOverwrite(json, loadedStats);
             player.playerStats = loadedStats;
         }
+        autoSaveActive = player.playerStats.autoSaveActive;
         gameState = GameState.Upgrades;
         upgradeManager.OnLoadGame();
         upgradeManager.CheckEquptment();
@@ -314,6 +316,7 @@ public class GameManager : MonoBehaviour
     {
         upgradeManager.ClearEquipSlots();
         player.playerStats.ResetStats();
+        player.playerStats.autoSaveActive = autoSaveActive;
     }
 
     /// <summary>
@@ -321,6 +324,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartRun()
     {
+        if(autoSaveActive)
+        {
+            SaveGame();
+        }
         runDistance = 0;
         collectedMoney = 0;
         player.playerStats.fuel = player.playerStats.maxFuel;
@@ -359,5 +366,17 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(player.endTime);
         uIManager.SetUIGameEnd();
         player.ResetForNewRun();
+    }
+
+    public void toggleAutoSave()
+    {
+        if(autoSaveActive)
+        {
+            autoSaveActive = false;
+        }
+        else
+        {
+            autoSaveActive = true;
+        }
     }
 }
