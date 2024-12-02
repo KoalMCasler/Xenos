@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
             playerForce.relativeForce = new Vector3(0,0,0);
             soundManager.contSFXSource.Stop();
         }
-        else if(gameManager.gameState != GameManager.GameState.Gameplay && gameManager.gameState != GameManager.GameState.Paused)
+        else if(gameManager.gameState != GameManager.GameState.Paused)
         {
             //holds player in spawn position, for menu and upgrade screens. 
             playerBody.isKinematic = true;
