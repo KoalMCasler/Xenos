@@ -279,6 +279,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         boostIsDone = true;
+        StartCoroutine(AngularReset());
+    }
+
+    private IEnumerator AngularReset()
+    {
+        yield return new WaitForSeconds(0.05f);
         playerBody.angularVelocity = Vector3.zero;
     }
 
