@@ -455,14 +455,14 @@ public class PlayerController : MonoBehaviour
             altitudeTimer -= Time.deltaTime;
             if(altitudeTimer <= 0)
             {
-                altitudeTimer = 1;
-                downForce += 1;
+                altitudeTimer = 1f;
+                downForce += downForce;
             }
             playerBody.AddForce(Vector3.down*downForce);
         }
         else
         {
-            downForce = 1;
+            downForce = 2;
         }
     }
     /// <summary>
